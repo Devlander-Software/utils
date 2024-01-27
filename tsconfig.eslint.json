@@ -1,0 +1,24 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+      "./src/**/*",
+      "./jest.config.js",
+      "./build-script.config.js",
+      "./test/**/*",
+      "./.eslintrc.js",
+      "rollup.config.mjs"
+
+    ],
+    "exclude": [
+        "node_modules",
+        "example",
+        "**/*.spec.ts",
+        "*.d.ts",
+        "typings",
+        "dist",
+        ".storybook/**/*",
+        "./auto-exporter.script.ts",
+        ".storybook",
+        "auto-exporter.cjs"
+    ]
+  }
