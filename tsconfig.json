@@ -23,6 +23,7 @@
     // Convert JSX into a createElement function call.
     // Ensure that casing is correct in imports.
     "forceConsistentCasingInFileNames": true, // default: true
+    "allowArbitraryExtensions": true,
     "module": "ESNEXT", // default: "commonjs"
     // Tell Typescript what process to use to look for modules.
     "moduleResolution": "Node",

@@ -10,18 +10,15 @@
  * @returns True if an item is found that matches the letter and filter text, false otherwise.
  */
 
-
 // make letter resricted to one character
 // using type script
-
-
 
 export const findItemByLetterAndFilter = (
   letter: string,
   array: Array<any>,
   keyToCheck: string = "name",
   index: number = 0,
-  filterText?: string
+  filterText?: string,
 ): boolean => {
   return array.some((item) => {
     if (letter.length !== 1) {
@@ -36,7 +33,7 @@ export const findItemByLetterAndFilter = (
     const checkForLetter = (existingValue: string): boolean => {
       const values = [existingValue, existingValue.toLowerCase()];
 
-      return values.some(value => value.charAt(index) === letter);
+      return values.some((value) => value.charAt(index) === letter);
     };
 
     const checkForFilterText = (existingValue: string): boolean => {
@@ -46,7 +43,9 @@ export const findItemByLetterAndFilter = (
 
       const filterTextValues = [filterText, filterText.toLowerCase()];
 
-      return filterTextValues.every(filterTextValue => existingValue.includes(filterTextValue));
+      return filterTextValues.every((filterTextValue) =>
+        existingValue.includes(filterTextValue),
+      );
     };
 
     const hasFilterText = checkForFilterText(existingValue);

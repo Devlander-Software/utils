@@ -9,11 +9,11 @@ export const abbreviateNumber = (value: number) => {
         (suffixNum != 0
           ? value / Math.pow(1000, suffixNum)
           : value
-        ).toPrecision(precision)
+        ).toPrecision(precision),
       );
       const dotLessShortValue = (shortValue + "").replace(
         /[^a-zA-Z 0-9]+/g,
-        ""
+        "",
       );
       if (dotLessShortValue.length <= 2) {
         break;
