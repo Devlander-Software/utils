@@ -1589,6 +1589,7 @@ __metadata:
     jest-environment-jsdom: ^29.7.0
     jsdom: ^23.0.1
     jsdom-global: ^3.0.2
+    picocolors: ^1.0.0
     prettier: ^3.0.3
     rollup: ^3.29.1
     rollup-plugin-delete: ^2.0.0

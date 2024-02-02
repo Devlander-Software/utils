@@ -3,7 +3,7 @@
  * @param value - The number to be abbreviated.
  * @returns The abbreviated number as a string.
  */
-export const abbreviateNumber = (value: number) => {
+export const abbreviateNumber = (value: number): string | number => {
   let newValue: number | string = value;
   if (value >= 1000) {
     const suffixes = ["", "k", "m", "b", "t"];

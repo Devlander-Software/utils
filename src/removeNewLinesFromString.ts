@@ -4,4 +4,5 @@
  * @param inputString - The input string to remove new lines from.
  * @returns The input string with all new lines removed.
  */
-export const removeNewLinesFromString = (inputString: string): string => inputString.replace(/\n/g, "");
+export const removeNewLinesFromString = (inputString: string): string =>
+  inputString.replace(/\n/g, "");
