@@ -3,4 +3,4 @@
  * @param str The string to check.
  * @returns Returns the parsed JSON object if the string is valid JSON, otherwise returns false.
  */
-export declare const isJson: (value: string | object) => JSON | boolean;
+export declare const isJson: (value: string | object) => Record<string, unknown> | boolean;

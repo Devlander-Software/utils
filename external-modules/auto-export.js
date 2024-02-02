@@ -14,8 +14,8 @@ const main = () => {
         outputFileName: 'index',
         outputFilenameExtension: '.ts',
         ignoredExtensions: ['.d.ts'],
-     
-        excludedFolders: ['__tests__', '__mocks__', '__snapshots__', '__fixtures__'],
+        
+        excludedFolders: ['__tests__', '__mocks__', '__snapshots__', '__fixtures__', 'test-tools'],
      
     })
 }

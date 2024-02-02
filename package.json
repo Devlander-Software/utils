@@ -1,10 +1,12 @@
 {
   "name": "@devlander/utils",
   "description": "Utils shared between projects that are plain javascript",
-  "version": "0.0.4",
-  "main": "dist/umd/index.js",
+  "version": "0.0.8",
+  "main": "dist/cjs/index.js",
   "browser": "dist/umd/index.js",
   "types": "typings/index.d.ts",
+  "module": "dist/esm/index.js",
+
   "type": "commonjs",
   "scripts": {
     "prebuild": "npm cache clean --force",
@@ -38,7 +40,6 @@
     "url": "https://github.com/Devlander-Software/utils/issues"
   },
   "homepage": "https://github.com/Devlander-Software/utils#readme",
-  "module": "dist/esm/index.js",
   "files": [
     "dist",
     "typings"

@@ -3,7 +3,9 @@
  * @param str The string to check.
  * @returns Returns the parsed JSON object if the string is valid JSON, otherwise returns false.
  */
-export const isJson = (value: string | object): Record<string, unknown> | boolean => {
+export const isJson = (
+  value: string | object,
+): Record<string, unknown> | boolean => {
   try {
     const str = typeof value === "string" ? value : JSON.stringify(value);
     return JSON.parse(str);

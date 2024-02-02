@@ -1,3 +1,8 @@
+/**
+ * Abbreviates a number by adding a suffix (k, m, b, t) based on its magnitude.
+ * @param value - The number to be abbreviated.
+ * @returns The abbreviated number as a string.
+ */
 export const abbreviateNumber = (value: number) => {
   let newValue: number | string = value;
   if (value >= 1000) {

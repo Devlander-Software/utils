@@ -12,12 +12,12 @@ describe("removeSpacesFromJson", () => {
     }`;
 
     const expected = {
-      "name": "JohnDoe",
-      "age": 30,
-      "address": {
-        "street": "123MainSt",
-        "city": "NewYork"
-      }
+      name: "JohnDoe",
+      age: 30,
+      address: {
+        street: "123MainSt",
+        city: "NewYork",
+      },
     };
 
     const result = removeSpacesFromJson(jsonInput);
@@ -26,21 +26,21 @@ describe("removeSpacesFromJson", () => {
 
   it("should remove spaces from a JSON object", () => {
     const jsonInput = {
-      "name": "John Doe",
-      "age": 30,
-      "address": {
-        "street": "123 Main St",
-        "city": "New York"
-      }
+      name: "John Doe",
+      age: 30,
+      address: {
+        street: "123 Main St",
+        city: "New York",
+      },
     };
 
     const expected = {
-      "name": "JohnDoe",
-      "age": 30,
-      "address": {
-        "street": "123MainSt",
-        "city": "NewYork"
-      }
+      name: "JohnDoe",
+      age: 30,
+      address: {
+        street: "123MainSt",
+        city: "NewYork",
+      },
     };
 
     const result = removeSpacesFromJson(jsonInput);

@@ -12,12 +12,12 @@ describe("removeNewLinesFromJson", () => {
     }`;
 
     const expected = {
-      "name": "John",
-      "age": 30,
-      "address": {
-        "street": "123 Main St",
-        "city": "New York"
-      }
+      name: "John",
+      age: 30,
+      address: {
+        street: "123 Main St",
+        city: "New York",
+      },
     };
 
     const result = removeNewLinesFromJson(jsonInput);
@@ -26,28 +26,24 @@ describe("removeNewLinesFromJson", () => {
 
   it("should remove new lines from a JSON object", () => {
     const jsonInput = {
-      "name": "John",
-      "age": 30,
-      "address": {
-        "street": "123 Main St",
-        "city": "New York"
-      }
+      name: "John",
+      age: 30,
+      address: {
+        street: "123 Main St",
+        city: "New York",
+      },
     };
 
     const expected = {
-      "name": "John",
-      "age": 30,
-      "address": {
-        "street": "123 Main St",
-        "city": "New York"
-      }
+      name: "John",
+      age: 30,
+      address: {
+        street: "123 Main St",
+        city: "New York",
+      },
     };
 
     const result = removeNewLinesFromJson(jsonInput);
     expect(result).toEqual(expected);
   });
-
-  
-
- 
 });
