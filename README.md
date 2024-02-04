@@ -6,17 +6,31 @@
 ![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png)
 
 
-[![Join Devlander on Discord](https://img.shields.io/badge/Discord-Devlander-%235865F2)](https://bit.ly/devlander-discord-invite)
+<img src="https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png" alt="Devlander Utils Header">
 
-[![npm downloads](https://img.shields.io/npm/dm/@devlander/hooks.svg)](https://www.npmjs.com/package/@devlander/hooks)
+<a href="https://bit.ly/devlander-discord-invite">
+  <img src="https://img.shields.io/badge/Discord-Devlander-%235865F2" alt="Join Devlander on Discord">
+</a>
 
-[![Join the discussion on Github](https://img.shields.io/badge/Github%20Discussions%20%26%20Support-Chat%20now!-blue)](https://github.com/orgs/Devlander-Software/discussions)
+<a href="https://www.npmjs.com/package/@devlander/hooks">
+  <img src="https://img.shields.io/npm/dm/@devlander/hooks.svg" alt="npm downloads">
+</a>
 
-[![Join Devlander on Twitch](https://img.shields.io/twitch/status/devlander)](https://bit.ly/devlander-twitch)
+<a href="https://github.com/orgs/Devlander-Software/discussions">
+  <img src="https://img.shields.io/badge/Github%20Discussions%20%26%20Support-Chat%20now!-blue" alt="Join the discussion on Github">
+</a>
 
-[![Follow Landon Johnson On Twitter](https://img.shields.io/twitter/follow/landonwjohnson.svg?style=social&label=Follow)](https://bit.ly/landonwjohnson-on-twitter)
+<a href="https://bit.ly/devlander-twitch">
+  <img src="https://img.shields.io/twitch/status/devlander" alt="Join Devlander on Twitch">
+</a>
 
-[![Wakatime stats for utils](https://wakatime.com/badge/user/bd50b6c5-e0ca-4937-83b3-ab2d13adbc73/project/018d49ad-1c41-4ee7-9a6b-5387db501fcb.svg)](https://bit.ly/landonwjohnson-on-twitter)
+<a href="https://bit.ly/landonwjohnson-on-twitter">
+  <img src="https://img.shields.io/twitter/follow/landonwjohnson.svg?style=social&label=Follow" alt="Follow Landon Johnson On Twitter">
+</a>
+
+<a href="https://bit.ly/landonwjohnson-on-twitter">
+  <img src="https://wakatime.com/badge/user/bd50b6c5-e0ca-4937-83b3-ab2d13adbc73/project/018d49ad-1c41-4ee7-9a6b-5387db501fcb.svg" alt="Wakatime stats for utils">
+</a>
 
 
 
