@@ -2,7 +2,6 @@
 
 # Devlander JavaScript Utilities Collection
 
-![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png)
 
 ![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png)
 
