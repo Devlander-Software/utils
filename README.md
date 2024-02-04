@@ -1,6 +1,6 @@
 # Devlander Javascript Utils Collection
 
-![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.jpg)
+![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png)
 
 [![devlanderutils](https://img.shields.io/twitter/url?color=%2308a0e9&label=devlanderutils&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Fbutton_hashtag%devlanderutils)](https://twitter.com/intent/tweet?button_hashtag=devlanderutils)
 
