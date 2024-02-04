@@ -42,3 +42,7 @@ export * from "./removeSpacesFromJson";
  * TSDoc for removeSpacesFromString
  */
 export * from "./removeSpacesFromString";
+/**
+ * TSDoc for waitFor
+ */
+export * from "./waitFor";

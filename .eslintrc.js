@@ -35,6 +35,7 @@ module.exports = {
     "rollup-config/*/**",
     "rollup-config/rollup-config.ts",
     "rollup.config.mjs",
+    "__tests__",
   ],
   rules: {
     'prettier/prettier': [
