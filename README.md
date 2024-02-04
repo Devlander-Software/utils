@@ -1,4 +1,8 @@
-# Devlander Javascript Utils Collection
+
+
+# Devlander JavaScript Utilities Collection
+
+![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png)
 
 ![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png)
 
@@ -16,9 +20,6 @@
 [![Wakatime stats for utils](https://wakatime.com/badge/user/bd50b6c5-e0ca-4937-83b3-ab2d13adbc73/project/018d49ad-1c41-4ee7-9a6b-5387db501fcb.svg)](https://bit.ly/landonwjohnson-on-twitter)
 
 
-# Devlander JavaScript Utilities Collection
-
-![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png)
 
 Enhance your JavaScript projects with the Devlander JavaScript Utils Collection - a meticulously curated set of utility functions to streamline your coding workflow. Join our vibrant community on Discord, engage in discussions on GitHub, and stay updated with our latest streams on Twitch. Boost your project's efficiency today!
 
