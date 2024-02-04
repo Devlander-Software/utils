@@ -16,8 +16,8 @@
 
 <br/>
 
-<a href="https://www.npmjs.com/package/@devlander/hooks">
-  <img src="https://img.shields.io/npm/dm/@devlander/hooks.svg" alt="npm downloads">
+<a href="https://www.npmjs.com/package/@devlander/utils">
+  <img src="https://img.shields.io/npm/dm/@devlander/utils.svg" alt="npm downloads">
 </a>
 <br/>
 
@@ -47,7 +47,7 @@
 Enhance your JavaScript projects with the Devlander JavaScript Utils Collection - a meticulously curated set of utility functions to streamline your coding workflow. Join our vibrant community on Discord, engage in discussions on GitHub, and stay updated with our latest streams on Twitch. Boost your project's efficiency today!
 
 - **Discord:** Join the Devlander community [here](https://bit.ly/devlander-discord-invite).
-- **npm downloads:** Get our package [@devlander/hooks](https://www.npmjs.com/package/@devlander/hooks).
+- **npm downloads:** Get our package [@devlander/utils](https://www.npmjs.com/package/@devlander/utils).
 - **GitHub Discussions:** Engage in discussions and get support [here](https://github.com/orgs/Devlander-Software/discussions).
 - **Twitch:** Catch our live coding sessions [here](https://bit.ly/devlander-twitch).
 - **Twitter:** Follow Landon Johnson [@landonwjohnson](https://bit.ly/landonwjohnson-on-twitter).
@@ -73,11 +73,15 @@ The Devlander JavaScript Utils Collection is an evolving library of JavaScript u
 
 - **`abbreviateNumber(value)`**: Abbreviates numbers with appropriate suffixes (k, m, b, t) for readability.
 
+### Timeout Utilities
+
+- **`waitFor(value, timeUnits?: ms | s, logDuration?: boolean)`**: Delays the execution of a function by a specified time.
+
 ## Quick Start and Documentation
 
 Dive into our utility functions with ease. Each utility is documented with parameters, return values, and usage examples to get you started quickly. Whether you're merging objects, checking JSON validity, or filtering data, our collection is designed to enhance your development process with minimal effort.
 
-- **Installation**: `npm install @devlander/hooks`
+- **Installation**: `npm install @devlander/utils`
 - **Usage**: Import utilities as needed in your project. Example usage is provided for each function to illustrate its application.
 
 ## Engage and Contribute
