@@ -22,4 +22,10 @@
   <img alt="Follow Landon Johnson On Twitter" src="https://img.shields.io/twitter/follow/landonwjohnson.svg?style=social&label=Follow" />
 </a> 
 
+<a href="https://bit.ly/landonwjohnson-on-twitter" target="_parent">
+  <img alt="Wakatime stats for utils" src="https://wakatime.com/badge/user/bd50b6c5-e0ca-4937-83b3-ab2d13adbc73/project/018d49ad-1c41-4ee7-9a6b-5387db501fcb.svg" />
+</a> 
+
+
+
 
