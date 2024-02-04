@@ -15,251 +15,47 @@
 
 [![Wakatime stats for utils](https://wakatime.com/badge/user/bd50b6c5-e0ca-4937-83b3-ab2d13adbc73/project/018d49ad-1c41-4ee7-9a6b-5387db501fcb.svg)](https://bit.ly/landonwjohnson-on-twitter)
 
-## About the project
 
-This project contains a collection of small utility functions that I have found useful in my day-to-day development. I decided to start a package to house these functions so that I can easily use them in any project I am working on. This helps me avoid referring to old code or duplicating code across projects. The project is ongoing, and I will update the version numbers accordingly for major and minor changes. The project is currently named "utils," but I'm open to suggestions for a better name.
+# Devlander JavaScript Utilities Collection
 
-## JSON utilities
+![Devlander Utils Header](https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png)
 
-### Function: isDeepEqual
-The `isDeepEqual` function is designed to check if two objects are deeply equal. It takes in two parameters, `obj1` and `obj2`, which represent the objects to be compared. The function returns `true` if the objects are deeply equal, and `false` otherwise.
-#### Parameters
+Enhance your JavaScript projects with the Devlander JavaScript Utils Collection - a meticulously curated set of utility functions to streamline your coding workflow. Join our vibrant community on Discord, engage in discussions on GitHub, and stay updated with our latest streams on Twitch. Boost your project's efficiency today!
 
-- `obj1`: The first object to compare.
-- `obj2`: The second object to compare.
+- **Discord:** Join the Devlander community [here](https://bit.ly/devlander-discord-invite).
+- **npm downloads:** Get our package [@devlander/hooks](https://www.npmjs.com/package/@devlander/hooks).
+- **GitHub Discussions:** Engage in discussions and get support [here](https://github.com/orgs/Devlander-Software/discussions).
+- **Twitch:** Catch our live coding sessions [here](https://bit.ly/devlander-twitch).
+- **Twitter:** Follow Landon Johnson [@landonwjohnson](https://bit.ly/landonwjohnson-on-twitter).
+- **Wakatime stats:** Track our progress [here](https://bit.ly/landonwjohnson-on-twitter).
 
-#### Returns
+## About This Project
 
-The function returns `true` if the objects are deeply equal, and `false` otherwise.
+The Devlander JavaScript Utils Collection is an evolving library of JavaScript utilities developed by Landon Johnson. These utilities address everyday coding tasks, reducing the need for repetitive code and enhancing productivity. Open to community input for naming and improvements; this project aims to be a go-to resource for developers.
 
+## Utilities Overview
 
+### JSON Utilities
 
+- **`isDeepEqual(obj1, obj2)`**: Deeply compares two objects for equality.
+- **`isJson(value)`**: Validates if a value is a legitimate JSON string or object.
+- **`mergeObjects(oldObj, newObj)`**: Merges two nested objects into one.
 
-#### Usage
+### Filter Utilities
 
-```typescript
+- **`hasItemByLetterAndFilter(array, key, value)`**: Filters various objects based on a specified letter and additional filter criteria.
 
-import { isDeepEqual } from '@devlander/utils';
+### Conversion Utilities
 
-const obj1 = {
-  name: 'John',
-  age: 30,
-  address: {
-    city: 'New York',
-    state: 'NY',
-  },
-};
+- **`abbreviateNumber(value)`**: Abbreviates numbers with appropriate suffixes (k, m, b, t) for readability.
 
-const obj2 = {
-  name: 'John',
-  age: 30,
-  address: {
-    city: 'New York',
-    state: 'NY',
-  },
-};
+## Quick Start and Documentation
 
-const isEqual = isDeepEqual(obj1, obj2);
-// true
-```
+Dive into our utility functions with ease. Each utility is documented with parameters, return values, and usage examples to get you started quickly. Whether you're merging objects, checking JSON validity, or filtering data, our collection is designed to enhance your development process with minimal effort.
 
+- **Installation**: `npm install @devlander/hooks`
+- **Usage**: Import utilities as needed in your project. Example usage is provided for each function to illustrate its application.
 
-### Function: isJson
+## Engage and Contribute
 
-The `isJson` function checks if a given value is a valid JSON string or object.
-
-#### Parameters
-
-- `value`: The value to check. It can be a string or an object.
-
-#### Returns
-
-If the value is a valid JSON string or can be converted to a valid JSON string, the function returns the parsed JSON object. If the value is not valid JSON or cannot be converted to a valid JSON string, the function returns `false`.
-
-#### Usage
-
-```typescript
-import { isJson } from './isJson';
-
-const jsonString = '{"name":"John", "age":30, "city":"New York"}';
-const result = isJson(jsonString);
-// Outputs: { name: 'John', age: 30, city: 'New York' }
-
-const notJsonString = 'This is not JSON';
-const result2 = isJson(notJsonString);
-// Outputs: false
-
-const jsonObject = { name: 'John', age: 30, city: 'New York' };
-const result3 = isJson(jsonObject);
-// Outputs: { name: 'John', age: 30, city: 'New York' }
-
-const invalidJsonObject = { name: 'John', age: NaN, city: 'New York' };
-const result4 = isJson(invalidJsonObject);
-// Outputs: false
-
-```
-
-## Function: mergeObjects
-
-The `mergeObjects` function merges two nested objects together.
-
-### Parameters
-
-- `oldObj`: The original object to merge.
-- `newObj`: The new object to merge.
-
-### Returns
-
-The function returns a new object that is the result of merging `newObj` into `oldObj`. If a key exists in both objects:
-- and the values are arrays, the arrays are concatenated.
-- and the values are objects, the objects are merged recursively.
-- otherwise, the value from `newObj` is used.
-
-### Usage
-
-```typescript
-import { mergeObjects } from './mergeObjects'
-
-const oldObj = {
-  name: 'John',
-  age: 30,
-  cities: ['New York', 'Los Angeles'],
-  details: {
-    height: 180,
-    weight: 75
-  }
-}
-
-const newObj = {
-  age: 31,
-  cities: ['Chicago'],
-  details: {
-    weight: 76,
-    hairColor: 'brown'
-  }
-}
-
-const result = mergeObjects(oldObj, newObj)
-
-// Outputs: 
-// {
-//   name: 'John',
-//   age: 31,
-//   cities: ['New York', 'Los Angeles', 'Chicago'],
-//   details: {
-//     height: 180,
-//     weight: 76,
-//     hairColor: 'brown'
-//   }
-// }
-``` 
-
-## Filter utilities
-
-
-### Function: hasItemByLetterAndFilter
-
-The `filterBy` function filters an array of objects based on a given key and value. It takes in three parameters: `array`, `key`, and `value`. The `array` parameter represents the array of objects to be filtered. The `key` parameter represents the key to filter by, and the `value` parameter represents the value to filter for. The function returns an array of objects that match the given key and value.
-
-### Parameters
-
-- `letter`: The letter to filter by.
-- `array`: The array of objects to filter.
-- `key`: Key of the object to search for
-- `indexOfLetter`: The index of the letter to search for in the key
-- `filterText`: The text to filter by
-
-## Use case
-This function is useful when you have a list of items that you want automatically rendered in sections alphabetically. For example, if you have a list of contacts, you can use this function to filter the contacts by the first letter of their names and display them in sections. You can also use the `filterText` parameter to search for contacts by name.
-
-### Behavior
-if no filter text is provided it will always filter by the letter and index of the letter in the key. however, if a filter text is provided it will filter by the letter and the filter text.
-and ignore the index of the letter in the key and search body of text within that key
-
-
-### Returns
-The function returns an array of objects that match the given key and value.
-
-
-### Usage 
-
-```typescript
-
-import { hasItemByLetterAndFilter } from '@devlander/utils';
-
-const contacts = [
-  { name: "John", phone: "123-456-7890" },
-  { name: "Jane", phone: "123-456-7890" },
-  { name: "Bob", phone: "123-456-7890" },
-  { name: "Alice", phone: "123-456-7890" },
-  { name: "Frank", phone: "123-456-7890" },
-  { name: "Freddy", phone: "123-456-7890" },
-  { name: "Frodo", phone: "123-456-7890" },
-  { name: "Arnold", phone: "" },
-];
-
-// Function to map and display contacts filtered by the first letter and optional filter text
-function displayFilteredContacts(contacts, filterText = "") {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-  const container = document.createElement('div');
-
-  alphabet.forEach(letter => {
-    if (hasItemByLetterAndFilter(letter, contacts, "name", filterText)) {
-      const sectionHeader = document.createElement('h2');
-      sectionHeader.textContent = letter.toUpperCase();
-      container.appendChild(sectionHeader);
-
-      contacts.filter(contact => 
-        contact.name.toLowerCase().startsWith(letter) && 
-        (!filterText || contact.name.toLowerCase().includes(filterText.toLowerCase()))
-      ).forEach(contact => {
-        const contactElement = document.createElement('p');
-        contactElement.textContent = `${contact.name} - ${contact.phone}`;
-        container.appendChild(contactElement);
-      });
-    }
-  });
-
-  // Assuming there's an element with id="contacts-section" in your HTML
-  const displayArea = document.getElementById('contacts-section');
-  displayArea.innerHTML = ''; // Clear previous content
-  displayArea.appendChild(container);
-}
-
-// Example usage with filter text as an empty string initially
-displayFilteredContacts(contacts);
-
-```
-## Conversion utilities
-
-
-### Function: abbreviateNumber
-
-The `abbreviateNumber` function abbreviates a number by adding a suffix (k, m, b, t) based on its magnitude.
-
-### Parameters
-
-- `value`: The number to be abbreviated.
-
-### Returns
-
-The function returns the abbreviated number as a string. If the number is less than 1000, it returns the original number.
-
-### Usage
-
-```typescript
-import { abbreviateNumber } from './abbreviateNumber';
-
-const number1 = 1500;
-const result1 = abbreviateNumber(number1);
- // Outputs: '1.5k'
-
-const number2 = 2200000;
-const result2 = abbreviateNumber(number2);
-  // Outputs: '2.2m'
-
-const number3 = 500;
-const result3 = abbreviateNumber(number3);
- // Outputs: 500
-
- ```
+We welcome contributions, feedback, and suggestions! Join our discussions on GitHub, or connect with us on Discord and Twitter. Your input helps us improve the Devlander JavaScript Utils Collection for the developer community.
