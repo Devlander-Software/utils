@@ -71,7 +71,6 @@ export const logFormattedPhrases = (
       : JSON.stringify(value, null, 2);
   }
 
-
   if (phrases.length === 0) {
     // Default log if no phrases provided
     formatPhrase(valueString);

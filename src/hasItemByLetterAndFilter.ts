@@ -17,7 +17,7 @@ export const hasItemByLetterAndFilter = (
   index?: number,
   filterText?: string,
 ): boolean => {
-  if(!index) {
+  if (!index) {
     index = 0;
   }
   return array.some((item) => {
@@ -54,5 +54,3 @@ export const hasItemByLetterAndFilter = (
     return hasFilterText && hasLetter;
   });
 };
-
-
