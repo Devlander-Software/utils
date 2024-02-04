@@ -3,9 +3,9 @@
  */
 export * from "./abbreviateNumber";
 /**
- * TSDoc for findItemByLetterAndFilter
+ * TSDoc for hasItemByLetterAndFilter
  */
-export * from "./findItemByLetterAndFilter";
+export * from "./hasItemByLetterAndFilter";
 /**
  * TSDoc for isDeepEqual
  */

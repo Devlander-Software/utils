@@ -17,9 +17,6 @@ export const hasItemByLetterAndFilter = (
   index?: number,
   filterText?: string,
 ): boolean => {
-  if (!index) {
-    index = 0;
-  }
   return array.some((item) => {
     if (letter.length !== 1) {
       throw new Error("Letter must be a single character.");
@@ -30,7 +27,10 @@ export const hasItemByLetterAndFilter = (
       return false;
     }
 
-    const checkForLetter = (keyValue: string): boolean => {
+    const checkForLetter = (keyValue: string, index = 0): boolean => {
+      if (typeof index === "undefined") {
+        index = 0;
+      }
       const values = [keyValue, keyValue.toLowerCase()];
 
       return values.some((value) => value.charAt(index) === letter);
@@ -49,8 +49,10 @@ export const hasItemByLetterAndFilter = (
     };
 
     const hasFilterText = checkForFilterText(keyValue);
-    const hasLetter = checkForLetter(keyValue);
+    const hasLetter = checkForLetter(keyValue, index);
 
-    return hasFilterText && hasLetter;
+    const hasValue = hasFilterText && hasLetter ? true : false;
+
+    return hasValue;
   });
 };
