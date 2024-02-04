@@ -1,17 +1,17 @@
-import { findItemByLetterAndFilter } from "../findItemByLetterAndFilter";
+import { hasItemByLetterAndFilter } from "../hasItemByLetterAndFilter";
 
-describe("findItemByLetterAndFilter", () => {
+describe("hasItemByLetterAndFilter", () => {
   it("should return true if an item with the specified letter is found", () => {
     const array = [{ name: "Apple" }, { name: "Banana" }, { name: "Cherry" }];
     const letter = "a";
-    const result = findItemByLetterAndFilter(letter, array);
+    const result = hasItemByLetterAndFilter(letter, array);
     expect(result).toBe(true);
   });
 
   it("should return false if no item with the specified letter is found", () => {
     const array = [{ name: "Apple" }, { name: "Banana" }, { name: "Cherry" }];
     const letter = "z";
-    const result = findItemByLetterAndFilter(letter, array);
+    const result = hasItemByLetterAndFilter(letter, array);
     expect(result).toBe(false);
   });
 
@@ -19,7 +19,7 @@ describe("findItemByLetterAndFilter", () => {
     const array = [{ name: "Apple" }, { name: "Banana" }, { name: "Cherry" }];
     const letter = "a";
     const filterText = "ppl";
-    const result = findItemByLetterAndFilter(
+    const result = hasItemByLetterAndFilter(
       letter,
       array,
       "name",
@@ -33,7 +33,7 @@ describe("findItemByLetterAndFilter", () => {
     const array = [{ name: "Apple" }, { name: "Banana" }, { name: "Cherry" }];
     const letter = "a";
     const filterText = "xyz";
-    const result = findItemByLetterAndFilter(
+    const result = hasItemByLetterAndFilter(
       letter,
       array,
       "name",

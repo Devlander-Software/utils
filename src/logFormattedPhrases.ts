@@ -1,27 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import pico from 'picocolors';
-import { abbreviateNumber } from './abbreviateNumber';
-import { isJson } from './isJson';
+import pico from "picocolors";
+import { abbreviateNumber } from "./abbreviateNumber";
+import { isJson } from "./isJson";
 
 export type PhraseBackgroundColors =
-  | 'bgBlack'
-  | 'bgRed'
-  | 'bgGreen'
-  | 'bgYellow'
-  | 'bgBlue'
-  | 'bgMagenta'
-  | 'bgCyan'
-  | 'bgWhite';
+  | "bgBlack"
+  | "bgRed"
+  | "bgGreen"
+  | "bgYellow"
+  | "bgBlue"
+  | "bgMagenta"
+  | "bgCyan"
+  | "bgWhite";
 export type PhraseTextColors =
-  | 'black'
-  | 'red'
-  | 'green'
-  | 'yellow'
-  | 'blue'
-  | 'magenta'
-  | 'cyan'
-  | 'white'
-  | 'gray';
+  | "black"
+  | "red"
+  | "green"
+  | "yellow"
+  | "blue"
+  | "magenta"
+  | "cyan"
+  | "white"
+  | "gray";
 
 export interface PhraseItem {
   phrase: string;
@@ -31,8 +31,8 @@ export interface PhraseItem {
 
 const formatPhrase = (
   phrase: string,
-  color: PhraseTextColors = 'white',
-  background: PhraseBackgroundColors = 'bgBlack'
+  color: PhraseTextColors = "white",
+  background: PhraseBackgroundColors = "bgBlack",
 ): void => {
   const colorFunc = color ? pico[color] : pico.white;
   const backgroundFunc = background ? pico[background] : pico.bgBlack;
@@ -45,22 +45,32 @@ const formatPhrase = (
  * @param value - The value to be logged. It can be a string, number, or object.
  * @param phrases - An array of phrase items containing the phrase, color, and background styles.
  */
+/**
+ * Logs the formatted value along with specified phrases.
+ * If the value is a number, it is abbreviated before logging.
+ * If the value is a string, it is logged as is.
+ * If the value is an object, it is logged as JSON string.
+ * If the value is a valid JSON object, it is logged with indentation.
+ * @param value - The value to be logged.
+ * @param phrases - An array of phrases to be logged along with the value.
+ */
 export const logFormattedPhrases = (
   value: string | number | Record<string, any>,
-  phrases: PhraseItem[]
+  phrases: PhraseItem[],
 ): void => {
   let valueString: string;
 
-  if (typeof value === 'number') {
+  if (typeof value === "number") {
     valueString = abbreviateNumber(value) as string;
-  } else if (typeof value === 'string') {
+  } else if (typeof value === "string") {
     valueString = JSON.stringify(value);
   } else {
     const isValidJson = isJson(value);
-    valueString = !isValidJson ? JSON.stringify(value) : JSON.stringify(value, null, 2);
+    valueString = !isValidJson
+      ? JSON.stringify(value)
+      : JSON.stringify(value, null, 2);
   }
 
-  console.log('valueString:', valueString);
 
   if (phrases.length === 0) {
     // Default log if no phrases provided
@@ -73,54 +83,3 @@ export const logFormattedPhrases = (
     });
   }
 };
-
-
-// describe('logFormattedPhrases', () => {
-//   it('should log the formatted value when no phrases are provided', () => {
-//     const value = 'Hello, World!';
-//     const phrases: PhraseItem[] = [];
-
-//     const consoleSpy = jest.spyOn(console, 'log');
-
-//     logFormattedPhrases(value, phrases);
-
-//     expect(consoleSpy).toHaveBeenCalledWith(value);
-//   });
-
-//   it('should log each phrase with the specified styles', () => {
-//     const value = 42;
-//     const phrases: PhraseItem[] = [
-//       { phrase: 'HELLO', color: 'red', background: 'bgWhite' },
-//       { phrase: 'Phrase 2', color: 'blue', background: 'bgGreen' },
-//     ];
-
-//     const consoleSpy = jest.spyOn(console, 'log');
-
-//     logFormattedPhrases(value, phrases);
-
-//     expect(consoleSpy).toHaveBeenCalledWith('HELLO');
-//     expect(consoleSpy).toHaveBeenCalledWith('Phrase 2');
-//   });
-
-//   it('should abbreviate the number value before logging', () => {
-//     const value = 1000000;
-//     const phrases: PhraseItem[] = [];
-
-//     const consoleSpy = jest.spyOn(console, 'log');
-
-//     logFormattedPhrases(value, phrases);
-
-//     expect(consoleSpy).toHaveBeenCalledWith('1m');
-//   });
-
-//   it('should stringify the object value before logging', () => {
-//     const value = { key: 'value' };
-//     const phrases: PhraseItem[] = [];
-
-//     const consoleSpy = jest.spyOn(console, 'log');
-
-//     logFormattedPhrases(value, phrases);
-
-//     expect(consoleSpy).toHaveBeenCalledWith('"{\"key\":\"value\"}"');
-//   });
-// }

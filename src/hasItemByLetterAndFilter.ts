@@ -4,39 +4,39 @@
  * Finds an item in an array based on a specific letter and optional filter text.
  * @param letter - The letter to search for in the item's key value.
  * @param array - The array of items to search through.
- * @param keyToCheck - The key to check in each item. Defaults to "name".
+ * @param key - The key to check in each item. Defaults to "name".
  * @param index - The index of the letter to check in the key value. Defaults to 0.
  * @param filterText - The optional filter text to match against the key value.
  * @returns True if an item is found that matches the letter and filter text, false otherwise.
  */
 
-// make letter resricted to one character
-// using type script
-
-export const findItemByLetterAndFilter = (
+export const hasItemByLetterAndFilter = (
   letter: string,
   array: Array<any>,
-  keyToCheck: string = "name",
-  index: number = 0,
+  key: string = "name",
+  index?: number,
   filterText?: string,
 ): boolean => {
+  if(!index) {
+    index = 0;
+  }
   return array.some((item) => {
     if (letter.length !== 1) {
       throw new Error("Letter must be a single character.");
     }
-    const existingValue: string | null = item[keyToCheck] || null;
+    const keyValue: string | null = item[key] || null;
 
-    if (!existingValue) {
+    if (!keyValue) {
       return false;
     }
 
-    const checkForLetter = (existingValue: string): boolean => {
-      const values = [existingValue, existingValue.toLowerCase()];
+    const checkForLetter = (keyValue: string): boolean => {
+      const values = [keyValue, keyValue.toLowerCase()];
 
       return values.some((value) => value.charAt(index) === letter);
     };
 
-    const checkForFilterText = (existingValue: string): boolean => {
+    const checkForFilterText = (keyValue: string): boolean => {
       if (!filterText) {
         return true;
       }
@@ -44,13 +44,15 @@ export const findItemByLetterAndFilter = (
       const filterTextValues = [filterText, filterText.toLowerCase()];
 
       return filterTextValues.every((filterTextValue) =>
-        existingValue.includes(filterTextValue),
+        keyValue.includes(filterTextValue),
       );
     };
 
-    const hasFilterText = checkForFilterText(existingValue);
-    const hasLetter = checkForLetter(existingValue);
+    const hasFilterText = checkForFilterText(keyValue);
+    const hasLetter = checkForLetter(keyValue);
 
     return hasFilterText && hasLetter;
   });
 };
+
+
