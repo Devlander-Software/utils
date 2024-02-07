@@ -4,9 +4,4 @@
  * @param count The number of elements in the range.
  * @returns An array of numbers representing the range.
  */
-export const getRange = (start: number, count: number) => {
-  if (count < 0) {
-    return [];
-  }
-  return Array.apply(0, Array(count)).map((_element, index) => index + start);
-};
+export declare const getRange: (start: number, count: number) => number[];

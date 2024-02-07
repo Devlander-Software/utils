@@ -3,6 +3,22 @@
  */
 export * from "./abbreviateNumber";
 /**
+ * TSDoc for calculatePercentage
+ */
+export * from "./calculatePercentage";
+/**
+ * TSDoc for convertVideoTimeStampToSeconds
+ */
+export * from "./convertVideoTimeStampToSeconds";
+/**
+ * TSDoc for dashToCamelCase
+ */
+export * from "./dashToCamelCase";
+/**
+ * TSDoc for getRange
+ */
+export * from "./getRange";
+/**
  * TSDoc for hasItemByLetterAndFilter
  */
 export * from "./hasItemByLetterAndFilter";
