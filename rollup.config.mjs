@@ -27,13 +27,7 @@ const makeExternalPredicate = externalArr => {
 export default {
   input: "src/index.ts", // Your entry point
   output: [
-    {
-      file: packageJson.browser,
-      format: "umd",
-      name: "DevlanderUtils", // Replace with your library's name
-      globals: globals,
-      sourcemap: true,
-    },
+ 
     {
       file: packageJson.main,
       format: "cjs",
