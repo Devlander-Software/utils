@@ -19,6 +19,10 @@ export * from "./dashToCamelCase";
  */
 export * from "./getRange";
 /**
+ * TSDoc for getUniqueObjects
+ */
+export * from "./getUniqueObjects";
+/**
  * TSDoc for hasItemByLetterAndFilter
  */
 export * from "./hasItemByLetterAndFilter";
@@ -26,6 +30,10 @@ export * from "./hasItemByLetterAndFilter";
  * TSDoc for isDeepEqual
  */
 export * from "./isDeepEqual";
+/**
+ * TSDoc for isEmpty
+ */
+export * from "./isEmpty";
 /**
  * TSDoc for isJson
  */
@@ -42,6 +50,10 @@ export * from "./logFormattedPhrases";
  * TSDoc for mergeObjects
  */
 export * from "./mergeObjects";
+/**
+ * TSDoc for pluralize
+ */
+export * from "./pluralize";
 /**
  * TSDoc for removeNewLinesFromJson
  */
