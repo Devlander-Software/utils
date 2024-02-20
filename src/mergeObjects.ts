@@ -1,4 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+
+
+
+// [warning] NestedObject, defined in ./src/mergeObjects.ts, is referenced by mergeObjects.mergeObjects but not included in the documentation.
+
+/**
+ * A nested object type.
+ */
 type NestedObject = {
   [key: string]: any;
 };
