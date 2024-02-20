@@ -15,6 +15,10 @@ export * from "./convertVideoTimeStampToSeconds";
  */
 export * from "./dashToCamelCase";
 /**
+ * TSDoc for ensureValidStyle
+ */
+export * from "./ensureValidStyle";
+/**
  * TSDoc for getRange
  */
 export * from "./getRange";
@@ -38,6 +42,10 @@ export * from "./isEmpty";
  * TSDoc for isJson
  */
 export * from "./isJson";
+/**
+ * TSDoc for isValidStyle
+ */
+export * from "./isValidStyle";
 /**
  * TSDoc for jsonContainsNewLine
  */
@@ -70,6 +78,10 @@ export * from "./removeSpacesFromJson";
  * TSDoc for removeSpacesFromString
  */
 export * from "./removeSpacesFromString";
+/**
+ * TSDoc for safeCssProperties
+ */
+export * from "./safeCssProperties";
 /**
  * TSDoc for waitFor
  */
