@@ -1,7 +1,7 @@
 {
   "name": "@devlander/utils",
   "description": "Utils shared between projects that are plain javascript",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "browser": "dist/umd/index.js",
   "main": "dist/cjs/index.js",
   "types": "typings/index.d.ts",
@@ -10,6 +10,7 @@
   "scripts": {
     "prebuild": "npm cache clean --force",
     "build:index": "node ./external-modules/auto-export.js",
+    "postinstall": "npx typedoc src/index.ts",
     "increment-version": "yarn version patch",
     "build:esm": "tsc",
     "test": "jest",
@@ -41,7 +42,8 @@
   "homepage": "https://github.com/Devlander-Software/utils#readme",
   "files": [
     "dist",
-    "typings"
+    "typings",
+    "docs"
   ],
   "devDependencies": {
     "@babel/core": "^7.23.3",
@@ -62,6 +64,8 @@
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.2.1",
     "@rollup/plugin-typescript": "^11.1.3",
+    "@ts-docs/default-docs-structure": "^0.4.4",
+    "@ts-docs/ts-docs": "^0.4.4",
     "@types/jest": "^29.5.6",
     "@types/jsdom-global": "^3.0.7",
     "@types/node": "^20.6.0",
@@ -85,6 +89,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-polyfill-node": "^0.13.0",
     "rollup-plugin-terser": "^7.0.2",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.2",
+    "typedoc": "^0.25.8"
   }
 }

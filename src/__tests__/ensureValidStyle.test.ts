@@ -1,7 +1,5 @@
 import { ensureValidStyle } from "../ensureValidStyle";
 
-
-
 // These are the tests that are failing.
 
 // ● ensureValidStyle › should add semicolons at the end of each CSS property if missing
