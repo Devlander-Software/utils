@@ -1,3 +1,6 @@
+/**
+ * A nested object type.
+ */
 type NestedObject = {
     [key: string]: any;
 };
