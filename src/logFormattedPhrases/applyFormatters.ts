@@ -1,10 +1,10 @@
 import pico from 'picocolors'
 import { Formatter } from 'picocolors/types'
 import {
-    AppliedFormatter,
-    PhraseColors,
-    PhraseItem,
-    PhraseOrderType,
+  AppliedFormatter,
+  PhraseColors,
+  PhraseItem,
+  PhraseOrderType,
 } from './formattedPhrase.types'
 import { getPhraseBackground } from './getPhraseBackground'
 

@@ -6,9 +6,9 @@ import { isEmpty } from '../isEmpty'
 import { mergeObjects } from '../mergeObjects'
 import { applyFormatters } from './applyFormatters'
 import {
-    AppliedFormatter,
-    PhraseItem,
-    PhraseOrderType,
+  AppliedFormatter,
+  PhraseItem,
+  PhraseOrderType,
 } from './formattedPhrase.types'
 
 export const defaultPhraseOrder: PhraseOrderType[] = [

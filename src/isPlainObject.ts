@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NestedObject } from './types/ nested-object.type'
 
 // Helper to check if a value is a plain object
