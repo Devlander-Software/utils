@@ -15,10 +15,10 @@ describe("isValidHex", () => {
   });
 
   it("should return false for non-string input", () => {
-    expect(isValidHex(null)).toBe(false);
-    expect(isValidHex(undefined)).toBe(false);
-    expect(isValidHex(123)).toBe(false);
-    expect(isValidHex({})).toBe(false);
-    expect(isValidHex([])).toBe(false);
+    expect(isValidHex(null as any)).toBe(false);
+    expect(isValidHex(undefined as any)).toBe(false);
+    expect(isValidHex(123 as any)).toBe(false);
+    expect(isValidHex({} as any)).toBe(false);
+    expect(isValidHex([] as any)).toBe(false);
   });
 });

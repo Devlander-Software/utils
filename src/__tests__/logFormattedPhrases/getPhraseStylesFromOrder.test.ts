@@ -2,16 +2,20 @@
 // referenced in conversations about the code.
 // Path: ./src/__tests__/logFormattedPhrases/getPhraseStylesFromOrder.test.ts
 
-import { AppliedFormatter, PhraseItem } from "../../logFormattedPhrases/formattedPhrase.types";
+import {
+  AppliedFormatter,
+  PhraseItem,
+} from "../../logFormattedPhrases/formattedPhrase.types";
 import { getPhraseStylesFromOrder } from "../../logFormattedPhrases/getPhraseStylesFromOrder";
 
-const hasValueInFormatters = (formatters: AppliedFormatter[], property: string) => {
+const hasValueInFormatters = (
+  formatters: AppliedFormatter[],
+  property: string,
+) => {
   return formatters.some((formatter) => formatter.name === property);
-}
+};
 
 describe("getPhraseStylesFromOrder", () => {
-
-
   // it("should return an empty array when item.orderToApplyStyles is empty", () => {
   //   const item: PhraseItem = {
   //     orderToApplyStyles: [],
@@ -22,7 +26,7 @@ describe("getPhraseStylesFromOrder", () => {
   // });
 
   // it("should return an empty array when item.orderToApplyStyles is not an array", () => {
-   
+
   //   const item: PhraseItem = {
   //     orderToApplyStyles: "invalid" as any,
   //     phrase: ""
@@ -43,10 +47,8 @@ describe("getPhraseStylesFromOrder", () => {
       ],
     };
     const result: AppliedFormatter[] = getPhraseStylesFromOrder(item);
-   expect(result).toBeDefined();
-
+    expect(result).toBeDefined();
   });
 
   // Add more test cases for different scenarios
-
 });

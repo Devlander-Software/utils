@@ -8,22 +8,22 @@
 export const getFirstWordCapitalized = (str: string) => {
   try {
     // Trim leading and trailing white spaces, and then split the string by spaces
-    const words = str.trim().split(' ')
+    const words = str.trim().split(" ");
 
     // Check if the array has a valid first word
-    if (words.length === 0 || words[0] === '') {
-      return ''
+    if (words.length === 0 || words[0] === "") {
+      return "";
     } else if (words && words.length > 1 && words[0]) {
-      const firstWord = words[0]
+      const firstWord = words[0];
 
       // Capitalize the first letter and convert the rest to lowercase
       const capitalizedFirstWord =
-        firstWord.charAt(0).toUpperCase() + firstWord.slice(1).toLowerCase()
-      return capitalizedFirstWord
+        firstWord.charAt(0).toUpperCase() + firstWord.slice(1).toLowerCase();
+      return capitalizedFirstWord;
     } else {
-      return ''
+      return "";
     }
   } catch (error) {
-    throw new Error(String(error))
+    throw new Error(String(error));
   }
-}
+};

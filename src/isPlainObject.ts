@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NestedObject } from './types/ nested-object.type'
+import { NestedObject } from "./types/ nested-object.type";
 
 // Helper to check if a value is a plain object
 /**
@@ -9,5 +9,5 @@ import { NestedObject } from './types/ nested-object.type'
  * @returns `true` if the value is a plain object, `false` otherwise.
  */
 export const isPlainObject = (value: any): value is NestedObject => {
-  return Object.prototype.toString.call(value) === '[object Object]'
-}
+  return Object.prototype.toString.call(value) === "[object Object]";
+};

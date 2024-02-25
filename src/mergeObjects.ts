@@ -1,4 +1,4 @@
-import { NestedObject } from './types/ nested-object.type'
+import { NestedObject } from "./types/ nested-object.type";
 
 /**
  * Merges two nested objects together.
@@ -11,28 +11,28 @@ export const mergeObjects = (
   oldObj: NestedObject,
   newObj: NestedObject,
 ): NestedObject => {
-  const result: NestedObject = { ...oldObj }
+  const result: NestedObject = { ...oldObj };
 
   Object.keys(newObj).forEach((key) => {
-    const newValue = newObj[key]
-    const oldValue = result[key]
+    const newValue = newObj[key];
+    const oldValue = result[key];
 
     if (Array.isArray(newValue) && Array.isArray(oldValue)) {
-      result[key] = [...oldValue, ...newValue]
+      result[key] = [...oldValue, ...newValue];
     } else if (
-      typeof newValue === 'object' &&
+      typeof newValue === "object" &&
       newValue !== null &&
       !Array.isArray(newValue)
     ) {
-      if (typeof oldValue === 'object' && !Array.isArray(oldValue)) {
-        result[key] = mergeObjects(oldValue, newValue)
+      if (typeof oldValue === "object" && !Array.isArray(oldValue)) {
+        result[key] = mergeObjects(oldValue, newValue);
       } else {
-        result[key] = newValue
+        result[key] = newValue;
       }
     } else {
-      result[key] = newValue
+      result[key] = newValue;
     }
-  })
+  });
 
-  return result
-}
+  return result;
+};

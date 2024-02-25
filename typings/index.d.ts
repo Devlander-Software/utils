@@ -19,6 +19,18 @@ export * from "./dashToCamelCase";
  */
 export * from "./ensureValidStyle";
 /**
+ * TSDoc for getAspectRatio
+ */
+export * from "./getAspectRatio";
+/**
+ * TSDoc for getFirstWordCapitalized
+ */
+export * from "./getFirstWordCapitalized";
+/**
+ * TSDoc for getRandomValFromArray
+ */
+export * from "./getRandomValFromArray";
+/**
  * TSDoc for getRange
  */
 export * from "./getRange";
@@ -30,6 +42,10 @@ export * from "./getUniqueObjects";
  * TSDoc for hasItemByLetterAndFilter
  */
 export * from "./hasItemByLetterAndFilter";
+/**
+ * TSDoc for hslToRgb
+ */
+export * from "./hslToRgb";
 /**
  * TSDoc for isDeepEqual
  */
@@ -43,6 +59,14 @@ export * from "./isEmpty";
  */
 export * from "./isJson";
 /**
+ * TSDoc for isPlainObject
+ */
+export * from "./isPlainObject";
+/**
+ * TSDoc for isValidHex
+ */
+export * from "./isValidHex";
+/**
  * TSDoc for isValidStyle
  */
 export * from "./isValidStyle";
@@ -51,9 +75,29 @@ export * from "./isValidStyle";
  */
 export * from "./jsonContainsNewLine";
 /**
+ * TSDoc for applyFormatters
+ */
+export * from "./logFormattedPhrases/applyFormatters";
+/**
+ * TSDoc for formatPhrase
+ */
+export * from "./logFormattedPhrases/formatPhrase";
+/**
+ * TSDoc for getPhraseBackground
+ */
+export * from "./logFormattedPhrases/getPhraseBackground";
+/**
+ * TSDoc for getPhraseStylesFromOrder
+ */
+export * from "./logFormattedPhrases/getPhraseStylesFromOrder";
+/**
  * TSDoc for logFormattedPhrases
  */
-export * from "./logFormattedPhrases";
+export * from "./logFormattedPhrases/logFormattedPhrases";
+/**
+ * TSDoc for logPhrases
+ */
+export * from "./logFormattedPhrases/logPhrases";
 /**
  * TSDoc for mergeObjects
  */
@@ -78,6 +122,10 @@ export * from "./removeSpacesFromJson";
  * TSDoc for removeSpacesFromString
  */
 export * from "./removeSpacesFromString";
+/**
+ * TSDoc for rgbaToHexAlpha
+ */
+export * from "./rgbaToHexAlpha";
 /**
  * TSDoc for safeCssProperties
  */

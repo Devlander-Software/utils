@@ -1,9 +1,4 @@
-/**
- * A nested object type.
- */
-type NestedObject = {
-    [key: string]: any;
-};
+import { NestedObject } from "./types/ nested-object.type";
 /**
  * Merges two nested objects together.
  *
@@ -12,4 +7,3 @@ type NestedObject = {
  * @returns The merged object.
  */
 export declare const mergeObjects: (oldObj: NestedObject, newObj: NestedObject) => NestedObject;
-export {};
