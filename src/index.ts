@@ -27,6 +27,14 @@ export * from "./getAspectRatio";
  */
 export * from "./getFirstWordCapitalized";
 /**
+ * TSDoc for getMessageByField
+ */
+export * from "./getMessageByField";
+/**
+ * TSDoc for getMessageFromObject
+ */
+export * from "./getMessageFromObject";
+/**
  * TSDoc for getRandomValFromArray
  */
 export * from "./getRandomValFromArray";
@@ -38,6 +46,10 @@ export * from "./getRange";
  * TSDoc for getUniqueObjects
  */
 export * from "./getUniqueObjects";
+/**
+ * TSDoc for getValueFromObject
+ */
+export * from "./getValueFromObject";
 /**
  * TSDoc for hasItemByLetterAndFilter
  */
