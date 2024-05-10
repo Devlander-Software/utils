@@ -25,17 +25,17 @@ describe("getMessageByField", () => {
     expect(result).toBeUndefined();
   });
 
-    it('should return the first error message found for any of the given fields', () => {
-      const errors: ErrorMessages = {
-        name: 'Name is required',
-        age: 'Age must be a number',
-        city: 'City is required'
-      };
-  
-      const result = getMessageByField(['name', 'age'], errors);
-  
-      expect(result).toBe('Name is required');
-    });
+  it("should return the first error message found for any of the given fields", () => {
+    const errors: ErrorMessages = {
+      name: "Name is required",
+      age: "Age must be a number",
+      city: "City is required",
+    };
+
+    const result = getMessageByField(["name", "age"], errors);
+
+    expect(result).toBe("Name is required");
+  });
 
   it("should return undefined if none of the given fields are found in the errors object", () => {
     const errors: ErrorMessages = {
