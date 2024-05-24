@@ -13,10 +13,7 @@ export declare const isString: (thing: any) => boolean;
 export declare const isNumber: (thing: any) => boolean;
 export declare const isObject: (thing: unknown) => boolean;
 export declare const isBoolean: (thing: unknown) => boolean;
-export declare const isDate: (thing: any) => boolean;
-export declare const isFile: (thing: any) => boolean;
-export declare const isFormData: (thing: {
-    append: any;
-    toString: () => string;
-}) => boolean;
+export declare const isDate: (thing: unknown) => boolean;
+export declare const isFile: (thing: unknown) => boolean;
+export declare const isArrayBuffer: (thing: unknown) => boolean;
 export {};

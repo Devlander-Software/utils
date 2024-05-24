@@ -4,7 +4,6 @@ import {
   isBuffer,
   isDate,
   isFile,
-  isFormData,
   isNumber,
   isObject,
   isString,
@@ -159,20 +158,6 @@ describe("typeToTest", () => {
     it("should return false if the value is not a file", () => {
       const value = "Hello";
       const result = isFile(value);
-      expect(result).toBe(false);
-    });
-  });
-
-  describe("isFormData", () => {
-    it("should return true if the value is a form data", () => {
-      const value = new FormData();
-      const result = isFormData(value);
-      expect(result).toBe(true);
-    });
-
-    it("should return false if the value is not a form data", () => {
-      const value = "Hello";
-      const result = isFormData(value as any); // Cast 'value' to 'any' to bypass the type check.
       expect(result).toBe(false);
     });
   });

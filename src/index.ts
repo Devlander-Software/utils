@@ -3,6 +3,10 @@
  */
 export * from "./abbreviateNumber";
 /**
+ * TSDoc for arrayToObject
+ */
+export * from "./arrayToObject";
+/**
  * TSDoc for assertOptions
  */
 export * from "./assertOptions";
@@ -38,6 +42,22 @@ export * from "./endsWith";
  * TSDoc for ensureValidStyle
  */
 export * from "./ensureValidStyle";
+/**
+ * TSDoc for findKey
+ */
+export * from "./findKey";
+/**
+ * TSDoc for forEach
+ */
+export * from "./forEach";
+/**
+ * TSDoc for forEachEntry
+ */
+export * from "./forEachEntry";
+/**
+ * TSDoc for freezeMethods
+ */
+export * from "./freezeMethods";
 /**
  * TSDoc for generateStripeCard
  */
@@ -79,6 +99,10 @@ export * from "./getValueFromObject";
  */
 export * from "./hasItemByLetterAndFilter";
 /**
+ * TSDoc for hasOwnProp
+ */
+export * from "./hasOwnProp";
+/**
  * TSDoc for hslToRgb
  */
 export * from "./hslToRgb";
@@ -91,6 +115,14 @@ export * from "./isDeepEqual";
  */
 export * from "./isEmpty";
 /**
+ * TSDoc for isFormData
+ */
+export * from "./isFormData";
+/**
+ * TSDoc for isFunction
+ */
+export * from "./isFunction";
+/**
  * TSDoc for isJson
  */
 export * from "./isJson";
@@ -98,6 +130,10 @@ export * from "./isJson";
  * TSDoc for isPlainObject
  */
 export * from "./isPlainObject";
+/**
+ * TSDoc for isRegExp
+ */
+export * from "./isRegExp";
 /**
  * TSDoc for isValidHex
  */
@@ -110,6 +146,14 @@ export * from "./isValidStyle";
  * TSDoc for jsonContainsNewLine
  */
 export * from "./jsonContainsNewLine";
+/**
+ * TSDoc for kindOf
+ */
+export * from "./kindOf";
+/**
+ * TSDoc for kindOfTest
+ */
+export * from "./kindOfTest";
 /**
  * TSDoc for applyFormatters
  */
@@ -135,13 +179,25 @@ export * from "./logFormattedPhrases/logFormattedPhrases";
  */
 export * from "./logFormattedPhrases/logPhrases";
 /**
+ * TSDoc for matchAll
+ */
+export * from "./matchAll";
+/**
  * TSDoc for mergeObjects
  */
 export * from "./mergeObjects";
 /**
+ * TSDoc for parsePropPath
+ */
+export * from "./parsePropPath";
+/**
  * TSDoc for pluralize
  */
 export * from "./pluralize";
+/**
+ * TSDoc for reduceDescriptors
+ */
+export * from "./reduceDescriptors";
 /**
  * TSDoc for removeNewLinesFromJson
  */
@@ -166,6 +222,10 @@ export * from "./rgbaToHexAlpha";
  * TSDoc for safeCssProperties
  */
 export * from "./safeCssProperties";
+/**
+ * TSDoc for toCamelCase
+ */
+export * from "./toCamelCase";
 /**
  * TSDoc for toFlatObject
  */
