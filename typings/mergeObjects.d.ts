@@ -1,4 +1,4 @@
-import { NestedObject } from "./types/ nested-object.type";
+import { AnyObject } from './types/value.types';
 /**
  * Merges two nested objects together.
  *
@@ -6,4 +6,4 @@ import { NestedObject } from "./types/ nested-object.type";
  * @param newObj - The new object to merge.
  * @returns The merged object.
  */
-export declare const mergeObjects: (oldObj: NestedObject, newObj: NestedObject) => NestedObject;
+export declare const mergeObjects: (oldObj: AnyObject, newObj: AnyObject) => AnyObject;

@@ -1,1 +1,1 @@
-export declare const isRegExp: (thing: unknown) => boolean;
+export declare function isRegExp(value: unknown): value is RegExp;

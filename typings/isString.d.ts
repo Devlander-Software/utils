@@ -1,1 +1,1 @@
-export declare const isString: (thing: any) => boolean;
+export declare function isString(value: unknown): value is string;

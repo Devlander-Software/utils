@@ -1,5 +1,5 @@
-import { typeOfTest } from './typeToTest'
+import { typeOfTest } from "./typeToTest";
 
 export function isString(value: unknown): value is string {
-  return typeOfTest('string')(value)
+  return typeOfTest("string")(value);
 }

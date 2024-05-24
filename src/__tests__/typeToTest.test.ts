@@ -1,12 +1,11 @@
+import { isArrayBufferView, isDate } from "util/types";
+import { isBoolean } from "../isBoolean";
+import { isBuffer } from "../isBuffer";
+import { isFile } from "../isFile";
+import { isObject } from "../isJson";
+import { isNumber } from "../isNumber";
+import { isUndefined } from "../isUndefined";
 import {
-  isArrayBufferView,
-  isBoolean,
-  isBuffer,
-  isDate,
-  isFile,
-  isNumber,
-  isObject,
-  isUndefined,
   typeOfTest,
 } from "../typeToTest";
 

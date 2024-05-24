@@ -11,6 +11,10 @@ export * from "./arrayToObject";
  */
 export * from "./assertOptions";
 /**
+ * TSDoc for assignValue
+ */
+export * from "./assignValue";
+/**
  * TSDoc for bind
  */
 export * from "./bind";
@@ -107,6 +111,22 @@ export * from "./hasOwnProp";
  */
 export * from "./hslToRgb";
 /**
+ * TSDoc for isBoolean
+ */
+export * from "./isBoolean";
+/**
+ * TSDoc for isBuffer
+ */
+export * from "./isBuffer";
+/**
+ * TSDoc for isContextDefined
+ */
+export * from "./isContextDefined";
+/**
+ * TSDoc for isDate
+ */
+export * from "./isDate";
+/**
  * TSDoc for isDeepEqual
  */
 export * from "./isDeepEqual";
@@ -114,6 +134,10 @@ export * from "./isDeepEqual";
  * TSDoc for isEmpty
  */
 export * from "./isEmpty";
+/**
+ * TSDoc for isFile
+ */
+export * from "./isFile";
 /**
  * TSDoc for isFormData
  */
@@ -123,9 +147,17 @@ export * from "./isFormData";
  */
 export * from "./isFunction";
 /**
+ * TSDoc for isGlobalDefined
+ */
+export * from "./isGlobalDefined";
+/**
  * TSDoc for isJson
  */
 export * from "./isJson";
+/**
+ * TSDoc for isNumber
+ */
+export * from "./isNumber";
 /**
  * TSDoc for isPlainObject
  */
@@ -138,6 +170,10 @@ export * from "./isRegExp";
  * TSDoc for isString
  */
 export * from "./isString";
+/**
+ * TSDoc for isUndefined
+ */
+export * from "./isUndefined";
 /**
  * TSDoc for isValidHex
  */
@@ -186,6 +222,10 @@ export * from "./logFormattedPhrases/logPhrases";
  * TSDoc for matchAll
  */
 export * from "./matchAll";
+/**
+ * TSDoc for merge
+ */
+export * from "./merge";
 /**
  * TSDoc for mergeObjects
  */

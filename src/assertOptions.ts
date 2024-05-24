@@ -1,5 +1,5 @@
-import { DevlanderError } from "./devlanderError";
-import { isObject } from "./typeToTest";
+import { DevlanderError } from './devlanderError'
+import { isObject } from './isJson'
 
 export function assertOptions(
   options: { [key: string]: unknown } | null,
@@ -8,51 +8,48 @@ export function assertOptions(
       value: unknown,
       opt: string,
       options: { [key: string]: unknown },
-    ) => boolean | string;
+    ) => boolean | string
   } | null,
   allowUnknown: boolean,
 ): void {
   if (!isObject(schema)) {
-    return;
+    return
   }
 
   if (schema === null) {
-    throw new DevlanderError(
-      "Schema must be an object",
-      "ERR_BAD_OPTION_VALUE",
-    );
+    throw new DevlanderError('Schema must be an object', 'ERR_BAD_OPTION_VALUE')
   }
 
   if (options === null) {
     throw new DevlanderError(
-      "Options must be an object",
-      "ERR_BAD_OPTION_VALUE",
-    );
+      'Options must be an object',
+      'ERR_BAD_OPTION_VALUE',
+    )
   }
 
   if (!isObject(options)) {
     throw new DevlanderError(
-      "Options must be an object",
-      "ERR_BAD_OPTION_VALUE",
-    );
+      'Options must be an object',
+      'ERR_BAD_OPTION_VALUE',
+    )
   }
 
-  const keys = Object.keys(options);
+  const keys = Object.keys(options)
   for (const opt of keys) {
-    const validator = schema[opt];
+    const validator = schema[opt]
     if (validator) {
-      const value = options[opt];
+      const value = options[opt]
       const result =
         value === undefined ||
-        validator(value, opt, options as unknown as { [key: string]: unknown });
+        validator(value, opt, options as unknown as { [key: string]: unknown })
       if (result !== true) {
         throw new DevlanderError(
           `Option '${opt}' must be ${result}`,
-          "ERR_BAD_OPTION_VALUE",
-        );
+          'ERR_BAD_OPTION_VALUE',
+        )
       }
     } else if (!allowUnknown) {
-      throw new DevlanderError(`Unknown option '${opt}'`, "ERR_BAD_OPTION");
+      throw new DevlanderError(`Unknown option '${opt}'`, 'ERR_BAD_OPTION')
     }
   }
 }
