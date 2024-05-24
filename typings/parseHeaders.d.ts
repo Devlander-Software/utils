@@ -5,4 +5,4 @@
  *
  * @returns Headers parsed into an object
  */
-export default function parseHeaders(rawHeaders: string): Record<string, string | string[]>;
+export declare function parseHeaders(rawHeaders: string): Record<string, string | string[]>;

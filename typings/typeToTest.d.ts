@@ -9,7 +9,6 @@ export declare function isBuffer(val: {
 export declare function isArrayBufferView(val: {
     buffer: any;
 }): any;
-export declare const isString: (thing: any) => boolean;
 export declare const isNumber: (thing: any) => boolean;
 export declare const isObject: (thing: unknown) => boolean;
 export declare const isBoolean: (thing: unknown) => boolean;

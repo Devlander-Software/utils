@@ -41,7 +41,6 @@ export function isArrayBufferView(val: { buffer: any }) {
   return result;
 }
 
-export const isString = typeOfTest("string");
 export const isNumber = typeOfTest("number");
 export const isObject = (thing: unknown) =>
   thing !== null && typeof thing === "object";

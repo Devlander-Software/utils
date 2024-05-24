@@ -1,3 +1,5 @@
-import { kindOfTest } from "./kindOfTest";
+import { kindOfTest } from './kindOfTest'
 
-export const isRegExp = kindOfTest("RegExp");
+export function isRegExp(value: unknown): value is RegExp {
+  return kindOfTest('RegExp')(value)
+}

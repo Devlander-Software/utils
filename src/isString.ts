@@ -1,3 +1,5 @@
-import { typeOfTest } from "./typeToTest";
+import { typeOfTest } from './typeToTest'
 
-export const isString = typeOfTest("string");
+export function isString(value: unknown): value is string {
+  return typeOfTest('string')(value)
+}

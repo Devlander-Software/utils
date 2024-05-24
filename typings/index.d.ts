@@ -191,6 +191,10 @@ export * from "./matchAll";
  */
 export * from "./mergeObjects";
 /**
+ * TSDoc for parseHeaders
+ */
+export * from "./parseHeaders";
+/**
  * TSDoc for parsePropPath
  */
 export * from "./parsePropPath";
