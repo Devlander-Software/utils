@@ -3,6 +3,14 @@
  */
 export * from "./abbreviateNumber";
 /**
+ * TSDoc for assertOptions
+ */
+export * from "./assertOptions";
+/**
+ * TSDoc for bind
+ */
+export * from "./bind";
+/**
  * TSDoc for calculatePercentage
  */
 export * from "./calculatePercentage";
@@ -11,13 +19,29 @@ export * from "./calculatePercentage";
  */
 export * from "./convertVideoTimeStampToSeconds";
 /**
+ * TSDoc for createTransitionalMessage
+ */
+export * from "./createTransitionalMessage";
+/**
  * TSDoc for dashToCamelCase
  */
 export * from "./dashToCamelCase";
 /**
+ * TSDoc for devlanderError
+ */
+export * from "./devlanderError";
+/**
+ * TSDoc for endsWith
+ */
+export * from "./endsWith";
+/**
  * TSDoc for ensureValidStyle
  */
 export * from "./ensureValidStyle";
+/**
+ * TSDoc for generateStripeCard
+ */
+export * from "./generateStripeCard";
 /**
  * TSDoc for getAspectRatio
  */
@@ -142,6 +166,18 @@ export * from "./rgbaToHexAlpha";
  * TSDoc for safeCssProperties
  */
 export * from "./safeCssProperties";
+/**
+ * TSDoc for toFlatObject
+ */
+export * from "./toFlatObject";
+/**
+ * TSDoc for toObjectSet
+ */
+export * from "./toObjectSet";
+/**
+ * TSDoc for typeToTest
+ */
+export * from "./typeToTest";
 /**
  * TSDoc for waitFor
  */
