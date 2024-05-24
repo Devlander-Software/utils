@@ -135,6 +135,10 @@ export * from "./isPlainObject";
  */
 export * from "./isRegExp";
 /**
+ * TSDoc for isString
+ */
+export * from "./isString";
+/**
  * TSDoc for isValidHex
  */
 export * from "./isValidHex";
