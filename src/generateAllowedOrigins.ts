@@ -1,24 +1,26 @@
-export function generateAllowedOrigins(domains: string[], devMode: boolean = false): string[] {
-    const combinations: string[] = [];
+// if devMode is true
 
-    domains.forEach(domain => {
-        const baseDomain = domain.replace(/^(https?:\/\/)?/, '');
-        const prefixes = ['https://'];
-        if (devMode) {
-            prefixes.push('http://');
-        }
+export const generateAllowedOrigins = (
+  domains: string[],
+): string[] => {
+  const combinations: string[] = [];
 
-        prefixes.forEach(prefix => {
-            combinations.push(`${prefix}${baseDomain}`);
-            if (domain.startsWith('www.')) {
-                combinations.push(`${prefix}${baseDomain}`);
-            } else {
-                combinations.push(`${prefix}www.${baseDomain}`);
-            }
-        });
+  domains.forEach((domain) => {
+    const baseDomain = domain.replace(/^(https?:\/\/)?/, "");
+    const prefixes = ["https://", "http://"];
+   
 
-        combinations.push(baseDomain);
+    prefixes.forEach((prefix) => {
+      combinations.push(`${prefix}${baseDomain}`);
+      if (domain.startsWith("www.")) {
+        combinations.push(`${prefix}${baseDomain}`);
+      } else {
+        combinations.push(`${prefix}www.${baseDomain}`);
+      }
     });
 
-    return combinations;
-}
+    combinations.push(baseDomain);
+  });
+
+  return combinations;
+};

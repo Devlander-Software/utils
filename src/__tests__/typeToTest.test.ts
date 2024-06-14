@@ -56,8 +56,6 @@ describe("typeToTest", () => {
     });
   });
 
-
-
   describe("isNumber", () => {
     it("should return true if the value is a number", () => {
       const value = 123;

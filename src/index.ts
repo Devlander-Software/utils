@@ -67,6 +67,10 @@ export * from "./forEachEntry";
  */
 export * from "./freezeMethods";
 /**
+ * TSDoc for generateAllowedOrigins
+ */
+export * from "./generateAllowedOrigins";
+/**
  * TSDoc for generateStripeCard
  */
 export * from "./generateStripeCard";

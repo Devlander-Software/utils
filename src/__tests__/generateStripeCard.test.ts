@@ -10,8 +10,6 @@ describe("generateStripeCard", () => {
     expect(card).toHaveProperty("expirationDate");
   });
 
- 
-
   it("should generate a valid CVV", () => {
     const card = generateStripeCard();
 

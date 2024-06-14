@@ -21,14 +21,3 @@ export const forEachEntry = <T>(
     fn.call(obj, key, value);
   }
 };
-
-// Usage example
-const myMap = new Map<string, number>([
-  ["a", 1],
-  ["b", 2],
-  ["c", 3],
-]);
-
-forEachEntry(myMap, (key, value) => {
-  console.log(`Key: ${key}, Value: ${value}`);
-});
