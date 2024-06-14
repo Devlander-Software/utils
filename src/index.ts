@@ -47,6 +47,10 @@ export * from "./endsWith";
  */
 export * from "./ensureValidStyle";
 /**
+ * TSDoc for extend
+ */
+export * from "./extend";
+/**
  * TSDoc for findKey
  */
 export * from "./findKey";

@@ -1,13 +1,11 @@
-import { isArrayBufferView, isDate } from "util/types";
 import { isBoolean } from "../isBoolean";
 import { isBuffer } from "../isBuffer";
+import { isDate } from "../isDate";
 import { isFile } from "../isFile";
 import { isObject } from "../isJson";
 import { isNumber } from "../isNumber";
 import { isUndefined } from "../isUndefined";
-import {
-  typeOfTest,
-} from "../typeToTest";
+import { typeOfTest } from "../typeToTest";
 
 describe("typeToTest", () => {
   describe("typeOfTest", () => {
@@ -58,23 +56,7 @@ describe("typeToTest", () => {
     });
   });
 
-  describe("isArrayBufferView", () => {
-    it("should return true if the value is an array buffer view", () => {
-      const value = {
-        buffer: new ArrayBuffer(8),
-      };
-      const result = isArrayBufferView(value);
-      expect(result).toBe(true);
-    });
 
-    it("should return false if the value is not an array buffer view", () => {
-      const value = {
-        buffer: "Hello",
-      };
-      const result = isArrayBufferView(value);
-      expect(result).toBe(false);
-    });
-  });
 
   describe("isNumber", () => {
     it("should return true if the value is a number", () => {

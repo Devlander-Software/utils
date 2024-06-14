@@ -1,3 +1,3 @@
-import { typeOfTest } from './typeToTest'
+import { typeOfTest } from "./typeToTest";
 
-export const isNumber = typeOfTest('number')
+export const isNumber = typeOfTest("number");

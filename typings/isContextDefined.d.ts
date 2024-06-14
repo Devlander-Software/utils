@@ -1,2 +1,2 @@
-import { GlobalPayload } from './isGlobalDefined';
+import { GlobalPayload } from "./isGlobalDefined";
 export declare const isContextDefined: (context: GlobalPayload) => boolean;

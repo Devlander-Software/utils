@@ -1,4 +1,4 @@
-import { AnyObject } from './types/value.types';
+import { AnyObject } from "./types/value.types";
 /**
  * Merges two nested objects together.
  *

@@ -1,5 +1,6 @@
+export type ObjectIndexType = string | number | symbol;
 export type AnyObject = {
-    [key: string]: any;
+    [key: ObjectIndexType]: any;
 } & Record<string, any>;
 export type PrimitiveType = number | string | boolean | symbol | bigint;
 export type NestedValueType = PrimitiveType | AnyObject;

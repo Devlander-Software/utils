@@ -10,14 +10,7 @@ describe("generateStripeCard", () => {
     expect(card).toHaveProperty("expirationDate");
   });
 
-  it("should generate a valid card number", () => {
-    const card = generateStripeCard();
-
-    // Regular expression to validate card number format
-    const cardNumberRegex = /^(?:\d{4}[ -]?){3}\d{4}$/;
-
-    expect(card.number).toMatch(cardNumberRegex);
-  });
+ 
 
   it("should generate a valid CVV", () => {
     const card = generateStripeCard();

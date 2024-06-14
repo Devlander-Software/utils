@@ -1,3 +1,3 @@
-import { typeOfTest } from './typeToTest'
+import { typeOfTest } from "./typeToTest";
 
-export const isUndefined = typeOfTest('undefined')
+export const isUndefined = typeOfTest("undefined");

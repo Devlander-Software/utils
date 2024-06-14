@@ -1,4 +1,4 @@
-import { AnyObject } from './types/value.types';
+import { AnyObject } from "./types/value.types";
 /**
  * Checks if a value is a plain object.
  *

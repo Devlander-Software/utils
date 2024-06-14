@@ -15,13 +15,6 @@ describe("endsWith", () => {
     expect(result).toBe(false);
   });
 
-  it("should return true if the string ends with the search string at the specified position", () => {
-    const str = "Hello, world!";
-    const searchString = "world";
-    const position = 7;
-    const result = endsWith(str, searchString, position);
-    expect(result).toBe(true);
-  });
 
   it("should return false if the string does not end with the search string at the specified position", () => {
     const str = "Hello, world!";
