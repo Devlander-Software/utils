@@ -1,1 +1,1 @@
-export declare const generateAllowedOrigins: (domains: string[], devMode?: boolean) => string[];
+export declare const generateAllowedOrigins: (domains: string[]) => string[];
