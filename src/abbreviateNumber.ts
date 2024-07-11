@@ -1,31 +1,101 @@
 /**
- * Abbreviates a number by adding a suffix (k, m, b, t) based on its magnitude.
- * @param value - The number to be abbreviated.
- * @returns The abbreviated number as a string.
+ * Options for formatting the abbreviated number's suffix.
  */
-export const abbreviateNumber = (value: number): string | number => {
-  let newValue: number | string = value;
-  if (value >= 1000) {
-    const suffixes = ["", "k", "m", "b", "t"];
-    const suffixNum = Math.floor(("" + value).length / 3);
-    let shortValue: number | string = 0;
-    for (let precision = 2; precision >= 1; precision--) {
-      shortValue = parseFloat(
-        (suffixNum != 0
-          ? value / Math.pow(1000, suffixNum)
-          : value
-        ).toPrecision(precision),
-      );
-      const dotLessShortValue = (shortValue + "").replace(
-        /[^a-zA-Z 0-9]+/g,
-        "",
-      );
-      if (dotLessShortValue.length <= 2) {
-        break;
-      }
-    }
-    if (shortValue % 1 != 0) shortValue = shortValue.toFixed(1);
-    newValue = shortValue + suffixes[suffixNum];
+interface AbbreviateOptions {
+  /**
+   * Specifies the case of the suffix. Accepts 'lower' for lowercase or 'upper' for uppercase.
+   * If not provided, the suffix defaults to uppercase.
+   */
+  case?: 'lower' | 'upper';
+}
+
+/**
+ * Enum for suffixes used in number abbreviation.
+ */
+export enum AbbreviateNumberSuffix {
+  NONE = '',
+  K = 'K',
+  M = 'M',
+  B = 'B',
+  T = 'T',
+  P = 'P',
+  E = 'E'
+}
+
+/**
+ * Abbreviates a number to a more readable format using suffixes for thousands (K), millions (M), billions (B), and larger values.
+ * The function can handle both number and string inputs, and provides an option to format the suffix in lowercase or uppercase.
+ *
+ * @param value - The number or string to be abbreviated. If the value is `undefined`, the function returns an empty string.
+ * If the value cannot be converted to a number, the function returns 'Invalid input'.
+ * @param options - An optional parameter to specify the formatting options for the suffix.
+ * @returns The abbreviated number with an appropriate suffix or an error message if the input is invalid.
+ *
+ * @example
+ * ```typescript
+ * // Basic usage with number input
+ * abbreviateNumber(123);              // "123"
+ * abbreviateNumber(1234);             // "1.2K"
+ * abbreviateNumber(1234567);          // "1.2M"
+ * abbreviateNumber(1234567890);       // "1.2B"
+ *
+ * // Basic usage with string input
+ * abbreviateNumber("1234567890123");  // "1.2T"
+ *
+ * // Using options to format the suffix in lowercase
+ * abbreviateNumber(1234567, { case: 'lower' }); // "1.2m"
+ *
+ * // Using options to format the suffix in uppercase
+ * abbreviateNumber(1234567, { case: 'upper' }); // "1.2M"
+ *
+ * // Handling undefined input
+ * abbreviateNumber(undefined);        // ""
+ *
+ * // Handling invalid input
+ * abbreviateNumber("invalid input");  // "Invalid input"
+ * ```
+ */
+export const abbreviateNumber = (
+  value: string | number | undefined,
+  options?: AbbreviateOptions
+): string => {
+  const suffixes: AbbreviateNumberSuffix[] = [
+    AbbreviateNumberSuffix.NONE,
+    AbbreviateNumberSuffix.K,
+    AbbreviateNumberSuffix.M,
+    AbbreviateNumberSuffix.B,
+    AbbreviateNumberSuffix.T,
+    AbbreviateNumberSuffix.P,
+    AbbreviateNumberSuffix.E
+  ];
+
+  // Handle undefined input
+  if (value === undefined) {
+    return '';
   }
-  return newValue;
-};
+
+  // Convert string input to number
+  const num = typeof value === 'string' ? parseFloat(value) : value;
+
+  // Handle invalid input
+  if (isNaN(num)) {
+    return 'Invalid input';
+  }
+
+  const tier = Math.log10(Math.abs(num)) / 3 | 0;
+
+  if (tier === 0) return num.toString();
+
+  let suffix: AbbreviateNumberSuffix = suffixes[tier];
+  const scale = Math.pow(10, tier * 3);
+  const scaled = num / scale;
+
+  // Handle suffix case options
+  if (options?.case === 'lower') {
+    suffix = suffix.toLowerCase() as AbbreviateNumberSuffix;
+  } else if (options?.case === 'upper') {
+    suffix = suffix.toUpperCase() as AbbreviateNumberSuffix;
+  }
+
+  return scaled.toFixed(1) + suffix;
+}

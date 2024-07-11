@@ -12,13 +12,4 @@
  * });
  * wrappedFn(1, 2, 3, 4, 5); // Output: 1 2 [3, 4, 5]
  */
-export const wrapFunctionWithOptionalArgs = <T extends unknown[], U>(
-  fn: (...args: [...T, U[]]) => void,
-) => {
-  return (...args: [...T, ...U[]]): void => {
-    const requiredArgs = args.slice(0, fn.length - 1) as T; // Extract required arguments
-    const optionalArgs = args.slice(fn.length - 1) as U[]; // Extract optional arguments
-    const combinedArgs: [...T, U[]] = [...requiredArgs, optionalArgs]; // Combine them
-    fn(...combinedArgs);
-  };
-};
+export declare const wrapFunctionWithOptionalArgs: <T extends unknown[], U>(fn: (...args: [...T, U[]]) => void) => (...args: [...T, ...U[]]) => void;

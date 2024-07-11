@@ -10,9 +10,4 @@
  * const result = selectFromList(2, "one", "two", "three");
  * console.log(result); // Output: "three"
  */
-export const selectFromList = <T>(
-  index: number,
-  ...items: T[]
-): T | undefined => {
-  return items[index];
-};
+export declare const selectFromList: <T>(index: number, ...items: T[]) => T | undefined;
