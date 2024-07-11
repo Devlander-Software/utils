@@ -5,7 +5,7 @@
 
 
 <br/>
-<img src="https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png" alt="Devlander Utils Header">
+<img src="https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-header-photo.png" alt="Devlander Utils Header">
 
 
 <br/>
