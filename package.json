@@ -1,7 +1,7 @@
 {
   "name": "@devlander/utils",
   "description": "Utils shared between projects that are plain javascript",
-  "version": "0.0.54",
+  "version": "0.0.55",
   "browser": "dist/umd/index.js",
   "main": "dist/cjs/index.js",
   "types": "typings/index.d.ts",
