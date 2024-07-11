@@ -1,14 +1,11 @@
 // if devMode is true
 
-export const generateAllowedOrigins = (
-  domains: string[],
-): string[] => {
+export const generateAllowedOrigins = (domains: string[]): string[] => {
   const combinations: string[] = [];
 
   domains.forEach((domain) => {
     const baseDomain = domain.replace(/^(https?:\/\/)?/, "");
     const prefixes = ["https://", "http://"];
-   
 
     prefixes.forEach((prefix) => {
       combinations.push(`${prefix}${baseDomain}`);

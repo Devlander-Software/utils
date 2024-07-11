@@ -279,6 +279,10 @@ export * from "./rgbaToHexAlpha";
  */
 export * from "./safeCssProperties";
 /**
+ * TSDoc for selectFromList
+ */
+export * from "./selectFromList";
+/**
  * TSDoc for toCamelCase
  */
 export * from "./toCamelCase";
@@ -298,3 +302,7 @@ export * from "./typeToTest";
  * TSDoc for waitFor
  */
 export * from "./waitFor";
+/**
+ * TSDoc for wrapFunctionWithOptionalArgs
+ */
+export * from "./wrapFunctionWithOptionalArgs";
