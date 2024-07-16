@@ -11,7 +11,7 @@ export interface AbbreviateOptions {
    * Specifies the rounding method. Accepts 'up' for rounding up, 'down' for rounding down, 'none' for no rounding.
    * If not provided, the default is 'none'.
    */
-  rounding?: 'up' | 'down' | 'none';
+  rounding?: "up" | "down" | "none";
 }
 
 /**
@@ -80,7 +80,7 @@ export const abbreviateNumber = (
   }
 
   // Convert string input to number
-  let num = typeof value === "string" ? parseFloat(value) : value;
+  const num = typeof value === "string" ? parseFloat(value) : value;
 
   // Handle invalid input
   if (isNaN(num)) {

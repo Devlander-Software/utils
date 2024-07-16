@@ -13,3 +13,4 @@ export function dashToCamelCase(dashName: string): string {
       return group1.toUpperCase();
     });
 }
+

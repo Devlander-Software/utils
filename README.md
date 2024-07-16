@@ -87,3 +87,5 @@ Dive into our utility functions with ease. Each utility is documented with param
 ## Engage and Contribute
 
 We welcome contributions, feedback, and suggestions! Join our discussions on GitHub, or connect with us on Discord and Twitter. Your input helps us improve the Devlander JavaScript Utils Collection for the developer community.
+
+### [Become a Sponsor!](https://bit.ly/sponsor-landonjohnson-github/)

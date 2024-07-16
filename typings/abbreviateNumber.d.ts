@@ -1,12 +1,17 @@
 /**
  * Options for formatting the abbreviated number's suffix.
  */
-interface AbbreviateOptions {
+export interface AbbreviateOptions {
     /**
      * Specifies the case of the suffix. Accepts 'lower' for lowercase or 'upper' for uppercase.
      * If not provided, the suffix defaults to uppercase.
      */
     case?: "lower" | "upper";
+    /**
+     * Specifies the rounding method. Accepts 'up' for rounding up, 'down' for rounding down, 'none' for no rounding.
+     * If not provided, the default is 'none'.
+     */
+    rounding?: "up" | "down" | "none";
 }
 /**
  * Enum for suffixes used in number abbreviation.
@@ -54,4 +59,3 @@ export declare enum AbbreviateNumberSuffix {
  * ```
  */
 export declare const abbreviateNumber: (value: string | number | undefined, options?: AbbreviateOptions) => string;
-export {};
