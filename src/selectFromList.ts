@@ -14,5 +14,5 @@ export const selectFromList = <T>(
   index: number,
   ...items: T[]
 ): T | undefined => {
-  return items[index];
-};
+  return items[index]
+}

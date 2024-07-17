@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { bind } from "./bind";
-import { forEach } from "./forEach";
-import { isFunction } from "./isFunction";
-import { AnyObject } from "./types/value.types";
+import { bind } from './bind'
+import { forEach } from './forEach'
+import { isFunction } from './isFunction'
+import { AnyObject } from './types/value.types'
 
 export const extend = <T, U>(
   a: T,
@@ -15,12 +15,12 @@ export const extend = <T, U>(
     b,
     (val: unknown, key: keyof U | string | number) => {
       if (thisArg && isFunction(val)) {
-        (a as any)[key] = bind<any>(val, thisArg);
+        ;(a as any)[key] = bind<any>(val, thisArg)
       } else {
-        (a as any)[key] = val;
+        ;(a as any)[key] = val
       }
     },
     { allOwnKeys },
-  );
-  return a as T & U;
-};
+  )
+  return a as T & U
+}

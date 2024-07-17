@@ -6,25 +6,25 @@ export interface AbbreviateOptions {
    * Specifies the case of the suffix. Accepts 'lower' for lowercase or 'upper' for uppercase.
    * If not provided, the suffix defaults to uppercase.
    */
-  case?: "lower" | "upper";
+  case?: 'lower' | 'upper'
   /**
    * Specifies the rounding method. Accepts 'up' for rounding up, 'down' for rounding down, 'none' for no rounding.
    * If not provided, the default is 'none'.
    */
-  rounding?: "up" | "down" | "none";
+  rounding?: 'up' | 'down' | 'none'
 }
 
 /**
  * Enum for suffixes used in number abbreviation.
  */
 export enum AbbreviateNumberSuffix {
-  NONE = "",
-  K = "K",
-  M = "M",
-  B = "B",
-  T = "T",
-  P = "P",
-  E = "E",
+  NONE = '',
+  K = 'K',
+  M = 'M',
+  B = 'B',
+  T = 'T',
+  P = 'P',
+  E = 'E',
 }
 
 /**
@@ -72,56 +72,56 @@ export const abbreviateNumber = (
     AbbreviateNumberSuffix.T,
     AbbreviateNumberSuffix.P,
     AbbreviateNumberSuffix.E,
-  ];
+  ]
 
   // Handle undefined input
   if (value === undefined) {
-    return "";
+    return ''
   }
 
   // Convert string input to number
-  const num = typeof value === "string" ? parseFloat(value) : value;
+  const num = typeof value === 'string' ? parseFloat(value) : value
 
   // Handle invalid input
   if (isNaN(num)) {
-    return "Invalid input";
+    return 'Invalid input'
   }
 
   // Determine the tier of the number
-  const tier = (Math.log10(Math.abs(num)) / 3) | 0;
+  const tier = (Math.log10(Math.abs(num)) / 3) | 0
 
   // If the tier is 0, return the number as is
-  if (tier === 0) return num.toString();
+  if (tier === 0) return num.toString()
 
   // Get the appropriate suffix
-  let suffix: AbbreviateNumberSuffix = suffixes[tier];
-  const scale = Math.pow(10, tier * 3);
+  let suffix: AbbreviateNumberSuffix = suffixes[tier]
+  const scale = Math.pow(10, tier * 3)
 
   // Scale the number
-  let scaled = num / scale;
+  let scaled = num / scale
 
   // Apply rounding if needed
   if (options?.rounding) {
     switch (options.rounding) {
-      case "up":
-        scaled = Math.ceil(scaled * 10) / 10;
-        break;
-      case "down":
-        scaled = Math.floor(scaled * 10) / 10;
-        break;
-      case "none":
+      case 'up':
+        scaled = Math.ceil(scaled * 10) / 10
+        break
+      case 'down':
+        scaled = Math.floor(scaled * 10) / 10
+        break
+      case 'none':
       default:
         // No rounding
-        break;
+        break
     }
   }
 
   // Handle suffix case options
-  if (options?.case === "lower") {
-    suffix = suffix.toLowerCase() as AbbreviateNumberSuffix;
-  } else if (options?.case === "upper") {
-    suffix = suffix.toUpperCase() as AbbreviateNumberSuffix;
+  if (options?.case === 'lower') {
+    suffix = suffix.toLowerCase() as AbbreviateNumberSuffix
+  } else if (options?.case === 'upper') {
+    suffix = suffix.toUpperCase() as AbbreviateNumberSuffix
   }
 
-  return scaled.toFixed(1) + suffix;
-};
+  return scaled.toFixed(1) + suffix
+}

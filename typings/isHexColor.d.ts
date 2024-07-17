@@ -18,15 +18,4 @@
  * console.log(isHexColor(123 as any)); // false
  * ```
  */
-
-export const isHexColor = (hex: string): boolean => {
-    if (typeof hex !== 'string') {
-      console.log(`Invalid type for hex: ${typeof hex}`);
-      return false;
-    }
-    const hexPattern = /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$/;
-    const isValid = hexPattern.test(hex);
-    console.log(`Testing hex: ${hex}, Result: ${isValid}`);
-    return isValid;
-  };
-  
+export declare const isHexColor: (hex: string) => boolean;

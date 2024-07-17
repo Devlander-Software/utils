@@ -15,6 +15,10 @@ export * from "./assertOptions";
  */
 export * from "./assignValue";
 /**
+ * TSDoc for binaryToHex
+ */
+export * from "./binaryToHex";
+/**
  * TSDoc for bind
  */
 export * from "./bind";
@@ -51,6 +55,10 @@ export * from "./ensureValidStyle";
  */
 export * from "./extend";
 /**
+ * TSDoc for extractKeysAndValues
+ */
+export * from "./extractKeysAndValues";
+/**
  * TSDoc for findKey
  */
 export * from "./findKey";
@@ -62,6 +70,10 @@ export * from "./forEach";
  * TSDoc for forEachEntry
  */
 export * from "./forEachEntry";
+/**
+ * TSDoc for formatDecimalObjectToRgba
+ */
+export * from "./formatDecimalObjectToRgba";
 /**
  * TSDoc for freezeMethods
  */
@@ -115,6 +127,14 @@ export * from "./hasItemByLetterAndFilter";
  */
 export * from "./hasOwnProp";
 /**
+ * TSDoc for hexToDecimals
+ */
+export * from "./hexToDecimals";
+/**
+ * TSDoc for hexToRgba
+ */
+export * from "./hexToRgba";
+/**
  * TSDoc for hslToRgb
  */
 export * from "./hslToRgb";
@@ -159,6 +179,10 @@ export * from "./isFunction";
  */
 export * from "./isGlobalDefined";
 /**
+ * TSDoc for isHexColor
+ */
+export * from "./isHexColor";
+/**
  * TSDoc for isJson
  */
 export * from "./isJson";
@@ -166,6 +190,10 @@ export * from "./isJson";
  * TSDoc for isNumber
  */
 export * from "./isNumber";
+/**
+ * TSDoc for isNumeric
+ */
+export * from "./isNumeric";
 /**
  * TSDoc for isPlainObject
  */
@@ -182,6 +210,10 @@ export * from "./isString";
  * TSDoc for isUndefined
  */
 export * from "./isUndefined";
+/**
+ * TSDoc for isValidBinary
+ */
+export * from "./isValidBinary";
 /**
  * TSDoc for isValidHex
  */
@@ -243,6 +275,10 @@ export * from "./mergeObjects";
  */
 export * from "./parseHeaders";
 /**
+ * TSDoc for parseHex
+ */
+export * from "./parseHex";
+/**
  * TSDoc for parsePropPath
  */
 export * from "./parsePropPath";
@@ -270,6 +306,10 @@ export * from "./removeSpacesFromJson";
  * TSDoc for removeSpacesFromString
  */
 export * from "./removeSpacesFromString";
+/**
+ * TSDoc for removeSymbolAt
+ */
+export * from "./removeSymbolAt";
 /**
  * TSDoc for rgbaToHexAlpha
  */

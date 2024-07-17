@@ -1,47 +1,47 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { abbreviateNumber } from "../abbreviateNumber";
-import { isJson } from "../isJson";
-import { formatPhrase } from "./formatPhrase";
-import { PhraseItem } from "./formattedPhrase.types";
+import { abbreviateNumber } from '../abbreviateNumber'
+import { isJson } from '../isJson'
+import { formatPhrase } from './formatPhrase'
+import { PhraseItem } from './formattedPhrase.types'
 
 const defaultPhrases: PhraseItem[] = [
   {
-    phrase: "Success",
-    background: "green",
-    color: "white",
-    fontWeight: "bold",
+    phrase: 'Success',
+    background: 'green',
+    color: 'white',
+    fontWeight: 'bold',
   },
   {
-    phrase: "Error",
-    background: "red",
-    color: "white",
-    fontWeight: "bold",
+    phrase: 'Error',
+    background: 'red',
+    color: 'white',
+    fontWeight: 'bold',
   },
   {
-    phrase: "Warning",
-    background: "yellow",
-    color: "black",
-    fontWeight: "bold",
+    phrase: 'Warning',
+    background: 'yellow',
+    color: 'black',
+    fontWeight: 'bold',
   },
   {
-    phrase: "Info",
-    background: "blue",
-    color: "white",
-    fontWeight: "bold",
+    phrase: 'Info',
+    background: 'blue',
+    color: 'white',
+    fontWeight: 'bold',
   },
   {
-    phrase: "devlander",
-    background: "cyan",
-    color: "black",
-    fontWeight: "bold",
+    phrase: 'devlander',
+    background: 'cyan',
+    color: 'black',
+    fontWeight: 'bold',
   },
   {
-    phrase: "Debug",
-    background: "magenta",
-    color: "white",
-    fontWeight: "bold",
+    phrase: 'Debug',
+    background: 'magenta',
+    color: 'white',
+    fontWeight: 'bold',
   },
-];
+]
 
 /**
  * Logs the formatted value along with specified phrases.
@@ -60,40 +60,40 @@ export const logPhrases = (
     (phrases && phrases.length === 0) ||
     !phrases ||
     !Array.isArray(phrases) ||
-    typeof phrases === "undefined"
+    typeof phrases === 'undefined'
   ) {
-    phrases = defaultPhrases;
+    phrases = defaultPhrases
   }
-  let valueString: string;
+  let valueString: string
 
-  if (typeof value === "number") {
-    valueString = abbreviateNumber(value) as string;
-  } else if (typeof value === "string") {
-    valueString = JSON.stringify(value);
+  if (typeof value === 'number') {
+    valueString = abbreviateNumber(value) as string
+  } else if (typeof value === 'string') {
+    valueString = JSON.stringify(value)
   } else {
-    const isValidJson = isJson(value);
+    const isValidJson = isJson(value)
     valueString = !isValidJson
       ? JSON.stringify(value)
-      : JSON.stringify(value, null, 2);
+      : JSON.stringify(value, null, 2)
   }
 
-  if (typeof phrases !== "undefined" && phrases && phrases.length === 0) {
+  if (typeof phrases !== 'undefined' && phrases && phrases.length === 0) {
     // Default log if no phrases provided
     formatPhrase({
       phrase: valueString,
-    });
+    })
   } else if (phrases) {
     // Log each phrase with specified styles
     phrases.forEach((phraseItem) => {
-      const { phrase, color, background } = phraseItem;
-      const combinedPhrase = `${phrase}: ${valueString}`;
+      const { phrase, color, background } = phraseItem
+      const combinedPhrase = `${phrase}: ${valueString}`
       const newPhrase = {
         ...phraseItem,
         phrase: combinedPhrase,
         color,
         background,
-      };
-      formatPhrase(newPhrase);
-    });
+      }
+      formatPhrase(newPhrase)
+    })
   }
-};
+}
