@@ -9,14 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v2
 
+      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org/'
 
+      # Load .env file if it exists
       - name: Load .env file if exists
         run: |
           if [ -f .env ]; then
@@ -25,14 +28,17 @@ jobs:
             set +a
           fi
 
+      # Set Environment Variables with fallback to .env
       - name: Set Environment Variables with fallback to .env
         run: |
           echo "NPM_READ_TOKEN=${{ secrets.NPM_READ_TOKEN || env.NPM_READ_TOKEN }}" >> $GITHUB_ENV
           echo "NPM_PUBLISH_TOKEN=${{ secrets.NPM_PUBLISH_TOKEN || env.NPM_PUBLISH_TOKEN }}" >> $GITHUB_ENV
 
+      # Install dependencies
       - name: Install dependencies
         run: yarn install
 
+      # Check and bump version if needed
       - name: Check and bump version if needed
         run: |
           git config --local user.email "action@github.com"
@@ -41,19 +47,31 @@ jobs:
           CURRENT_VERSION=$(npm view $(node -p "require('./package.json').name") version)
           LOCAL_VERSION=$(node -p "require('./package.json').version")
           if [ "$CURRENT_VERSION" == "$LOCAL_VERSION" ]; then
-            npm version patch
+            yarn version --patch --no-git-tag-version
           fi
 
+      # Set up .npmrc for authentication
       - name: Set up .npmrc for authentication
         run: |
-          echo "@devlander:registry=https://registry.npmjs.org/" > ~/.npmrc
-          echo "//registry.npmjs.org/:_authToken=${NPM_PUBLISH_TOKEN}" >> ~/.npmrc
+          echo "//$NPM_REGISTRY/:_authToken=${NPM_PUBLISH_TOKEN}" > ~/.npmrc
 
+      # Debug - Display .npmrc (optional)
       - name: Debug - Display .npmrc
         run: cat ~/.npmrc
         continue-on-error: true
 
+      # Commit version bump
+      - name: Commit version bump
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add package.json
+          git commit -m "chore: bump version"
+
+      # Push changes
+      - name: Push changes
+        run: git push
+
+      # Publish to npm
       - name: Publish to npm
-        run: npm publish --access public
-
-
+        run: yarn run start-publish
