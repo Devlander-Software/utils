@@ -5,7 +5,7 @@
 
 
 <br/>
-<img src="https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-cover.png" alt="Devlander Utils Header">
+<img src="https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-header-photo.png" alt="Devlander Utils Header">
 
 
 <br/>
@@ -87,3 +87,5 @@ Dive into our utility functions with ease. Each utility is documented with param
 ## Engage and Contribute
 
 We welcome contributions, feedback, and suggestions! Join our discussions on GitHub, or connect with us on Discord and Twitter. Your input helps us improve the Devlander JavaScript Utils Collection for the developer community.
+
+### [Become a Sponsor!](https://bit.ly/sponsor-landonjohnson-github/)

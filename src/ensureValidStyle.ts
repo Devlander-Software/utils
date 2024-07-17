@@ -5,10 +5,10 @@ export const ensureValidStyle = (cssString: string): string => {
     .replace(
       /([a-z-]+)\s+([^;:]+)(;|$)/gi,
       (match, property, value, ending) =>
-        `${property}: ${value}${ending === ";" ? ";" : ""}`,
+        `${property}: ${value}${ending === ';' ? ';' : ''}`,
     )
     // Ensure semicolons at the end of each declaration
-    .replace(/([^;])\s*$/gm, "$1;");
+    .replace(/([^;])\s*$/gm, '$1;')
 
-  return fixedCSS;
-};
+  return fixedCSS
+}

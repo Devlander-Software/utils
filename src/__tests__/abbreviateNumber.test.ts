@@ -9,31 +9,31 @@ describe("abbreviateNumber", () => {
 
   it("should abbreviate the number with 'K' suffix if it is between 1000 and 999999", () => {
     const value = 1500;
-    const result = abbreviateNumber(value, { case: 'upper' });
+    const result = abbreviateNumber(value, { case: "upper" });
     expect(result).toBe("1.5K");
   });
 
   it("should abbreviate the number with 'M' suffix if it is between 1000000 and 999999999", () => {
     const value = 2500000;
-    const result = abbreviateNumber(value, { case: 'upper' });
+    const result = abbreviateNumber(value, { case: "upper" });
     expect(result).toBe("2.5M");
   });
 
   it("should abbreviate the number with 'B' suffix if it is between 1000000000 and 999999999999", () => {
     const value = 3500000000;
-    const result = abbreviateNumber(value, { case: 'upper' });
+    const result = abbreviateNumber(value, { case: "upper" });
     expect(result).toBe("3.5B");
   });
 
   it("should abbreviate the number with 'T' suffix if it is greater than or equal to 1000000000000", () => {
     const value = 5000000000000;
-    const result = abbreviateNumber(value, { case: 'upper' });
+    const result = abbreviateNumber(value, { case: "upper" });
     expect(result).toBe("5.0T");
   });
 
   it("should abbreviate the number with lowercase suffix if 'lower' option is provided", () => {
     const value = 2500000;
-    const result = abbreviateNumber(value, { case: 'lower' });
+    const result = abbreviateNumber(value, { case: "lower" });
     expect(result).toBe("2.5m");
   });
 
@@ -57,19 +57,43 @@ describe("abbreviateNumber", () => {
 
   it("should handle negative numbers correctly", () => {
     const value = -2500000;
-    const result = abbreviateNumber(value, { case: 'upper' });
+    const result = abbreviateNumber(value, { case: "upper" });
     expect(result).toBe("-2.5M");
   });
 
   it("should handle large numbers with 'P' suffix correctly", () => {
     const value = 1e15; // 1 quadrillion
-    const result = abbreviateNumber(value, { case: 'upper' });
+    const result = abbreviateNumber(value, { case: "upper" });
     expect(result).toBe("1.0P");
   });
 
   it("should handle extremely large numbers with 'E' suffix correctly", () => {
     const value = 1e18; // 1 quintillion
-    const result = abbreviateNumber(value, { case: 'upper' });
+    const result = abbreviateNumber(value, { case: "upper" });
     expect(result).toBe("1.0E");
+  });
+
+  it("should round the number up if 'rounding' option is 'up'", () => {
+    const value = 1234.56;
+    const result = abbreviateNumber(value, { rounding: "up" });
+    expect(result).toBe("1.3K");
+  });
+
+  it("should round the number down if 'rounding' option is 'down'", () => {
+    const value = 1234.56;
+    const result = abbreviateNumber(value, { rounding: "down" });
+    expect(result).toBe("1.2K");
+  });
+
+  it("should not round the number if 'rounding' option is 'none'", () => {
+    const value = 1234.56;
+    const result = abbreviateNumber(value, { rounding: "none" });
+    expect(result).toBe("1.2K");
+  });
+
+  it("should not round the number if 'rounding' option is not provided", () => {
+    const value = 1234.56;
+    const result = abbreviateNumber(value);
+    expect(result).toBe("1.2K");
   });
 });

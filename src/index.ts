@@ -15,6 +15,10 @@ export * from "./assertOptions";
  */
 export * from "./assignValue";
 /**
+ * TSDoc for binaryToHex
+ */
+export * from "./binaryToHex";
+/**
  * TSDoc for bind
  */
 export * from "./bind";
@@ -50,6 +54,10 @@ export * from "./ensureValidStyle";
  * TSDoc for extend
  */
 export * from "./extend";
+/**
+ * TSDoc for extractKeysAndValues
+ */
+export * from "./extractKeysAndValues";
 /**
  * TSDoc for findKey
  */
@@ -115,10 +123,6 @@ export * from "./hasItemByLetterAndFilter";
  */
 export * from "./hasOwnProp";
 /**
- * TSDoc for hslToRgb
- */
-export * from "./hslToRgb";
-/**
  * TSDoc for isBoolean
  */
 export * from "./isBoolean";
@@ -167,6 +171,10 @@ export * from "./isJson";
  */
 export * from "./isNumber";
 /**
+ * TSDoc for isNumeric
+ */
+export * from "./isNumeric";
+/**
  * TSDoc for isPlainObject
  */
 export * from "./isPlainObject";
@@ -183,9 +191,9 @@ export * from "./isString";
  */
 export * from "./isUndefined";
 /**
- * TSDoc for isValidHex
+ * TSDoc for isValidBinary
  */
-export * from "./isValidHex";
+export * from "./isValidBinary";
 /**
  * TSDoc for isValidStyle
  */
@@ -271,9 +279,9 @@ export * from "./removeSpacesFromJson";
  */
 export * from "./removeSpacesFromString";
 /**
- * TSDoc for rgbaToHexAlpha
+ * TSDoc for removeSymbolAt
  */
-export * from "./rgbaToHexAlpha";
+export * from "./removeSymbolAt";
 /**
  * TSDoc for safeCssProperties
  */

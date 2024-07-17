@@ -1,5 +1,5 @@
-import { kindOfTest } from "./kindOfTest";
+import { kindOfTest } from './kindOfTest'
 
 export function isRegExp(value: unknown): value is RegExp {
-  return kindOfTest("RegExp")(value);
+  return kindOfTest('RegExp')(value)
 }

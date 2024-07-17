@@ -1,7 +1,7 @@
-export type TimeUnits = "ms" | "s";
+export type TimeUnits = 'ms' | 's'
 
 export interface WaitFor {
-  (value: number, timeUnits?: TimeUnits, logDuration?: boolean): Promise<void>;
+  (value: number, timeUnits?: TimeUnits, logDuration?: boolean): Promise<void>
 }
 
 /**
@@ -16,30 +16,30 @@ export const waitFor: WaitFor = (
   timeUnits?: TimeUnits,
   logDuration?: boolean,
 ) => {
-  if (timeUnits !== "ms" && timeUnits !== "s") {
-    timeUnits = "ms";
+  if (timeUnits !== 'ms' && timeUnits !== 's') {
+    timeUnits = 'ms'
   }
 
-  if (typeof logDuration !== "boolean" || typeof logDuration === "undefined") {
-    logDuration = false;
+  if (typeof logDuration !== 'boolean' || typeof logDuration === 'undefined') {
+    logDuration = false
   }
 
-  const startTime = Date.now();
-  const time = timeUnits === "ms" ? value : value * 1000;
+  const startTime = Date.now()
+  const time = timeUnits === 'ms' ? value : value * 1000
   const logForConsole =
-    logDuration && logDuration.toString() === "true" ? console.log : () => {};
+    logDuration && logDuration.toString() === 'true' ? console.log : () => {}
 
   return new Promise<void>((resolve) => {
     setTimeout(() => {
-      if (logDuration && logDuration.toString() === "true") {
-        const endTime = Date.now();
-        const durationMs = endTime - startTime;
+      if (logDuration && logDuration.toString() === 'true') {
+        const endTime = Date.now()
+        const durationMs = endTime - startTime
         // Adjust the logging to reflect the time in the correct unit, based on the 'timeUnits' parameter
-        const duration = timeUnits === "ms" ? durationMs : durationMs / 1000;
-        const unit = timeUnits === "ms" ? "ms" : "s";
-        logForConsole(`Waited for ${duration}${unit}.`);
+        const duration = timeUnits === 'ms' ? durationMs : durationMs / 1000
+        const unit = timeUnits === 'ms' ? 'ms' : 's'
+        logForConsole(`Waited for ${duration}${unit}.`)
       }
-      resolve();
-    }, time);
-  });
-};
+      resolve()
+    }, time)
+  })
+}

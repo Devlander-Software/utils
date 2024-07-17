@@ -14,7 +14,7 @@ export const getUniqueObjects = (
     .filter(
       (element, index, finalArray) => finalArray.indexOf(element) === index,
     )
-    .map((element, index) => array[index]);
+    .map((element, index) => array[index])
 
-  return uniqueElements;
-};
+  return uniqueElements
+}

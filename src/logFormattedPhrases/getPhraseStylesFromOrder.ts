@@ -2,24 +2,24 @@
 // referenced in conversations about the code.
 // Path: ./src/logFormattedPhrases/getPhraseStylesFromOrder.ts
 
-import { isEmpty } from "../isEmpty";
-import { mergeObjects } from "../mergeObjects";
-import { applyFormatters } from "./applyFormatters";
+import { isEmpty } from '../isEmpty'
+import { mergeObjects } from '../mergeObjects'
+import { applyFormatters } from './applyFormatters'
 import {
   AppliedFormatter,
   PhraseItem,
   PhraseOrderType,
-} from "./formattedPhrase.types";
+} from './formattedPhrase.types'
 
 export const defaultPhraseOrder: PhraseOrderType[] = [
-  { property: "background", order: 1, enabled: true },
-  { property: "color", order: 2, enabled: true },
-  { property: "fontWeight", order: 3, enabled: true },
-  { property: "fontStyle", order: 4, enabled: true },
-  { property: "textDecoration", order: 5, enabled: true },
-  { property: "dim", order: 6, enabled: true },
-  { property: "hidden", order: 7, enabled: true },
-];
+  { property: 'background', order: 1, enabled: true },
+  { property: 'color', order: 2, enabled: true },
+  { property: 'fontWeight', order: 3, enabled: true },
+  { property: 'fontStyle', order: 4, enabled: true },
+  { property: 'textDecoration', order: 5, enabled: true },
+  { property: 'dim', order: 6, enabled: true },
+  { property: 'hidden', order: 7, enabled: true },
+]
 
 /**
  * Retrieves the applied phrase styles from the given item.
@@ -31,25 +31,25 @@ export const getPhraseStylesFromOrder = (
 ): AppliedFormatter[] => {
   console.log(
     item,
-    "item in getPhraseStylesFromOrder before merge or assigning default",
-  );
+    'item in getPhraseStylesFromOrder before merge or assigning default',
+  )
   if (item && isEmpty(item) && !item.orderToApplyStyles) {
-    item.orderToApplyStyles = defaultPhraseOrder;
+    item.orderToApplyStyles = defaultPhraseOrder
   } else {
-    console.log("PhraseItem.orderToApplyStyles is not empty or undefined");
+    console.log('PhraseItem.orderToApplyStyles is not empty or undefined')
   }
 
   if (
-    process.env.NODE_ENV === "test" ||
-    process.env.NODE_ENV === "development" ||
-    process.env.NODE_ENV === "dev"
+    process.env.NODE_ENV === 'test' ||
+    process.env.NODE_ENV === 'development' ||
+    process.env.NODE_ENV === 'dev'
   ) {
-    console.log(item, "PhraseItem in getPhraseStylesFromOrder at start");
+    console.log(item, 'PhraseItem in getPhraseStylesFromOrder at start')
   }
 
   if (!item || isEmpty(item)) {
-    console.log("PhraseItem is empty or undefined");
-    return [];
+    console.log('PhraseItem is empty or undefined')
+    return []
   }
 
   // Use the default order or the one provided in the item
@@ -61,21 +61,21 @@ export const getPhraseStylesFromOrder = (
           defaultPhraseOrder,
           item.orderToApplyStyles,
         ) as PhraseOrderType[])
-      : defaultPhraseOrder;
+      : defaultPhraseOrder
 
-  const formattersToApply = applyFormatters(item, propertiesToApply);
+  const formattersToApply = applyFormatters(item, propertiesToApply)
 
   if (
-    process.env.NODE_ENV === "test" ||
-    process.env.NODE_ENV === "development" ||
-    process.env.NODE_ENV === "dev"
+    process.env.NODE_ENV === 'test' ||
+    process.env.NODE_ENV === 'development' ||
+    process.env.NODE_ENV === 'dev'
   ) {
     console.log(
       formattersToApply,
-      "formattersToApply at END of getPhraseStylesFromOrder",
-    );
+      'formattersToApply at END of getPhraseStylesFromOrder',
+    )
   }
 
   // why is this empty?
-  return formattersToApply;
-};
+  return formattersToApply
+}

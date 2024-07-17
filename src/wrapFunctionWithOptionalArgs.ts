@@ -16,9 +16,9 @@ export const wrapFunctionWithOptionalArgs = <T extends unknown[], U>(
   fn: (...args: [...T, U[]]) => void,
 ) => {
   return (...args: [...T, ...U[]]): void => {
-    const requiredArgs = args.slice(0, fn.length - 1) as T; // Extract required arguments
-    const optionalArgs = args.slice(fn.length - 1) as U[]; // Extract optional arguments
-    const combinedArgs: [...T, U[]] = [...requiredArgs, optionalArgs]; // Combine them
-    fn(...combinedArgs);
-  };
-};
+    const requiredArgs = args.slice(0, fn.length - 1) as T // Extract required arguments
+    const optionalArgs = args.slice(fn.length - 1) as U[] // Extract optional arguments
+    const combinedArgs: [...T, U[]] = [...requiredArgs, optionalArgs] // Combine them
+    fn(...combinedArgs)
+  }
+}
