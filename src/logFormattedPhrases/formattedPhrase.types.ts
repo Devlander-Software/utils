@@ -1,61 +1,61 @@
-import { Formatter } from 'picocolors/types'
+import { Formatter } from "picocolors/types";
 
 export type ActualBackgroundColorValues =
-  | 'bgBlack'
-  | 'bgRed'
-  | 'bgGreen'
-  | 'bgYellow'
-  | 'bgBlue'
-  | 'bgMagenta'
-  | 'bgCyan'
-  | 'bgWhite'
+  | "bgBlack"
+  | "bgRed"
+  | "bgGreen"
+  | "bgYellow"
+  | "bgBlue"
+  | "bgMagenta"
+  | "bgCyan"
+  | "bgWhite";
 
 export type PhraseColors =
-  | 'black'
-  | 'red'
-  | 'green'
-  | 'yellow'
-  | 'blue'
-  | 'magenta'
-  | 'cyan'
-  | 'white'
-  | 'gray'
+  | "black"
+  | "red"
+  | "green"
+  | "yellow"
+  | "blue"
+  | "magenta"
+  | "cyan"
+  | "white"
+  | "gray";
 
-export type PhraseDecoration = undefined | 'underline' | 'strikethrough'
-export type PhraseWeight = undefined | 'bold'
-export type PhraseFontStyle = undefined | 'italic'
+export type PhraseDecoration = undefined | "underline" | "strikethrough";
+export type PhraseWeight = undefined | "bold";
+export type PhraseFontStyle = undefined | "italic";
 
 export enum PhraseProperty {
-  background = 'background',
-  color = 'color',
-  fontWeight = 'fontWeight',
-  fontStyle = 'fontStyle',
-  textDecoration = 'textDecoration',
-  dim = 'dim',
-  hidden = 'hidden',
+  background = "background",
+  color = "color",
+  fontWeight = "fontWeight",
+  fontStyle = "fontStyle",
+  textDecoration = "textDecoration",
+  dim = "dim",
+  hidden = "hidden",
 }
 
 export type PhrasePropertyType =
-  | 'background'
-  | 'color'
-  | 'fontWeight'
-  | 'fontStyle'
-  | 'textDecoration'
-  | 'dim'
-  | 'hidden'
-  | PhraseProperty
+  | "background"
+  | "color"
+  | "fontWeight"
+  | "fontStyle"
+  | "textDecoration"
+  | "dim"
+  | "hidden"
+  | PhraseProperty;
 
 export interface PhraseOrderType {
-  property: PhrasePropertyType
+  property: PhrasePropertyType;
 
-  order: number
-  enabled?: boolean
+  order: number;
+  enabled?: boolean;
 }
 
 export interface AppliedFormatter {
-  name: PhraseOrderType['property']
-  formatter: Formatter
-  value: string
+  name: PhraseOrderType["property"];
+  formatter: Formatter;
+  value: string;
 }
 
 /**
@@ -65,58 +65,58 @@ export interface PhraseItem {
   /**
    * The phrase text.
    */
-  phrase: string
+  phrase: string;
   /**
    * The color of the phrase.
    */
-  color?: PhraseColors
+  color?: PhraseColors;
   /**
    * The environments in which the phrase is allowed.
    */
-  allowedInEnvironments?: string[]
+  allowedInEnvironments?: string[];
   /**
    * The current environment.
    */
-  currentEnvironment?: string
+  currentEnvironment?: string;
   /**
    * Whether the phrase should be displayed with reduced intensity.
    */
-  dim?: boolean
+  dim?: boolean;
   /**
    * Whether the phrase should be hidden.
    */
-  hidden?: boolean
+  hidden?: boolean;
   /**
    * The font weight of the phrase.
    */
-  fontWeight?: PhraseWeight
+  fontWeight?: PhraseWeight;
   /**
    * The font style of the phrase.
    */
-  fontStyle?: PhraseFontStyle
+  fontStyle?: PhraseFontStyle;
   /**
    * The text decoration of the phrase.
    */
-  textDecoration?: PhraseDecoration
+  textDecoration?: PhraseDecoration;
   /**
    * The background color of the phrase.
    */
-  background?: PhraseColors
+  background?: PhraseColors;
   /**
    * The order in which the styles should be applied.
    */
-  orderToApplyStyles?: PhraseOrderType[]
+  orderToApplyStyles?: PhraseOrderType[];
 }
 export interface PhraseItem {
-  phrase: string
-  color?: PhraseColors
-  allowedInEnvironments?: string[]
-  currentEnvironment?: string
-  dim?: boolean
-  hidden?: boolean
-  fontWeight?: PhraseWeight
-  fontStyle?: PhraseFontStyle
-  textDecoration?: PhraseDecoration
-  background?: PhraseColors
-  orderToApplyStyles?: PhraseOrderType[]
+  phrase: string;
+  color?: PhraseColors;
+  allowedInEnvironments?: string[];
+  currentEnvironment?: string;
+  dim?: boolean;
+  hidden?: boolean;
+  fontWeight?: PhraseWeight;
+  fontStyle?: PhraseFontStyle;
+  textDecoration?: PhraseDecoration;
+  background?: PhraseColors;
+  orderToApplyStyles?: PhraseOrderType[];
 }

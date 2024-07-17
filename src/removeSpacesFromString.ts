@@ -4,5 +4,5 @@
  * @returns The input string with all spaces removed.
  */
 export const removeSpacesFromString = (inputString: string): string => {
-  return inputString.replace(/\s+/g, '')
-}
+  return inputString.replace(/\s+/g, "");
+};

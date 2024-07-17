@@ -1,3 +1,3 @@
-import { kindOfTest } from './kindOfTest'
+import { kindOfTest } from "./kindOfTest";
 
-export const isDate = kindOfTest('Date')
+export const isDate = kindOfTest("Date");

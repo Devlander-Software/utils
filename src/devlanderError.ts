@@ -1,13 +1,13 @@
-'use strict'
+"use strict";
 
-import { toFlatObject } from './toFlatObject'
+import { toFlatObject } from "./toFlatObject";
 
 interface ErrorConfig {
-  [key: string]: undefined | string | number | boolean | ErrorConfig
+  [key: string]: undefined | string | number | boolean | ErrorConfig;
 }
 
 interface CustomProps {
-  [key: string]: undefined | string | number | boolean | ErrorConfig
+  [key: string]: undefined | string | number | boolean | ErrorConfig;
 }
 
 /**
@@ -18,23 +18,23 @@ interface CustomProps {
  * @param {ErrorConfig} [config] The config.
  */
 export class DevlanderError extends Error {
-  code?: string
-  config?: ErrorConfig
+  code?: string;
+  config?: ErrorConfig;
 
   constructor(message: string, code?: string, config?: ErrorConfig) {
-    super(message)
+    super(message);
 
     if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, this.constructor)
+      Error.captureStackTrace(this, this.constructor);
     } else {
-      this.stack = new Error().stack
+      this.stack = new Error().stack;
     }
 
-    this.name = 'DevlanderError'
-    if (code) this.code = code
-    if (config) this.config = config
+    this.name = "DevlanderError";
+    if (code) this.code = code;
+    if (config) this.config = config;
 
-    Object.defineProperty(this, 'DevlanderError', { value: true })
+    Object.defineProperty(this, "DevlanderError", { value: true });
   }
 
   static from(
@@ -46,24 +46,24 @@ export class DevlanderError extends Error {
   ): DevlanderError {
     const devlanderError = Object.create(
       DevlanderError.prototype,
-    ) as DevlanderError
+    ) as DevlanderError;
 
     toFlatObject(
       error,
       devlanderError as unknown as Record<string, unknown>,
       (obj) => obj !== (Error.prototype as unknown),
-      (prop) => prop !== 'DevlanderError',
-    )
+      (prop) => prop !== "DevlanderError",
+    );
 
-    DevlanderError.call(devlanderError, error.message, code, config)
+    DevlanderError.call(devlanderError, error.message, code, config);
 
-    devlanderError.cause = error
-    devlanderError.name = error.name
+    devlanderError.cause = error;
+    devlanderError.name = error.name;
 
     if (customProps) {
-      Object.assign(devlanderError, customProps)
+      Object.assign(devlanderError, customProps);
     }
 
-    return devlanderError
+    return devlanderError;
   }
 }

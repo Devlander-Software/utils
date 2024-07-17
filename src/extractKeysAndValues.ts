@@ -5,8 +5,8 @@
  * @template V - Type of the values in the record.
  */
 export interface ReturnTypeForValuesFromRecord<K extends string, V> {
-  keys: K[]
-  values: V[]
+  keys: K[];
+  values: V[];
 }
 
 /**
@@ -20,10 +20,10 @@ export interface ReturnTypeForValuesFromRecord<K extends string, V> {
 export function extractKeysAndValues<T extends Record<string, unknown>>(
   record: T,
 ): ReturnTypeForValuesFromRecord<keyof T & string, T[keyof T]> {
-  const keys = Object.keys(record) as (keyof T & string)[]
-  const values = Object.values(record) as T[keyof T][]
+  const keys = Object.keys(record) as (keyof T & string)[];
+  const values = Object.values(record) as T[keyof T][];
 
-  return { keys, values }
+  return { keys, values };
 }
 
 // // Example usage with default type

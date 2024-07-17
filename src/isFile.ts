@@ -1,3 +1,3 @@
-import { kindOfTest } from './kindOfTest'
+import { kindOfTest } from "./kindOfTest";
 
-export const isFile = kindOfTest('File')
+export const isFile = kindOfTest("File");
