@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      # Check and bump version if needed
+      # Check current version on npm and bump version if needed
       - name: Check and bump version if needed
         run: |
           git config --local user.email "action@github.com"
@@ -54,32 +54,40 @@ jobs:
           
           CURRENT_VERSION=$(npm view $(node -p "require('./package.json').name") version)
           LOCAL_VERSION=$(node -p "require('./package.json').version")
+          echo "Current version: $CURRENT_VERSION"
+          echo "Local version: $LOCAL_VERSION"
           if [ "$CURRENT_VERSION" == "$LOCAL_VERSION" ]; then
             yarn version --patch --no-git-tag-version
           fi
+          git status
 
       # Set up .npmrc for authentication
       - name: Set up .npmrc for authentication
         run: |
-          echo "//$NPM_REGISTRY/:_authToken=${NPM_PUBLISH_TOKEN}" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_PUBLISH_TOKEN}" > ~/.npmrc
 
       # Debug - Display .npmrc (optional)
       - name: Debug - Display .npmrc
         run: cat ~/.npmrc
         continue-on-error: true
 
-      # Commit version bump
+      # Conditionally commit version bump
       - name: Commit version bump
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add package.json
-          git commit -m "chore: bump version"
-
-      # Push changes
-      - name: Push changes
-        run: git push
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "chore: bump version"
+            git push
+          else
+            echo "No changes to commit"
 
       # Publish to npm
       - name: Publish to npm
-        run: yarn run start-publish
+        run: |
+          if [ "$CURRENT_VERSION" != "$LOCAL_VERSION" ]; then
+            yarn publish --non-interactive --access public
+          else
+            echo "Version not bumped, skipping publish"
+          fi
