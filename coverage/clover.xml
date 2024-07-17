@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1721216438538" clover="3.2.0">
-  <project timestamp="1721216438538" name="All files">
-    <metrics statements="451" coveredstatements="378" conditionals="390" coveredconditionals="281" methods="90" coveredmethods="82" elements="931" coveredelements="741" complexity="0" loc="451" ncloc="451" packages="2" files="55" classes="55"/>
+<coverage generated="1721235152725" clover="3.2.0">
+  <project timestamp="1721235152725" name="All files">
+    <metrics statements="460" coveredstatements="387" conditionals="402" coveredconditionals="293" methods="91" coveredmethods="83" elements="953" coveredelements="763" complexity="0" loc="460" ncloc="460" packages="2" files="56" classes="56"/>
     <package name="src">
-      <metrics statements="380" coveredstatements="317" conditionals="314" coveredconditionals="232" methods="84" coveredmethods="76"/>
-      <file name="abbreviateNumber.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/abbreviateNumber.ts">
+      <metrics statements="389" coveredstatements="326" conditionals="326" coveredconditionals="244" methods="85" coveredmethods="77"/>
+      <file name="abbreviateNumber.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/abbreviateNumber.ts">
         <metrics statements="24" coveredstatements="24" conditionals="18" coveredconditionals="18" methods="1" coveredmethods="1"/>
         <line num="63" count="1" type="stmt"/>
         <line num="67" count="16" type="stmt"/>
@@ -31,40 +31,40 @@
         <line num="123" count="7" type="stmt"/>
         <line num="126" count="13" type="stmt"/>
       </file>
-      <file name="assertOptions.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/assertOptions.ts">
+      <file name="assertOptions.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/assertOptions.ts">
         <metrics statements="18" coveredstatements="15" conditionals="16" coveredconditionals="12" methods="1" coveredmethods="1"/>
-        <line num="15" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="30" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-        <line num="40" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="27" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="34" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="1" type="stmt"/>
         <line num="41" count="3" type="stmt"/>
-        <line num="43" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="45" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="51" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="52" count="1" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="44" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="47" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="55" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="56" count="1" type="stmt"/>
       </file>
-      <file name="bind.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/bind.ts">
+      <file name="bind.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/bind.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="14" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
       </file>
-      <file name="calculatePercentage.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/calculatePercentage.ts">
+      <file name="calculatePercentage.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/calculatePercentage.ts">
         <metrics statements="4" coveredstatements="4" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="10" count="3" type="cond" truecount="5" falsecount="0"/>
         <line num="11" count="2" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="convertVideoTimeStampToSeconds.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/convertVideoTimeStampToSeconds.ts">
+      <file name="convertVideoTimeStampToSeconds.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/convertVideoTimeStampToSeconds.ts">
         <metrics statements="11" coveredstatements="8" conditionals="12" coveredconditionals="9" methods="1" coveredmethods="1"/>
         <line num="8" count="15" type="stmt"/>
         <line num="10" count="15" type="cond" truecount="1" falsecount="1"/>
@@ -78,12 +78,12 @@
         <line num="23" count="0" type="stmt"/>
         <line num="26" count="15" type="stmt"/>
       </file>
-      <file name="dashToCamelCase.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/dashToCamelCase.ts">
+      <file name="dashToCamelCase.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/dashToCamelCase.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="8" count="5" type="stmt"/>
         <line num="13" count="7" type="stmt"/>
       </file>
-      <file name="devlanderError.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/devlanderError.ts">
+      <file name="devlanderError.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/devlanderError.ts">
         <metrics statements="18" coveredstatements="7" conditionals="8" coveredconditionals="3" methods="4" coveredmethods="1"/>
         <line num="25" count="3" type="stmt"/>
         <line num="27" count="3" type="cond" truecount="1" falsecount="1"/>
@@ -104,29 +104,29 @@
         <line num="64" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
       </file>
-      <file name="endsWith.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/endsWith.ts">
+      <file name="endsWith.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/endsWith.ts">
         <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="6" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="cond" truecount="2" falsecount="0"/>
       </file>
-      <file name="ensureValidStyle.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/ensureValidStyle.ts">
+      <file name="ensureValidStyle.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/ensureValidStyle.ts">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
         <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="13" count="3" type="stmt"/>
       </file>
-      <file name="extractKeysAndValues.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/extractKeysAndValues.ts">
+      <file name="extractKeysAndValues.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/extractKeysAndValues.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="23" count="5" type="stmt"/>
         <line num="24" count="5" type="stmt"/>
         <line num="26" count="5" type="stmt"/>
       </file>
-      <file name="generateAllowedOrigins.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/generateAllowedOrigins.ts">
+      <file name="generateAllowedOrigins.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/generateAllowedOrigins.ts">
         <metrics statements="12" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -141,7 +141,7 @@
         <line num="19" count="2" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
       </file>
-      <file name="generateStripeCard.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/generateStripeCard.ts">
+      <file name="generateStripeCard.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/generateStripeCard.ts">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="13" count="3" type="stmt"/>
         <line num="59" count="3" type="stmt"/>
@@ -153,7 +153,7 @@
         <line num="70" count="3" type="stmt"/>
         <line num="72" count="3" type="stmt"/>
       </file>
-      <file name="getAspectRatio.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/getAspectRatio.ts">
+      <file name="getAspectRatio.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/getAspectRatio.ts">
         <metrics statements="21" coveredstatements="12" conditionals="13" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="22" count="1" type="stmt"/>
         <line num="25" count="2" type="cond" truecount="0" falsecount="1"/>
@@ -177,7 +177,7 @@
         <line num="61" count="1" type="stmt"/>
         <line num="64" count="2" type="stmt"/>
       </file>
-      <file name="getMessageByField.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/getMessageByField.ts">
+      <file name="getMessageByField.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/getMessageByField.ts">
         <metrics statements="20" coveredstatements="18" conditionals="18" coveredconditionals="14" methods="2" coveredmethods="2"/>
         <line num="17" count="1" type="stmt"/>
         <line num="21" count="4" type="stmt"/>
@@ -200,34 +200,35 @@
         <line num="45" count="1" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
       </file>
-      <file name="getMessageFromObject.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/getMessageFromObject.ts">
-        <metrics statements="6" coveredstatements="6" conditionals="11" coveredconditionals="11" methods="2" coveredmethods="2"/>
+      <file name="getMessageFromObject.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/getMessageFromObject.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="11" coveredconditionals="11" methods="2" coveredmethods="2"/>
         <line num="13" count="2" type="stmt"/>
         <line num="18" count="8" type="cond" truecount="4" falsecount="0"/>
         <line num="19" count="3" type="stmt"/>
         <line num="21" count="3" type="cond" truecount="4" falsecount="0"/>
-        <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="6" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="6" type="stmt"/>
       </file>
-      <file name="getRandomValFromArray.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/getRandomValFromArray.ts">
+      <file name="getRandomValFromArray.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/getRandomValFromArray.ts">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
       </file>
-      <file name="getRange.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/getRange.ts">
+      <file name="getRange.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/getRange.ts">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="5" type="stmt"/>
       </file>
-      <file name="getValueFromObject.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/getValueFromObject.ts">
+      <file name="getValueFromObject.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/getValueFromObject.ts">
         <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="12" count="9" type="cond" truecount="2" falsecount="0"/>
       </file>
-      <file name="hasItemByLetterAndFilter.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/hasItemByLetterAndFilter.ts">
+      <file name="hasItemByLetterAndFilter.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/hasItemByLetterAndFilter.ts">
         <metrics statements="22" coveredstatements="19" conditionals="16" coveredconditionals="12" methods="6" coveredmethods="6"/>
         <line num="13" count="1" type="stmt"/>
         <line num="20" count="4" type="stmt"/>
@@ -252,11 +253,11 @@
         <line num="54" count="8" type="cond" truecount="4" falsecount="0"/>
         <line num="56" count="8" type="stmt"/>
       </file>
-      <file name="isBoolean.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isBoolean.ts">
+      <file name="isBoolean.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isBoolean.ts">
         <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="cond" truecount="2" falsecount="0"/>
       </file>
-      <file name="isBuffer.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isBuffer.ts">
+      <file name="isBuffer.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isBuffer.ts">
         <metrics statements="6" coveredstatements="2" conditionals="13" coveredconditionals="6" methods="2" coveredmethods="1"/>
         <line num="9" count="2" type="stmt"/>
         <line num="20" count="0" type="cond" truecount="0" falsecount="4"/>
@@ -265,11 +266,11 @@
         <line num="25" count="0" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
       </file>
-      <file name="isDate.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isDate.ts">
+      <file name="isDate.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isDate.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="isDeepEqual.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isDeepEqual.ts">
+      <file name="isDeepEqual.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isDeepEqual.ts">
         <metrics statements="12" coveredstatements="12" conditionals="14" coveredconditionals="14" methods="1" coveredmethods="1"/>
         <line num="13" count="18" type="cond" truecount="2" falsecount="0"/>
         <line num="14" count="8" type="stmt"/>
@@ -284,25 +285,25 @@
         <line num="35" count="5" type="stmt"/>
         <line num="39" count="2" type="stmt"/>
       </file>
-      <file name="isEmpty.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isEmpty.ts">
+      <file name="isEmpty.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isEmpty.ts">
         <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="1" count="6" type="stmt"/>
         <line num="2" count="31" type="cond" truecount="6" falsecount="0"/>
       </file>
-      <file name="isFile.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isFile.ts">
+      <file name="isFile.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isFile.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="isFormData.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isFormData.ts">
+      <file name="isFormData.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isFormData.ts">
         <metrics statements="2" coveredstatements="2" conditionals="10" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="10" count="1" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
       </file>
-      <file name="isFunction.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isFunction.ts">
+      <file name="isFunction.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isFunction.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="2" type="stmt"/>
       </file>
-      <file name="isJson.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isJson.ts">
+      <file name="isJson.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isJson.ts">
         <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="6" count="7" type="stmt"/>
         <line num="9" count="14" type="stmt"/>
@@ -312,29 +313,40 @@
         <line num="17" count="7" type="stmt"/>
         <line num="18" count="11" type="cond" truecount="2" falsecount="0"/>
       </file>
-      <file name="isNumber.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isNumber.ts">
+      <file name="isNumber.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isNumber.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
       </file>
-      <file name="isPlainObject.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isPlainObject.ts">
+      <file name="isNumeric.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isNumeric.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="5" type="cond" truecount="4" falsecount="0"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="43" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="46" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="5" type="stmt"/>
+      </file>
+      <file name="isPlainObject.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isPlainObject.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="6" type="stmt"/>
       </file>
-      <file name="isString.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isString.ts">
+      <file name="isString.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isString.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="2" type="stmt"/>
       </file>
-      <file name="isUndefined.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isUndefined.ts">
+      <file name="isUndefined.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isUndefined.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="isValidBinary.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isValidBinary.ts">
+      <file name="isValidBinary.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isValidBinary.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="9" type="stmt"/>
       </file>
-      <file name="isValidStyle.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/isValidStyle.ts">
+      <file name="isValidStyle.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/isValidStyle.ts">
         <metrics statements="14" coveredstatements="14" conditionals="14" coveredconditionals="13" methods="4" coveredmethods="4"/>
         <line num="10" count="1" type="stmt"/>
         <line num="15" count="10" type="cond" truecount="2" falsecount="0"/>
@@ -351,7 +363,7 @@
         <line num="38" count="15" type="cond" truecount="4" falsecount="0"/>
         <line num="41" count="5" type="stmt"/>
       </file>
-      <file name="jsonContainsNewLine.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/jsonContainsNewLine.ts">
+      <file name="jsonContainsNewLine.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/jsonContainsNewLine.ts">
         <metrics statements="15" coveredstatements="13" conditionals="14" coveredconditionals="12" methods="2" coveredmethods="2"/>
         <line num="3" count="2" type="stmt"/>
         <line num="7" count="7" type="stmt"/>
@@ -369,19 +381,19 @@
         <line num="26" count="6" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
       </file>
-      <file name="kindOf.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/kindOf.ts">
+      <file name="kindOf.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/kindOf.ts">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="cond" truecount="2" falsecount="0"/>
       </file>
-      <file name="kindOfTest.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/kindOfTest.ts">
+      <file name="kindOfTest.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/kindOfTest.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
         <line num="5" count="4" type="stmt"/>
       </file>
-      <file name="mergeObjects.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/mergeObjects.ts">
+      <file name="mergeObjects.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/mergeObjects.ts">
         <metrics statements="13" coveredstatements="13" conditionals="13" coveredconditionals="13" methods="2" coveredmethods="2"/>
         <line num="10" count="4" type="stmt"/>
         <line num="14" count="8" type="stmt"/>
@@ -397,12 +409,12 @@
         <line num="33" count="13" type="stmt"/>
         <line num="37" count="8" type="stmt"/>
       </file>
-      <file name="pluralize.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/pluralize.ts">
+      <file name="pluralize.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/pluralize.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="2" type="cond" truecount="2" falsecount="0"/>
       </file>
-      <file name="removeNewLinesFromJson.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/removeNewLinesFromJson.ts">
+      <file name="removeNewLinesFromJson.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/removeNewLinesFromJson.ts">
         <metrics statements="19" coveredstatements="6" conditionals="21" coveredconditionals="5" methods="3" coveredmethods="1"/>
         <line num="12" count="1" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
@@ -424,12 +436,12 @@
         <line num="49" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="52" count="2" type="stmt"/>
       </file>
-      <file name="removeNewLinesFromString.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/removeNewLinesFromString.ts">
+      <file name="removeNewLinesFromString.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/removeNewLinesFromString.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
       </file>
-      <file name="removeSpacesFromJson.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/removeSpacesFromJson.ts">
+      <file name="removeSpacesFromJson.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/removeSpacesFromJson.ts">
         <metrics statements="18" coveredstatements="18" conditionals="19" coveredconditionals="15" methods="3" coveredmethods="3"/>
         <line num="13" count="1" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
@@ -450,26 +462,26 @@
         <line num="47" count="4" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
       </file>
-      <file name="removeSpacesFromString.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/removeSpacesFromString.ts">
+      <file name="removeSpacesFromString.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/removeSpacesFromString.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="6" type="stmt"/>
       </file>
-      <file name="removeSymbolAt.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/removeSymbolAt.ts">
+      <file name="removeSymbolAt.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/removeSymbolAt.ts">
         <metrics statements="2" coveredstatements="2" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="6" count="13" type="cond" truecount="2" falsecount="0"/>
       </file>
-      <file name="safeCssProperties.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/safeCssProperties.ts">
+      <file name="safeCssProperties.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/safeCssProperties.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
-      <file name="selectFromList.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/selectFromList.ts">
+      <file name="selectFromList.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/selectFromList.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="13" count="1" type="stmt"/>
         <line num="17" count="4" type="stmt"/>
       </file>
-      <file name="toFlatObject.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/toFlatObject.ts">
+      <file name="toFlatObject.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/toFlatObject.ts">
         <metrics statements="13" coveredstatements="1" conditionals="12" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
@@ -485,7 +497,7 @@
         <line num="31" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
       </file>
-      <file name="toObjectSet.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/toObjectSet.ts">
+      <file name="toObjectSet.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/toObjectSet.ts">
         <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="7" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="5" count="4" type="stmt"/>
@@ -502,13 +514,13 @@
         <line num="23" count="1" type="stmt"/>
         <line num="27" count="4" type="stmt"/>
       </file>
-      <file name="typeToTest.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/typeToTest.ts">
+      <file name="typeToTest.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/typeToTest.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="14" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="39" count="10" type="stmt"/>
+        <line num="40" count="28" type="stmt"/>
       </file>
-      <file name="waitFor.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/waitFor.ts">
+      <file name="waitFor.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/waitFor.ts">
         <metrics statements="17" coveredstatements="17" conditionals="22" coveredconditionals="20" methods="4" coveredmethods="3"/>
         <line num="14" count="1" type="stmt"/>
         <line num="19" count="4" type="cond" truecount="4" falsecount="0"/>
@@ -528,7 +540,7 @@
         <line num="40" count="1" type="stmt"/>
         <line num="42" count="4" type="stmt"/>
       </file>
-      <file name="wrapFunctionWithOptionalArgs.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/wrapFunctionWithOptionalArgs.ts">
+      <file name="wrapFunctionWithOptionalArgs.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/wrapFunctionWithOptionalArgs.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="15" count="1" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
@@ -540,7 +552,7 @@
     </package>
     <package name="src.logFormattedPhrases">
       <metrics statements="71" coveredstatements="61" conditionals="76" coveredconditionals="49" methods="6" coveredmethods="6"/>
-      <file name="applyFormatters.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/logFormattedPhrases/applyFormatters.ts">
+      <file name="applyFormatters.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/logFormattedPhrases/applyFormatters.ts">
         <metrics statements="28" coveredstatements="23" conditionals="22" coveredconditionals="16" methods="2" coveredmethods="2"/>
         <line num="11" count="3" type="stmt"/>
         <line num="15" count="4" type="cond" truecount="4" falsecount="1"/>
@@ -571,7 +583,7 @@
         <line num="80" count="0" type="stmt"/>
         <line num="90" count="4" type="stmt"/>
       </file>
-      <file name="formatPhrase.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/logFormattedPhrases/formatPhrase.ts">
+      <file name="formatPhrase.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/logFormattedPhrases/formatPhrase.ts">
         <metrics statements="23" coveredstatements="21" conditionals="28" coveredconditionals="16" methods="2" coveredmethods="2"/>
         <line num="5" count="1" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
@@ -597,14 +609,14 @@
         <line num="62" count="2" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
       </file>
-      <file name="getPhraseBackground.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/logFormattedPhrases/getPhraseBackground.ts">
+      <file name="getPhraseBackground.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/logFormattedPhrases/getPhraseBackground.ts">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="5" count="4" type="stmt"/>
         <line num="6" count="4" type="stmt"/>
         <line num="17" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="18" count="4" type="stmt"/>
       </file>
-      <file name="getPhraseStylesFromOrder.ts" path="/Users/landonjohnson/dev-local/workspaces/devlander/utils/src/logFormattedPhrases/getPhraseStylesFromOrder.ts">
+      <file name="getPhraseStylesFromOrder.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/logFormattedPhrases/getPhraseStylesFromOrder.ts">
         <metrics statements="16" coveredstatements="13" conditionals="24" coveredconditionals="15" methods="1" coveredmethods="1"/>
         <line num="14" count="3" type="stmt"/>
         <line num="29" count="3" type="stmt"/>

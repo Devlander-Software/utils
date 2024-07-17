@@ -1,3 +1,6 @@
+
+// this needs an example in ts docs of how the function is used and why it's useful
+
 export const binaryToHex = (binary: string): string => {
   if (!/^[01]+$/.test(binary)) {
     throw new Error("Invalid binary input");

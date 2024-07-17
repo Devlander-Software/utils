@@ -245,34 +245,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import pico from 'picocolors'
-import { Formatter } from 'picocolors/types'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import pico from "picocolors";
+import { Formatter } from "picocolors/types";
 import {
   AppliedFormatter,
   PhraseColors,
   PhraseItem,
   PhraseOrderType,
-} from './formattedPhrase.types'
-import { getPhraseBackground } from './getPhraseBackground'
+} from "./formattedPhrase.types";
+import { getPhraseBackground } from "./getPhraseBackground";
 &nbsp;
 export const applyFormatters = (
   phraseItem: PhraseItem,
   styleOrder: PhraseOrderType[],
 ): AppliedFormatter[] =&gt; {
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof styleOrder === 'undefined' || styleOrder === null || !styleOrder) {
-<span class="cstat-no" title="statement not covered" >    return []</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof styleOrder === "undefined" || styleOrder === null || !styleOrder) {
+<span class="cstat-no" title="statement not covered" >    return [];</span>
   }
-  const appliedStyles: AppliedFormatter[] = []
+  const appliedStyles: AppliedFormatter[] = [];
 &nbsp;
   // Define which properties are expected to have string values vs. boolean flags
   const valueBasedProperties = [
-    'color',
-    'fontWeight',
-    'fontStyle',
-    'background',
-    'textDecoration',
-  ]
-  const booleanProperties = ['dim', 'hidden']
+    "color",
+    "fontWeight",
+    "fontStyle",
+    "background",
+    "textDecoration",
+  ];
+  const booleanProperties = ["dim", "hidden"];
 &nbsp;
   const picoValues: { [key: string]: Formatter } = {
     black: pico.black,
@@ -285,57 +285,57 @@ export const applyFormatters = (
     white: pico.white,
     dim: pico.dim,
     hidden: pico.hidden,
-  }
+  };
 &nbsp;
   if (styleOrder &amp;&amp; Array.isArray(styleOrder) &amp;&amp; styleOrder.length &gt; 0) {
     styleOrder.forEach((style) =&gt; {
-      const { property, enabled } = style
-      const propertyValue = phraseItem[property as keyof PhraseItem]
+      const { property, enabled } = style;
+      const propertyValue = phraseItem[property as keyof PhraseItem];
 &nbsp;
       // Skip if the style is not enabled or the property does not exist in the phrase item
-      if (!enabled || !propertyValue) return
+      if (!enabled || !propertyValue) return;
 &nbsp;
       if (valueBasedProperties.includes(property)) {
         // Handle properties associated with specific values (e.g., color, background)
-        let formatFunction: Formatter = pico.white
+        let formatFunction: Formatter = pico.white;
 &nbsp;
-        if (property === 'background') {
+        if (property === "background") {
           // Use a custom function for background colors
-          formatFunction = getPhraseBackground(propertyValue as PhraseColors)
+          formatFunction = getPhraseBackground(propertyValue as PhraseColors);
         } else {
-          const picoFunc = picoValues[propertyValue as keyof typeof picoValues]
+          const picoFunc = picoValues[propertyValue as keyof typeof picoValues];
 &nbsp;
-          console.log(picoFunc, 'picoFunc in applyFormatters')
+          console.log(picoFunc, "picoFunc in applyFormatters");
 &nbsp;
           // Use pico formatter if available
-          formatFunction = picoFunc as Formatter
+          formatFunction = picoFunc as Formatter;
         }
 &nbsp;
-        console.log(' RIGHT BEFORE PUSHING TO APPLIED STYLES')
-        console.log(formatFunction, 'formatFunction in applyFormatters')
-        console.log(propertyValue, 'propertyValue in applyFormatters')
+        console.log(" RIGHT BEFORE PUSHING TO APPLIED STYLES");
+        console.log(formatFunction, "formatFunction in applyFormatters");
+        console.log(propertyValue, "propertyValue in applyFormatters");
 &nbsp;
         appliedStyles.push({
           name: property,
           formatter: formatFunction,
           value: propertyValue.toString(),
-        })
+        });
       } else <span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="else path not taken" >E</span>if (booleanProperties.includes(property)) {</span>
         // Handle boolean properties (e.g., dim, hidden)
-        const formatterFunc = <span class="cstat-no" title="statement not covered" >pico[property as keyof typeof pico] as Formatter</span>
+        const formatterFunc = <span class="cstat-no" title="statement not covered" >pico[property as keyof typeof pico] as Formatter;</span>
 <span class="cstat-no" title="statement not covered" >        if (formatterFunc) {</span>
 <span class="cstat-no" title="statement not covered" >          appliedStyles.push({</span>
             name: property,
             formatter: formatterFunc,
-            value: 'true', // The value is just a placeholder for boolean properties
-          })
+            value: "true", // The value is just a placeholder for boolean properties
+          });
         }
       }
-    })
+    });
   }
 &nbsp;
-  return appliedStyles
-}
+  return appliedStyles;
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -343,7 +343,7 @@ export const applyFormatters = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-17T11:40:38.508Z
+                at 2024-07-17T16:52:32.687Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

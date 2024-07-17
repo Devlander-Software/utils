@@ -1,6 +1,7 @@
 import { findKey } from "./findKey";
 import { isPlainObject } from "./isPlainObject";
 import { AnyObject, MergeableValue, NestedRecord } from "./types/value.types";
+// this needs an example in ts docs of how the function is used and why it's useful
 
 export type AssignValueCallback = (
   payload: AnyObject,
