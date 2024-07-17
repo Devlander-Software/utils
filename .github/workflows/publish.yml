@@ -68,17 +68,16 @@ jobs:
         run: cat ~/.npmrc
         continue-on-error: true
 
-      # Commit version bump
+      # Conditionally commit version bump
       - name: Commit version bump
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add package.json
-          git commit -m "chore: bump version"
-
-      # Push changes
-      - name: Push changes
-        run: git push
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "chore: bump version"
+            git push
+          fi
 
       # Publish to npm
       - name: Publish to npm
