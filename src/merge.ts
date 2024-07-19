@@ -2,7 +2,7 @@
 import { assignValue } from "./assignValue";
 import { forEach } from "./forEach";
 import { MergeableInput, MergeableValue } from "./types/value.types";
-type MergedValue = MergeableValue | Record<string, MergeableValue>;
+export type MergedValue = MergeableValue | Record<string, MergeableValue>;
 export function merge(
   ...objs: MergeableInput[]
 ): Record<string, MergeableValue> {

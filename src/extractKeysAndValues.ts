@@ -26,7 +26,6 @@ export function extractKeysAndValues<T extends Record<string, unknown>>(
   return { keys, values };
 }
 
-
 // this needs an example in ts docs of how the function is used and why it's useful
 // // Example usage with default type
 // const exampleRecord = {

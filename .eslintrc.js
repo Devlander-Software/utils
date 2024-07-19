@@ -14,6 +14,7 @@ module.exports = {
     'prettier',
   ],
   plugins: [
+    'eslint-plugin-tsdoc',
     '@typescript-eslint',
     'import',
     'jest',
@@ -38,6 +39,7 @@ module.exports = {
     "__tests__",
   ],
   rules: {
+    'tsdoc/syntax': 'warn',
     'prettier/prettier': [
       'warn',
       {

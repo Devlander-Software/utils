@@ -1,7 +1,7 @@
 {
   "name": "@devlander/utils",
   "description": "Comprehensive JavaScript and TypeScript utilities for seamless development. Includes object manipulation, data validation, and more.",
-  "version": "0.0.64",
+  "version": "0.0.66",
   "browser": "dist/umd/index.js",
   "main": "dist/cjs/index.js",
   "types": "typings/index.d.ts",
@@ -14,12 +14,12 @@
     "build:esm": "tsc",
     "test": "jest --coverage",
     "format": "prettier --write 'src/**/*.ts'",
+    "docs": "typedoc --out ./docs --theme ./typedoc-theme ./src",
     "lint": "eslint ./src --ext .ts --fix && yarn run format && yarn run typecheck",
     "typecheck": "tsc --project tsconfig.json --noEmit --emitDeclarationOnly false",
     "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index && yarn build:esm && yarn build:umd",
     "build:umd": "rollup -c",
     "timeout": "delay 5",
-    "docs": "typedoc --out ./docs ./src",
     "push-main": "git add -A && yarn run timeout && git commit -m 'updated build' && yarn run timeout && git push origin main",
     "start-publish": "yarn run lint && yarn run build && yarn run increment-version && npm publish",
     "prepare": "yarn run build"
@@ -100,5 +100,9 @@
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.6.2",
     "typedoc": "^0.25.8"
+  },
+  "dependencies": {
+    "@devlander/typedoc-theme": "^0.1.0",
+    "eslint-plugin-tsdoc": "^0.3.0"
   }
 }
