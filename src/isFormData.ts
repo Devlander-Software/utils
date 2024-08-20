@@ -1,5 +1,5 @@
 import { isFunction } from "./isFunction";
-import { isObject } from "./isJson";
+import { isObject } from "./isObject";
 import { kindOf } from "./kindOf";
 
 interface CustomFormDataLike {
