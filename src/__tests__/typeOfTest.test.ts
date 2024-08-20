@@ -1,7 +1,7 @@
 import { typeOfTest } from "../typeToTest";
 
-describe('typeOfTest', () => {
-  test('should return true for correct type', () => {
+describe("typeOfTest", () => {
+  test("should return true for correct type", () => {
     const isString = typeOfTest("string");
     expect(isString("hello")).toBe(true);
     const isNumber = typeOfTest("number");
@@ -11,7 +11,7 @@ describe('typeOfTest', () => {
     expect(isBoolean(false)).toBe(true);
     const isObject = typeOfTest("object");
     expect(isObject({})).toBe(true);
-    expect(isObject([])).toBe(true);  // Arrays are also of type "object"
+    expect(isObject([])).toBe(true); // Arrays are also of type "object"
     const isFunction = typeOfTest("function");
     expect(isFunction(() => {})).toBe(true);
     const isUndefined = typeOfTest("undefined");
@@ -20,7 +20,7 @@ describe('typeOfTest', () => {
     expect(isSymbol(Symbol())).toBe(true);
   });
 
-  test('should return false for incorrect type', () => {
+  test("should return false for incorrect type", () => {
     const isString = typeOfTest("string");
     expect(isString(123)).toBe(false);
     const isNumber = typeOfTest("number");

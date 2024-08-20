@@ -2,7 +2,7 @@ import { forEachEntry } from "./forEachEntry";
 import { hasOwnProp } from "./hasOwnProp";
 import { isFormData } from "./isFormData";
 import { isFunction } from "./isFunction";
-import { isObject } from "./isJson";
+import { isObject } from "./isObject";
 import { parsePropPath } from "./parsePropPath";
 
 type FormDataValue = string | Blob | File;

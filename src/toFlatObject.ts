@@ -1,55 +1,84 @@
 /**
- * Flattens the properties of a source object into a destination object.
+ * Flattens the properties of a source object into a destination object, traversing up its prototype chain.
  *
- * @param {object | null} sourceObj - The source object to flatten.
- * @param {Record<string, unknown>} [destObj={}] - The destination object to which properties are added.
- * @param {(obj: object) => boolean} [filter] - A function to filter which objects' properties to include.
- * @param {(prop: string, sourceObj: unknown, destObj: unknown) => boolean} [propFilter] - A function to filter which properties to include.
- * @returns {Record<string, unknown>} - The destination object with properties flattened from the source object.
- *
- * @example
- * const source = { a: 1, b: { c: 2 } };
- * const result = toFlatObject(source);
- * console.log(result); // { a: 1, c: 2 }
- *
- * @example
- * const error = new Error('Test error');
- * const result = toFlatObject(error);
- * console.log(result); // { message: 'Test error', stack: '...' }
+ * @param sourceObj - The source object to flatten.
+ * @param destObj - The destination object where properties will be added.
+ * @param filter - Optional filter function to include/exclude objects during traversal.
+ * @param propFilter - Optional filter function to include/exclude specific properties.
+ * @returns The destination object with flattened properties.
  */
 export const toFlatObject = (
   sourceObj: object | null,
   destObj: Record<string, unknown> = {},
   filter?: (obj: object) => boolean,
-  propFilter?: (prop: string, sourceObj: unknown, destObj: unknown) => boolean,
+  propFilter?: (
+    prop: string,
+    obj: object,
+    destObj: Record<string, unknown>,
+  ) => boolean,
 ): Record<string, unknown> => {
-  const merged: Record<string, boolean> = {};
+  console.log("Starting toFlatObject");
+  console.log("Initial sourceObj:", sourceObj);
+  console.log("Initial destObj:", destObj);
 
-  if (sourceObj == null) return destObj;
+  // Handle case where sourceObj is null or undefined
+  if (!sourceObj) {
+    console.log(
+      "Source object is null or undefined, returning destObj:",
+      destObj,
+    );
+    return destObj;
+  }
 
   let currentObj: object | null = sourceObj;
+  const merged = new Set<string>(); // Track merged properties to avoid duplicates
 
   do {
-    const props = Object.getOwnPropertyNames(currentObj);
+    console.log("Current object:", currentObj);
 
-    for (let i = props.length - 1; i >= 0; i--) {
-      const prop = props[i];
+    // Apply object-level filter if provided
+    if (!filter || filter(currentObj)) {
+      console.log("Object passed filter:", currentObj);
 
-      if (
-        (!propFilter || propFilter(prop, sourceObj, destObj)) &&
-        !merged[prop]
-      ) {
-        destObj[prop] = (currentObj as Record<string, unknown>)[prop];
-        merged[prop] = true;
+      // Retrieve all own property names of the current object
+      const props = Object.getOwnPropertyNames(currentObj);
+      console.log("Properties of current object:", props);
+
+      for (const prop of props) {
+        const alreadyMerged = merged.has(prop);
+        const inDestObj = Object.prototype.hasOwnProperty.call(destObj, prop);
+        const isObjectPrototypeProp = Object.prototype.hasOwnProperty.call(
+          Object.prototype,
+          prop,
+        );
+
+        console.log(
+          `Checking property '${prop}' - alreadyMerged: ${alreadyMerged}, inDestObj: ${inDestObj}, isObjectPrototypeProp: ${isObjectPrototypeProp}`,
+        );
+
+        // Apply property-level filter if provided and ensure the property hasn't been merged already
+        if (
+          (!propFilter || propFilter(prop, currentObj, destObj)) &&
+          !alreadyMerged &&
+          !inDestObj &&
+          !isObjectPrototypeProp
+        ) {
+          destObj[prop] = (currentObj as Record<string, unknown>)[prop]; // Merge property
+          merged.add(prop); // Mark property as merged
+          console.log(`Property '${prop}' added to destObj`);
+        } else {
+          console.log(`Property '${prop}' skipped`);
+        }
       }
+    } else {
+      console.log("Object did not pass filter, skipping:", currentObj);
     }
 
+    // Move up the prototype chain, stop before reaching Object.prototype
     currentObj = Object.getPrototypeOf(currentObj);
-  } while (
-    currentObj &&
-    (!filter || filter(currentObj)) &&
-    currentObj !== Object.prototype
-  );
+    console.log("Moved to prototype object:", currentObj);
+  } while (currentObj && currentObj !== Object.prototype);
 
+  console.log("Final destObj:", destObj);
   return destObj;
 };

@@ -2,8 +2,8 @@ import { isBoolean } from "../isBoolean";
 import { isBuffer } from "../isBuffer";
 import { isDate } from "../isDate";
 import { isFile } from "../isFile";
-import { isObject } from "../isJson";
 import { isNumber } from "../isNumber";
+import { isObject } from "../isObject";
 import { isUndefined } from "../isUndefined";
 import { typeOfTest } from "../typeToTest";
 

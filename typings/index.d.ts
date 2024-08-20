@@ -7,10 +7,6 @@ export * from "./abbreviateNumber";
  */
 export * from "./arrayToObject";
 /**
- * TSDoc for assertOptions
- */
-export * from "./assertOptions";
-/**
  * TSDoc for assignValue
  */
 export * from "./assignValue";
@@ -38,10 +34,6 @@ export * from "./createTransitionalMessage";
  * TSDoc for dashToCamelCase
  */
 export * from "./dashToCamelCase";
-/**
- * TSDoc for devlanderError
- */
-export * from "./devlanderError";
 /**
  * TSDoc for endsWith
  */
@@ -214,30 +206,6 @@ export * from "./kindOf";
  * TSDoc for kindOfTest
  */
 export * from "./kindOfTest";
-/**
- * TSDoc for applyFormatters
- */
-export * from "./logFormattedPhrases/applyFormatters";
-/**
- * TSDoc for formatPhrase
- */
-export * from "./logFormattedPhrases/formatPhrase";
-/**
- * TSDoc for getPhraseBackground
- */
-export * from "./logFormattedPhrases/getPhraseBackground";
-/**
- * TSDoc for getPhraseStylesFromOrder
- */
-export * from "./logFormattedPhrases/getPhraseStylesFromOrder";
-/**
- * TSDoc for logFormattedPhrases
- */
-export * from "./logFormattedPhrases/logFormattedPhrases";
-/**
- * TSDoc for logPhrases
- */
-export * from "./logFormattedPhrases/logPhrases";
 /**
  * TSDoc for matchAll
  */
