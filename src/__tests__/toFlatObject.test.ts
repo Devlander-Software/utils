@@ -1,6 +1,5 @@
 import { toFlatObject } from "../toFlatObject";
 
-
 describe("toFlatObject", () => {
   test("should flatten properties from source object to destination object", () => {
     const source = { a: 1, b: 2 };
@@ -18,7 +17,7 @@ describe("toFlatObject", () => {
   test("should apply property filter", () => {
     const source = { a: 1, b: 2, c: 3 };
     const dest = {};
-    const propFilter = (prop: string) => prop !== 'b';
+    const propFilter = (prop: string) => prop !== "b";
     const result = toFlatObject(source, dest, undefined, propFilter);
     expect(result).toEqual({ a: 1, c: 3 });
   });
@@ -39,9 +38,15 @@ describe("toFlatObject", () => {
   });
 
   test("should merge properties from multiple prototype levels", () => {
-    class A { a = 1; }
-    class B extends A { b = 2; }
-    class C extends B { c = 3; }
+    class A {
+      a = 1;
+    }
+    class B extends A {
+      b = 2;
+    }
+    class C extends B {
+      c = 3;
+    }
 
     const c = new C();
     const result = toFlatObject(c as unknown as Record<string, unknown>);
@@ -51,7 +56,7 @@ describe("toFlatObject", () => {
   // test("should not include Object.prototype properties", () => {
   //   const source = {};
   //   const result = toFlatObject(source);
-  
+
   //   // Object.prototype properties should not be included
   //   expect(result).not.toHaveProperty("toString");
   //   expect(result).not.toHaveProperty("hasOwnProperty");

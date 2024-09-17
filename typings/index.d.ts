@@ -207,6 +207,10 @@ export * from "./kindOf";
  */
 export * from "./kindOfTest";
 /**
+ * TSDoc for loggerUtils
+ */
+export * from "./loggerUtils";
+/**
  * TSDoc for matchAll
  */
 export * from "./matchAll";
