@@ -1,6 +1,6 @@
 interface TransitionalOptions {
-  option: string
-  description: string
+  option: string;
+  description: string;
 }
 
 export function createTransitionalMessage(
@@ -9,12 +9,12 @@ export function createTransitionalMessage(
   messageTemplate?: string,
 ) {
   function formatMessage(options: TransitionalOptions): string {
-    const { option, description } = options
-    const baseMessage = `[${name} v${version}] Transitional option '${option}' ${description}`
+    const { option, description } = options;
+    const baseMessage = `[${name} v${version}] Transitional option '${option}' ${description}`;
     return messageTemplate
-      ? messageTemplate.replace('{baseMessage}', baseMessage)
-      : baseMessage
+      ? messageTemplate.replace("{baseMessage}", baseMessage)
+      : baseMessage;
   }
 
-  return formatMessage
+  return formatMessage;
 }

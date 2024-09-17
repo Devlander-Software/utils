@@ -6,7 +6,7 @@
  */
 export const getRange = (start: number, count: number) => {
   if (count < 0) {
-    return []
+    return [];
   }
-  return Array.apply(0, Array(count)).map((_element, index) => index + start)
-}
+  return Array.apply(0, Array(count)).map((_element, index) => index + start);
+};

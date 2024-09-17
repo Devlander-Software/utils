@@ -118,7 +118,11 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,6 +131,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,14 +152,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -173,8 +181,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DevlanderError } from './devlanderError'
-import { isObject } from './isJson'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DevlanderError } from "./devlanderError";
+import { isObject } from "./isObject";
+// this needs an example in ts docs of how the function is used and why it's useful
 &nbsp;
 export function assertOptions(
   options: { [key: string]: unknown } | null,
@@ -183,48 +192,51 @@ export function assertOptions(
       value: unknown,
       opt: string,
       options: { [key: string]: unknown },
-    ) =&gt; boolean | string
+    ) =&gt; boolean | string;
   } | null,
   allowUnknown: boolean,
 ): void {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (!isObject(schema)) {
-<span class="cstat-no" title="statement not covered" >    return</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
 &nbsp;
   <span class="missing-if-branch" title="if path not taken" >I</span>if (schema === null) {
-<span class="cstat-no" title="statement not covered" >    throw new DevlanderError('Schema must be an object', 'ERR_BAD_OPTION_VALUE')</span>
+<span class="cstat-no" title="statement not covered" >    throw new DevlanderError(</span>
+      "Schema must be an object",
+      "ERR_BAD_OPTION_VALUE",
+    );
   }
 &nbsp;
   <span class="missing-if-branch" title="if path not taken" >I</span>if (options === null) {
 <span class="cstat-no" title="statement not covered" >    throw new DevlanderError(</span>
-      'Options must be an object',
-      'ERR_BAD_OPTION_VALUE',
-    )
+      "Options must be an object",
+      "ERR_BAD_OPTION_VALUE",
+    );
   }
 &nbsp;
   if (!isObject(options)) {
     throw new DevlanderError(
-      'Options must be an object',
-      'ERR_BAD_OPTION_VALUE',
-    )
+      "Options must be an object",
+      "ERR_BAD_OPTION_VALUE",
+    );
   }
 &nbsp;
-  const keys = Object.keys(options)
+  const keys = Object.keys(options);
   for (const opt of keys) {
-    const validator = schema[opt]
+    const validator = schema[opt];
     if (validator) {
-      const value = options[opt]
+      const value = options[opt];
       const result =
         value === undefined ||
-        validator(value, opt, options as unknown as { [key: string]: unknown })
+        validator(value, opt, options as unknown as { [key: string]: unknown });
       if (result !== true) {
         throw new DevlanderError(
           `Option '${opt}' must be ${result}`,
-          'ERR_BAD_OPTION_VALUE',
-        )
+          "ERR_BAD_OPTION_VALUE",
+        );
       }
     } else <span class="missing-if-branch" title="else path not taken" >E</span>if (!allowUnknown) {
-      throw new DevlanderError(`Unknown option '${opt}'`, 'ERR_BAD_OPTION')
+      throw new DevlanderError(`Unknown option '${opt}'`, "ERR_BAD_OPTION");
     }
   }
 }
@@ -235,7 +247,7 @@ export function assertOptions(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-17T11:40:38.508Z
+                at 2024-08-20T19:47:50.452Z
             </div>
         <script src="../prettify.js"></script>
         <script>

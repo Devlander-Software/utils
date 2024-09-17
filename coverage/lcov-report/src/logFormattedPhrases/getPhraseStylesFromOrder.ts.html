@@ -229,24 +229,24 @@
 // referenced in conversations about the code.
 // Path: ./src/logFormattedPhrases/getPhraseStylesFromOrder.ts
 &nbsp;
-import { isEmpty } from '../isEmpty'
-import { mergeObjects } from '../mergeObjects'
-import { applyFormatters } from './applyFormatters'
+import { isEmpty } from "../isEmpty";
+import { mergeObjects } from "../mergeObjects";
+import { applyFormatters } from "./applyFormatters";
 import {
   AppliedFormatter,
   PhraseItem,
   PhraseOrderType,
-} from './formattedPhrase.types'
+} from "./formattedPhrase.types";
 &nbsp;
 export const defaultPhraseOrder: PhraseOrderType[] = [
-  { property: 'background', order: 1, enabled: true },
-  { property: 'color', order: 2, enabled: true },
-  { property: 'fontWeight', order: 3, enabled: true },
-  { property: 'fontStyle', order: 4, enabled: true },
-  { property: 'textDecoration', order: 5, enabled: true },
-  { property: 'dim', order: 6, enabled: true },
-  { property: 'hidden', order: 7, enabled: true },
-]
+  { property: "background", order: 1, enabled: true },
+  { property: "color", order: 2, enabled: true },
+  { property: "fontWeight", order: 3, enabled: true },
+  { property: "fontStyle", order: 4, enabled: true },
+  { property: "textDecoration", order: 5, enabled: true },
+  { property: "dim", order: 6, enabled: true },
+  { property: "hidden", order: 7, enabled: true },
+];
 &nbsp;
 /**
  * Retrieves the applied phrase styles from the given item.
@@ -258,25 +258,25 @@ export const getPhraseStylesFromOrder = (
 ): AppliedFormatter[] =&gt; {
   console.log(
     item,
-    'item in getPhraseStylesFromOrder before merge or assigning default',
-  )
+    "item in getPhraseStylesFromOrder before merge or assigning default",
+  );
   <span class="missing-if-branch" title="if path not taken" >I</span>if (item &amp;&amp; isEmpty(item) &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >!item.orderToApplyStyles)</span> {
-<span class="cstat-no" title="statement not covered" >    item.orderToApplyStyles = defaultPhraseOrder</span>
+<span class="cstat-no" title="statement not covered" >    item.orderToApplyStyles = defaultPhraseOrder;</span>
   } else {
-    console.log('PhraseItem.orderToApplyStyles is not empty or undefined')
+    console.log("PhraseItem.orderToApplyStyles is not empty or undefined");
   }
 &nbsp;
   <span class="missing-if-branch" title="else path not taken" >E</span>if (
-    process.env.NODE_ENV === 'test' ||
-<span class="branch-1 cbranch-no" title="branch not covered" >    process.env.NODE_ENV === 'development' </span>||
-<span class="branch-2 cbranch-no" title="branch not covered" >    process.env.NODE_ENV === 'dev'</span>
+    process.env.NODE_ENV === "test" ||
+<span class="branch-1 cbranch-no" title="branch not covered" >    process.env.NODE_ENV === "development" </span>||
+<span class="branch-2 cbranch-no" title="branch not covered" >    process.env.NODE_ENV === "dev"</span>
   ) {
-    console.log(item, 'PhraseItem in getPhraseStylesFromOrder at start')
+    console.log(item, "PhraseItem in getPhraseStylesFromOrder at start");
   }
 &nbsp;
   <span class="missing-if-branch" title="if path not taken" >I</span>if (!item || isEmpty(item)) {
-<span class="cstat-no" title="statement not covered" >    console.log('PhraseItem is empty or undefined')</span>
-<span class="cstat-no" title="statement not covered" >    return []</span>
+<span class="cstat-no" title="statement not covered" >    console.log("PhraseItem is empty or undefined");</span>
+<span class="cstat-no" title="statement not covered" >    return [];</span>
   }
 &nbsp;
   // Use the default order or the one provided in the item
@@ -288,24 +288,24 @@ export const getPhraseStylesFromOrder = (
           defaultPhraseOrder,
           item.orderToApplyStyles,
         ) as PhraseOrderType[])
-      : defaultPhraseOrder
+      : defaultPhraseOrder;
 &nbsp;
-  const formattersToApply = applyFormatters(item, propertiesToApply)
+  const formattersToApply = applyFormatters(item, propertiesToApply);
 &nbsp;
   <span class="missing-if-branch" title="else path not taken" >E</span>if (
-    process.env.NODE_ENV === 'test' ||
-<span class="branch-1 cbranch-no" title="branch not covered" >    process.env.NODE_ENV === 'development' </span>||
-<span class="branch-2 cbranch-no" title="branch not covered" >    process.env.NODE_ENV === 'dev'</span>
+    process.env.NODE_ENV === "test" ||
+<span class="branch-1 cbranch-no" title="branch not covered" >    process.env.NODE_ENV === "development" </span>||
+<span class="branch-2 cbranch-no" title="branch not covered" >    process.env.NODE_ENV === "dev"</span>
   ) {
     console.log(
       formattersToApply,
-      'formattersToApply at END of getPhraseStylesFromOrder',
-    )
+      "formattersToApply at END of getPhraseStylesFromOrder",
+    );
   }
 &nbsp;
   // why is this empty?
-  return formattersToApply
-}
+  return formattersToApply;
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -313,7 +313,7 @@ export const getPhraseStylesFromOrder = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-17T11:40:38.508Z
+                at 2024-08-20T19:47:50.452Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

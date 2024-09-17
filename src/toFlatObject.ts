@@ -1,42 +1,50 @@
 export const toFlatObject = (
-  sourceObj: Record<string, unknown> | Error | null,
+  sourceObj: object | null,
   destObj: Record<string, unknown> = {},
-  filter?: (obj: Record<string, unknown>) => boolean,
-  propFilter?: (prop: string, sourceObj: unknown, destObj: unknown) => boolean,
+  filter?: (obj: object) => boolean,
+  propFilter?: (prop: string, obj: object, destObj: Record<string, unknown>) => boolean,
 ): Record<string, unknown> => {
-  const merged: Record<string, boolean> = {}
+  console.log("Starting toFlatObject");
+  console.log("Initial sourceObj:", sourceObj);
+  console.log("Initial destObj:", destObj);
 
-  if (sourceObj == null) return destObj
+  if (!sourceObj) {
+    console.log("Source object is null or undefined, returning destObj:", destObj);
+    return destObj;
+  }
 
-  let currentObj: Record<string, unknown> | null = sourceObj as Record<
-    string,
-    unknown
-  >
+  let currentObj: object | null = sourceObj;
+  const merged = new Set<string>();
 
   do {
-    const props = Object.getOwnPropertyNames(currentObj)
+    if (filter && !filter(currentObj)) {
+      break;
+    }
 
-    for (let i = props.length - 1; i >= 0; i--) {
-      const prop = props[i]
+    const props = Object.getOwnPropertyNames(currentObj);
+    for (const prop of props) {
+      // Skip properties from Object.prototype
+      if (Object.prototype.hasOwnProperty.call(Object.prototype, prop)) {
+        continue;
+      }
 
       if (
-        (!propFilter || propFilter(prop, sourceObj, destObj)) &&
-        !merged[prop]
+        merged.has(prop) ||
+        prop in destObj ||           // Exclude properties already in destObj
+        (propFilter && !propFilter(prop, currentObj, destObj))
       ) {
-        destObj[prop] = currentObj[prop]
-        merged[prop] = true
+        continue;
+      }
+
+      const value = (currentObj as Record<string, unknown>)[prop];
+      if (value !== undefined) {
+        destObj[prop] = value;
+        merged.add(prop);
       }
     }
 
-    currentObj = Object.getPrototypeOf(currentObj) as Record<
-      string,
-      unknown
-    > | null
-  } while (
-    currentObj &&
-    (!filter || filter(currentObj)) &&
-    currentObj !== Object.prototype
-  )
+    currentObj = Object.getPrototypeOf(currentObj);
+  } while (currentObj && currentObj !== Object.prototype);
 
-  return destObj
-}
+  return destObj;
+};

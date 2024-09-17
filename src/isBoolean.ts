@@ -1,1 +1,1 @@
-export const isBoolean = (thing: unknown) => thing === true || thing === false
+export const isBoolean = (thing: unknown) => thing === true || thing === false;
