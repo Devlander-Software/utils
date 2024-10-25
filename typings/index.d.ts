@@ -23,6 +23,10 @@ export * from "./bind";
  */
 export * from "./calculatePercentage";
 /**
+ * TSDoc for composeLabelFromParts
+ */
+export * from "./composeLabelFromParts";
+/**
  * TSDoc for convertVideoTimeStampToSeconds
  */
 export * from "./convertVideoTimeStampToSeconds";
@@ -34,6 +38,10 @@ export * from "./createTransitionalMessage";
  * TSDoc for dashToCamelCase
  */
 export * from "./dashToCamelCase";
+/**
+ * TSDoc for deduplicate
+ */
+export * from "./deduplicate";
 /**
  * TSDoc for endsWith
  */
@@ -51,6 +59,10 @@ export * from "./extend";
  */
 export * from "./extractKeysAndValues";
 /**
+ * TSDoc for filterAndSuggestItems
+ */
+export * from "./filterAndSuggestItems";
+/**
  * TSDoc for findKey
  */
 export * from "./findKey";
@@ -62,6 +74,10 @@ export * from "./forEach";
  * TSDoc for forEachEntry
  */
 export * from "./forEachEntry";
+/**
+ * TSDoc for formatRangeOrPercent
+ */
+export * from "./formatRangeOrPercent";
 /**
  * TSDoc for freezeMethods
  */
@@ -278,6 +294,10 @@ export * from "./toFlatObject";
  * TSDoc for toObjectSet
  */
 export * from "./toObjectSet";
+/**
+ * TSDoc for toQueryString
+ */
+export * from "./toQueryString";
 /**
  * TSDoc for typeToTest
  */
