@@ -1,1 +1,1 @@
-export declare const isBoolean: (thing: unknown) => boolean;
+export declare const isBoolean: (thing: unknown) => thing is boolean;
