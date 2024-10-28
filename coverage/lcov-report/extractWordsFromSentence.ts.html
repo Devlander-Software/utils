@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for removeSpacesFromJson.ts</title>
+    <title>Code coverage report for extractWordsFromSentence.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> removeSpacesFromJson.ts</h1>
+        <h1><a href="index.html">All files</a> extractWordsFromSentence.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.94% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>15/19</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -114,7 +114,19 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,92 +141,104 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable @typescript-eslint/no-explicit-any */
-&nbsp;
-import { isJson } from "./isJson";
-import { removeSpacesFromString } from "./removeSpacesFromString";
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export interface WordSelectionOptions {
+  removeDuplicates?: boolean;
+  caseSensitive?: boolean;
+}
 &nbsp;
 /**
- * Removes spaces from a JSON object or string.
- *
- * @param jsonInput - The JSON object or string to remove spaces from.
- * @returns The JSON object with spaces removed.
- * @throws {Error} If the input is not a valid JSON.
+ * Extracts a specified number of words from a given sentence, with optional settings.
+ * 
+ * @param sentence - The sentence from which words will be extracted.
+ * @param wordLimit - The maximum number of words to include in the output.
+ * @param options - Additional options to customize word extraction.
+ * 
+ * @returns An object containing:
+ * - `words`: A string of the extracted words up to the specified limit.
+ * - `errors`: An object with error messages if any issues arise during extraction.
  */
-export const removeSpacesFromJson = (
-  jsonInput: string | Record&lt;string, unknown&gt;,
-): Record&lt;string, unknown&gt; =&gt; {
-  const jsonObject = isJson(jsonInput);
-  if (
-    jsonObject === false ||
-    typeof jsonObject !== "object" ||
-    jsonObject === null
-  ) {
-    throw new Error("Invalid JSON input.");
+export const extractWordsFromSentence = (
+  sentence: string,
+  wordLimit: number,
+  options: WordSelectionOptions = {}
+): { words: string; errors: { [key: string]: string } } =&gt; {
+  // Define default options and merge with provided options
+  const defaultOptions: WordSelectionOptions = { caseSensitive: true, removeDuplicates: false };
+  const finalOptions = { ...defaultOptions, ...options };
+&nbsp;
+  // Step 1: Split the sentence into words
+  let words = sentence.split(" ");
+&nbsp;
+  // Step 2: Apply case insensitivity if specified
+  if (!finalOptions.caseSensitive) {
+    words = words.map(word =&gt; word.toLowerCase());
   }
 &nbsp;
-  const removeSpaces = (
-    obj: Record&lt;string, unknown&gt;,
-  ): Record&lt;string, unknown&gt; | unknown[] =&gt; {
-    const newObj: Record&lt;string, unknown&gt; | unknown[] = Array.isArray(obj)
-      ? <span class="branch-0 cbranch-no" title="branch not covered" >[]</span>
-      : {};
-    Object.keys(obj).forEach((key) =&gt; {
-      const value = obj[key as string];
-      if (typeof value === "string") {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (!Array.isArray(newObj)) {
-          newObj[key] = removeSpacesFromString(value);
-        }
-      } else if (typeof value === "object" &amp;&amp; value !== null) {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (!Array.isArray(newObj)) {
-          newObj[key] = removeSpaces(value as Record&lt;string, unknown&gt;);
-        }
-      } else {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (!Array.isArray(newObj)) {
-          newObj[key] = value;
-        }
+  // Step 3: Remove duplicates if specified
+  if (finalOptions.removeDuplicates) {
+    const seen = new Set();
+    words = words.filter(word =&gt; {
+      if (seen.has(word)) {
+        return false;
       }
+      seen.add(word);
+      return true;
     });
-    return newObj;
-  };
+  }
 &nbsp;
-  return removeSpaces(jsonObject) as Record&lt;string, unknown&gt;;
+  // Step 4: Check if the final processed word count meets the word limit
+  const errors: { [key: string]: string } = {};
+  if (words.length &lt; wordLimit) {
+    errors.wordLimit = `Requested word limit (${wordLimit}) exceeds available words (${words.length}).`;
+  }
+&nbsp;
+  // Step 5: Extract words up to the word limit
+  const extractedWords = words.slice(0, wordLimit).join(" ");
+&nbsp;
+  return {
+    words: extractedWords,
+    errors,
+  };
 };
 &nbsp;</pre></td></tr></table></pre>
 

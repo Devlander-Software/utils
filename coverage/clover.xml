@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730135433137" clover="3.2.0">
-  <project timestamp="1730135433138" name="All files">
-    <metrics statements="479" coveredstatements="437" conditionals="436" coveredconditionals="359" methods="107" coveredmethods="103" elements="1022" coveredelements="899" complexity="0" loc="479" ncloc="479" packages="1" files="57" classes="57"/>
+<coverage generated="1730138061382" clover="3.2.0">
+  <project timestamp="1730138061382" name="All files">
+    <metrics statements="497" coveredstatements="455" conditionals="445" coveredconditionals="368" methods="110" coveredmethods="106" elements="1052" coveredelements="929" complexity="0" loc="497" ncloc="497" packages="1" files="58" classes="58"/>
     <file name="abbreviateNumber.ts" path="C:\Users\lj___\Documents\dev\workplaces\devlander\utils\src\abbreviateNumber.ts">
       <metrics statements="24" coveredstatements="24" conditionals="18" coveredconditionals="18" methods="1" coveredmethods="1"/>
       <line num="63" count="1" type="stmt"/>
@@ -129,6 +129,27 @@
       <line num="23" count="5" type="stmt"/>
       <line num="24" count="5" type="stmt"/>
       <line num="26" count="5" type="stmt"/>
+    </file>
+    <file name="extractWordsFromSentence.ts" path="C:\Users\lj___\Documents\dev\workplaces\devlander\utils\src\extractWordsFromSentence.ts">
+      <metrics statements="18" coveredstatements="18" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="23" count="6" type="stmt"/>
+      <line num="24" count="6" type="stmt"/>
+      <line num="27" count="6" type="stmt"/>
+      <line num="30" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="4" type="stmt"/>
+      <line num="35" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="37" count="2" type="stmt"/>
+      <line num="38" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="39" count="4" type="stmt"/>
+      <line num="41" count="4" type="stmt"/>
+      <line num="42" count="4" type="stmt"/>
+      <line num="47" count="6" type="stmt"/>
+      <line num="48" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="49" count="3" type="stmt"/>
+      <line num="53" count="6" type="stmt"/>
+      <line num="55" count="6" type="stmt"/>
     </file>
     <file name="filterAndSuggestItems.ts" path="C:\Users\lj___\Documents\dev\workplaces\devlander\utils\src\filterAndSuggestItems.ts">
       <metrics statements="19" coveredstatements="19" conditionals="24" coveredconditionals="20" methods="5" coveredmethods="5"/>
