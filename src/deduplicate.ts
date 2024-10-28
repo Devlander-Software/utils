@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export enum DeduplicateInputType {
-  STRING = 'string',
-  OBJECT = 'object',
-  ARRAY = 'array',
-  NUMBER = 'number',
-  MATRIX = 'matrix',
+  STRING = "string",
+  OBJECT = "object",
+  ARRAY = "array",
+  NUMBER = "number",
+  MATRIX = "matrix",
 }
 
 /**
@@ -28,30 +28,32 @@ export enum DeduplicateInputType {
  */
 export const deduplicate = (
   input: string | Record<string, unknown> | unknown[] | number,
-  inputType: DeduplicateInputType | keyof typeof DeduplicateInputType = DeduplicateInputType.STRING
+  inputType:
+    | DeduplicateInputType
+    | keyof typeof DeduplicateInputType = DeduplicateInputType.STRING,
 ): string | Record<string, unknown> | number | unknown[] => {
   const getDeduplicationMethod = () => {
     switch (inputType) {
       case DeduplicateInputType.STRING:
-      case 'STRING':
-        if (typeof input === 'string') {
+      case "STRING":
+        if (typeof input === "string") {
           return input
-            .split('')
+            .split("")
             .filter((item, pos, self) => self.indexOf(item) === pos)
-            .join('');
+            .join("");
         }
         break;
 
       case DeduplicateInputType.ARRAY:
-      case 'ARRAY':
+      case "ARRAY":
         if (Array.isArray(input)) {
           return input.filter((item, pos, self) => self.indexOf(item) === pos);
         }
         break;
 
       case DeduplicateInputType.OBJECT:
-      case 'OBJECT':
-        if (typeof input === 'object' && !Array.isArray(input)) {
+      case "OBJECT":
+        if (typeof input === "object" && !Array.isArray(input)) {
           const seenValues = new Set();
           const uniqueEntries = Object.entries(input).filter(([key, value]) => {
             // Only include the entry if its value is not in `seenValues`
@@ -66,19 +68,19 @@ export const deduplicate = (
         break;
 
       case DeduplicateInputType.NUMBER:
-      case 'NUMBER':
-        if (typeof input === 'number') {
+      case "NUMBER":
+        if (typeof input === "number") {
           const uniqueDigits = input
             .toString()
-            .split('')
+            .split("")
             .filter((digit, pos, self) => self.indexOf(digit) === pos)
-            .join('');
+            .join("");
           return parseInt(uniqueDigits, 10);
         }
         break;
 
       case DeduplicateInputType.MATRIX:
-      case 'MATRIX':
+      case "MATRIX":
         if (Array.isArray(input) && input.every(Array.isArray)) {
           return input.map((row) => Array.from(new Set(row)));
         }

@@ -1,4 +1,9 @@
-import { composeLabelFromItems, ListConjunction, MultipleItemsLabelPrefix, SingleItemLabelPrefix } from "../composeLabelFromParts";
+import {
+  composeLabelFromItems,
+  ListConjunction,
+  MultipleItemsLabelPrefix,
+  SingleItemLabelPrefix,
+} from "../composeLabelFromParts";
 
 interface Product {
   name: string;
@@ -72,6 +77,4 @@ describe("composeLabelFromItems", () => {
     });
     expect(result).toBe("");
   });
-
-
 });

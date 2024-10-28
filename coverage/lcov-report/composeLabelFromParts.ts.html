@@ -179,7 +179,19 @@
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
 <a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -275,9 +287,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
@@ -299,126 +319,136 @@
  * Enum representing prefixes for labels when there is a single item.
  */
 export enum SingleItemLabelPrefix {
-    Only = "Only",
-    Exclusive = "Exclusive to",
-    Solely = "Solely in",
-  }
-  
+  Only = "Only",
+  Exclusive = "Exclusive to",
+  Solely = "Solely in",
+}
+&nbsp;
+/**
+ * Enum representing prefixes for labels when there are multiple items.
+ */
+export enum MultipleItemsLabelPrefix {
+  IncludedIn = "Included in",
+  FoundWithin = "Found in",
+  PresentIn = "Present in",
+}
+&nbsp;
+/**
+ * Enum for conjunctions used between items in a list.
+ */
+export enum ListConjunction {
+  And = "and",
+  AsWellAs = "as well as",
+  AlongWith = "along with",
+}
+&nbsp;
+/**
+ * Parameters for composing a label from an array of items.
+ * @template T - The type of each item in the array.
+ */
+export interface LabelCompositionParams&lt;T&gt; {
   /**
-   * Enum representing prefixes for labels when there are multiple items.
+   * Array of items to compose into the label.
    */
-  export enum MultipleItemsLabelPrefix {
-    IncludedIn = "Included in",
-    FoundWithin = "Found in",
-    PresentIn = "Present in",
-  }
-  
+  items: T[];
+&nbsp;
   /**
-   * Enum for conjunctions used between items in a list.
+   * Key in each item to be used for label generation.
    */
-  export enum ListConjunction {
-    And = "and",
-    AsWellAs = "as well as",
-    AlongWith = "along with",
-  }
-  
+  labelKey: keyof T;
+&nbsp;
   /**
-   * Parameters for composing a label from an array of items.
-   * @template T - The type of each item in the array.
+   * Prefix to use if there is only one item. Defaults to SingleItemLabelPrefix.Only.
    */
-  export interface LabelCompositionParams&lt;T&gt; {
-    /** 
-     * Array of items to compose into the label.
-     */
-    items: T[];
-  
-    /** 
-     * Key in each item to be used for label generation.
-     */
-    labelKey: keyof T;
-  
-    /**
-     * Prefix to use if there is only one item. Defaults to SingleItemLabelPrefix.Only.
-     */
-    singleItemPrefix?: SingleItemLabelPrefix | keyof typeof SingleItemLabelPrefix;
-  
-    /**
-     * Prefix to use for multiple items. Defaults to MultipleItemsLabelPrefix.FoundWithin.
-     */
-    multipleItemsPrefix?: MultipleItemsLabelPrefix | keyof typeof MultipleItemsLabelPrefix;
-  
-    /**
-     * Conjunction to use when listing items, applied before the last item. Defaults to ListConjunction.And.
-     */
-    conjunctionWord?: ListConjunction | keyof typeof ListConjunction;
-  }
-  
+  singleItemPrefix?: SingleItemLabelPrefix | keyof typeof SingleItemLabelPrefix;
+&nbsp;
   /**
-   * Composes a descriptive label from an array of objects by concatenating values of a specified key in each object.
-   * The label adjusts automatically based on the number of items and provides flexibility to customize prefixes and conjunctions.
-   *
-   * @template T - The type of each item in the items array.
-   * @param {LabelCompositionParams&lt;T&gt;} params - Configuration parameters for generating the label.
-   * @returns {string} A formatted string label based on the provided items and options.
-   *
-   * @example
-   * // Example usage with a simple array of products
-   * interface Product { name: string; }
-   * const products: Product[] = [
-   *   { name: "Apple" },
-   *   { name: "Banana" },
-   *   { name: "Cherry" },
-   * ];
-   *
-   * const label = composeLabelFromItems({
-   *   items: products,
-   *   labelKey: "name",
-   *   singleItemPrefix: "Only",
-   *   multipleItemsPrefix: "FoundWithin",
-   *   conjunctionWord: "And",
-   * });
-   * // Output: "Found in Apple, Banana and Cherry:"
+   * Prefix to use for multiple items. Defaults to MultipleItemsLabelPrefix.FoundWithin.
    */
-  export const composeLabelFromItems = &lt;T&gt;({
-    items,
-    labelKey,
-    singleItemPrefix = SingleItemLabelPrefix.Only,
-    multipleItemsPrefix = MultipleItemsLabelPrefix.FoundWithin,
-    conjunctionWord = ListConjunction.And,
-  }: LabelCompositionParams&lt;T&gt;): string =&gt; {
-    if (!items || items.length === 0) {
-      return "";
-    }
-  
-    // Normalize enum-like parameters to ensure correct prefix or conjunction
-    const singlePrefix = SingleItemLabelPrefix[singleItemPrefix as keyof typeof SingleItemLabelPrefix] || singleItemPrefix;
-    const multiplePrefix = MultipleItemsLabelPrefix[multipleItemsPrefix as keyof typeof MultipleItemsLabelPrefix] || multipleItemsPrefix;
-    const conjunction = ListConjunction[conjunctionWord as keyof typeof ListConjunction] || conjunctionWord;
-  
-    // Handle single item case
-    if (items.length === 1) {
-      return `${singlePrefix} ${items[0][labelKey]}:`;
-    }
-  
-    // Compose label for multiple items
-    const label = items
-      .map((item, index) =&gt; {
-        const isLastItem = index === items.length - 1;
-        const itemName = item[labelKey];
-        return isLastItem ? `${conjunction} ${itemName}` : itemName;
-      })
-      .join(", ");
-  
-    return `${multiplePrefix} ${label}:`;
-  };
-  </pre></td></tr></table></pre>
+  multipleItemsPrefix?:
+    | MultipleItemsLabelPrefix
+    | keyof typeof MultipleItemsLabelPrefix;
+&nbsp;
+  /**
+   * Conjunction to use when listing items, applied before the last item. Defaults to ListConjunction.And.
+   */
+  conjunctionWord?: ListConjunction | keyof typeof ListConjunction;
+}
+&nbsp;
+/**
+ * Composes a descriptive label from an array of objects by concatenating values of a specified key in each object.
+ * The label adjusts automatically based on the number of items and provides flexibility to customize prefixes and conjunctions.
+ *
+ * @template T - The type of each item in the items array.
+ * @param {LabelCompositionParams&lt;T&gt;} params - Configuration parameters for generating the label.
+ * @returns {string} A formatted string label based on the provided items and options.
+ *
+ * @example
+ * // Example usage with a simple array of products
+ * interface Product { name: string; }
+ * const products: Product[] = [
+ *   { name: "Apple" },
+ *   { name: "Banana" },
+ *   { name: "Cherry" },
+ * ];
+ *
+ * const label = composeLabelFromItems({
+ *   items: products,
+ *   labelKey: "name",
+ *   singleItemPrefix: "Only",
+ *   multipleItemsPrefix: "FoundWithin",
+ *   conjunctionWord: "And",
+ * });
+ * // Output: "Found in Apple, Banana and Cherry:"
+ */
+export const composeLabelFromItems = &lt;T&gt;({
+  items,
+  labelKey,
+  singleItemPrefix = SingleItemLabelPrefix.Only,
+  multipleItemsPrefix = MultipleItemsLabelPrefix.FoundWithin,
+  conjunctionWord = ListConjunction.And,
+}: LabelCompositionParams&lt;T&gt;): string =&gt; {
+  if (!items || items.length === 0) {
+    return "";
+  }
+&nbsp;
+  // Normalize enum-like parameters to ensure correct prefix or conjunction
+  const singlePrefix =
+    SingleItemLabelPrefix[
+      singleItemPrefix as keyof typeof SingleItemLabelPrefix
+    ] || singleItemPrefix;
+  const multiplePrefix =
+    MultipleItemsLabelPrefix[
+      multipleItemsPrefix as keyof typeof MultipleItemsLabelPrefix
+    ] || multipleItemsPrefix;
+  const conjunction =
+    ListConjunction[conjunctionWord as keyof typeof ListConjunction] ||
+    conjunctionWord;
+&nbsp;
+  // Handle single item case
+  if (items.length === 1) {
+    return `${singlePrefix} ${items[0][labelKey]}:`;
+  }
+&nbsp;
+  // Compose label for multiple items
+  const label = items
+    .map((item, index) =&gt; {
+      const isLastItem = index === items.length - 1;
+      const itemName = item[labelKey];
+      return isLastItem ? `${conjunction} ${itemName}` : itemName;
+    })
+    .join(", ");
+&nbsp;
+  return `${multiplePrefix} ${label}:`;
+};
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-25T18:23:56.814Z
+                at 2024-10-28T17:10:32.994Z
             </div>
         <script src="prettify.js"></script>
         <script>

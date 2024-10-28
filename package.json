@@ -10,7 +10,6 @@
   "scripts": {
     "prebuild": "npm cache clean --force",
     "build:index": "node ./external-modules/auto-export.js",
-    "increment-version": "yarn version patch",
     "build:esm": "tsc",
     "test": "jest --coverage",
     "test:failures": "jest --onlyFailures",
@@ -22,7 +21,7 @@
     "build:umd": "rollup -c",
     "timeout": "delay 5",
     "push-main": "git add -A && yarn run timeout && git commit -m 'updated build' && yarn run timeout && git push origin main",
-    "start-publish": "yarn run lint && yarn run build && yarn run increment-version && npm publish",
+    "start-publish": "yarn run lint && yarn run build && npm publish",
     "prepare": "yarn run build"
   },
   "packageManager": "yarn@3.6.3",

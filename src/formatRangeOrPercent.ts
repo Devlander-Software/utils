@@ -1,25 +1,25 @@
 export enum RangeOrAmountEnum {
-  None = ' ',
-  Range = 'Range',
-  Amount = 'Amount',
+  None = " ",
+  Range = "Range",
+  Amount = "Amount",
 }
 
 export enum PercentagePrefixEnum {
-  Empty = ' ',
-  UpTo = 'up to',
-  About = 'about',
-  Around = 'around',
-  Approximately = 'approximately',
+  Empty = " ",
+  UpTo = "up to",
+  About = "about",
+  Around = "around",
+  Approximately = "approximately",
 }
 
 interface FormatDetailOptions {
-  details: string
-  formatAsRangeOrAmount?: RangeOrAmountEnum | keyof typeof RangeOrAmountEnum
-  percentagePrefix?: PercentagePrefixEnum | keyof typeof PercentagePrefixEnum
-  percentageSuffix?: string
-  minPercent?: number
-  maxPercent?: number
-  percent?: number
+  details: string;
+  formatAsRangeOrAmount?: RangeOrAmountEnum | keyof typeof RangeOrAmountEnum;
+  percentagePrefix?: PercentagePrefixEnum | keyof typeof PercentagePrefixEnum;
+  percentageSuffix?: string;
+  minPercent?: number;
+  maxPercent?: number;
+  percent?: number;
 }
 
 /**
@@ -75,14 +75,14 @@ export const formatRangeOrPercentage = (
   options: FormatDetailOptions,
 ): string => {
   const {
-    details = '',
+    details = "",
     formatAsRangeOrAmount = RangeOrAmountEnum.None,
     percentagePrefix = PercentagePrefixEnum.Empty,
-    percentageSuffix = '',
+    percentageSuffix = "",
     percent = 0,
     minPercent = 0,
     maxPercent = 0,
-  } = options
+  } = options;
 
   const shouldShowParenthesis = (
     percentagePrefix: string,
@@ -90,42 +90,42 @@ export const formatRangeOrPercentage = (
     formatAsRangeOrAmount: RangeOrAmountEnum | keyof typeof RangeOrAmountEnum,
   ) => {
     return (
-      percentagePrefix.trim() !== '' ||
-      percentageSuffix.trim() !== '' ||
+      percentagePrefix.trim() !== "" ||
+      percentageSuffix.trim() !== "" ||
       formatAsRangeOrAmount === RangeOrAmountEnum.Range ||
       formatAsRangeOrAmount === RangeOrAmountEnum.Amount
-    )
-  }
+    );
+  };
 
   const showParenthesis = shouldShowParenthesis(
     percentagePrefix,
     percentageSuffix,
     formatAsRangeOrAmount,
-  )
+  );
 
   // For the range, append `%` only if `percentageSuffix` doesn't already contain `%`
   const formattedRangeOrAmount =
     formatAsRangeOrAmount === RangeOrAmountEnum.Amount
       ? `${percent}%`
       : formatAsRangeOrAmount === RangeOrAmountEnum.Range
-        ? `${minPercent} - ${maxPercent}${percentageSuffix.includes('%') ? '' : '%'}`
-        : ''
+        ? `${minPercent} - ${maxPercent}${percentageSuffix.includes("%") ? "" : "%"}`
+        : "";
 
-  let formattedDetails = ''
+  let formattedDetails = "";
 
   if (formatAsRangeOrAmount === RangeOrAmountEnum.Range) {
-    formattedDetails = `${showParenthesis ? '(' : ''}${
-      percentagePrefix.trim() ? `${percentagePrefix} ` : ''
+    formattedDetails = `${showParenthesis ? "(" : ""}${
+      percentagePrefix.trim() ? `${percentagePrefix} ` : ""
     }${formattedRangeOrAmount}${
-      percentageSuffix.trim() ? percentageSuffix : ''
-    }${showParenthesis ? ')' : ''} ${details.trim()}`
+      percentageSuffix.trim() ? percentageSuffix : ""
+    }${showParenthesis ? ")" : ""} ${details.trim()}`;
   } else if (formatAsRangeOrAmount === RangeOrAmountEnum.Amount) {
     formattedDetails = `(${
-      percentagePrefix.trim() ? `${percentagePrefix} ` : ''
-    }${percent}%${percentageSuffix.trim() ? ` ${percentageSuffix}` : ''}) ${details.trim()}`
+      percentagePrefix.trim() ? `${percentagePrefix} ` : ""
+    }${percent}%${percentageSuffix.trim() ? ` ${percentageSuffix}` : ""}) ${details.trim()}`;
   } else if (formatAsRangeOrAmount === RangeOrAmountEnum.None) {
-    formattedDetails = details.trim()
+    formattedDetails = details.trim();
   }
 
-  return formattedDetails
-}
+  return formattedDetails;
+};
