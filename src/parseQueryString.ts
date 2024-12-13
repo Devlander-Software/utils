@@ -12,7 +12,7 @@
  * // Output: { foo: ['bar', 'baz'], baz: 'qux' }
  * ```
  */
-function parseQueryString(queryString: string): Record<string, string | string[]> {
+export const parseQueryString = (queryString: string): Record<string, string | string[]> => {
     // Remove the leading '?' if present
     if (queryString.startsWith('?')) {
         queryString = queryString.substring(1);
