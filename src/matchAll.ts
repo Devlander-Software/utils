@@ -1,10 +1,10 @@
 export const matchAll = (regExp: RegExp, str: string): RegExpMatchArray[] => {
-  const matches: RegExpMatchArray[] = [];
-  let match: RegExpMatchArray | null;
+  const matches: RegExpMatchArray[] = []
+  let match: RegExpMatchArray | null
 
   while ((match = regExp.exec(str)) !== null) {
-    matches.push(match);
+    matches.push(match)
   }
 
-  return matches;
-};
+  return matches
+}

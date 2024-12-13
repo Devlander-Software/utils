@@ -4,11 +4,11 @@ export enum ProtocolPrefixEnum {
   NONE = '',
 }
 
-export type ProtocolPrefix = `${ProtocolPrefixEnum}` | ProtocolPrefixEnum;
+export type ProtocolPrefix = `${ProtocolPrefixEnum}` | ProtocolPrefixEnum
 
 interface GenerateAllowedOriginsOptions {
-  includeWww?: boolean;
-  validateDomains?: boolean;
+  includeWww?: boolean
+  validateDomains?: boolean
 }
 
 /**
@@ -18,8 +18,8 @@ interface GenerateAllowedOriginsOptions {
  * @returns The normalized domain.
  */
 const normalizeDomain = (domain: string): string => {
-  return domain.replace(/^(https?:\/\/)?(www\.)?/, '').toLowerCase();
-};
+  return domain.replace(/^(https?:\/\/)?(www\.)?/, '').toLowerCase()
+}
 
 /**
  * Validates if a domain is correctly formatted.
@@ -28,9 +28,9 @@ const normalizeDomain = (domain: string): string => {
  * @returns True if the domain is valid, false otherwise.
  */
 const isValidDomain = (domain: string): boolean => {
-  const domainRegex = /^[a-zA-Z0-9.-]+(\.[a-zA-Z]{2,})$/;
-  return domainRegex.test(domain);
-};
+  const domainRegex = /^[a-zA-Z0-9.-]+(\.[a-zA-Z]{2,})$/
+  return domainRegex.test(domain)
+}
 
 /**
  * Generates an array of allowed origin URLs based on the provided domains and prefixes.
@@ -43,37 +43,44 @@ const isValidDomain = (domain: string): boolean => {
 export const generateAllowedOrigins = (
   domains: string[],
   prefixes: ProtocolPrefix[] = Object.values(ProtocolPrefixEnum),
-  options: GenerateAllowedOriginsOptions = { includeWww: true, validateDomains: true }
+  options: GenerateAllowedOriginsOptions = {
+    includeWww: true,
+    validateDomains: true,
+  },
 ): string[] => {
-  const uniqueCombinations: Set<string> = new Set();
+  const uniqueCombinations: Set<string> = new Set()
 
   domains.forEach((domain) => {
-    const normalizedDomain = normalizeDomain(domain);
+    const normalizedDomain = normalizeDomain(domain)
 
     // Validate the domain if the option is enabled
     if (options.validateDomains && !isValidDomain(normalizedDomain)) {
-      console.warn(`Skipping invalid domain: ${domain}`);
-      return;
+      console.warn(`Skipping invalid domain: ${domain}`)
+      return
     }
 
     // Generate URLs with provided prefixes
     prefixes.forEach((prefix) => {
-      if (!Object.values(ProtocolPrefixEnum).includes(prefix as ProtocolPrefixEnum)) {
-        throw new Error(`Invalid prefix: ${prefix}`);
+      if (
+        !Object.values(ProtocolPrefixEnum).includes(
+          prefix as ProtocolPrefixEnum,
+        )
+      ) {
+        throw new Error(`Invalid prefix: ${prefix}`)
       }
 
-      uniqueCombinations.add(`${prefix}${normalizedDomain}`);
+      uniqueCombinations.add(`${prefix}${normalizedDomain}`)
       if (options.includeWww) {
-        uniqueCombinations.add(`${prefix}www.${normalizedDomain}`);
+        uniqueCombinations.add(`${prefix}www.${normalizedDomain}`)
       }
-    });
+    })
 
     // Add bare domain and its www-prefixed variant if not already included
-    uniqueCombinations.add(normalizedDomain);
+    uniqueCombinations.add(normalizedDomain)
     if (options.includeWww) {
-      uniqueCombinations.add(`www.${normalizedDomain}`);
+      uniqueCombinations.add(`www.${normalizedDomain}`)
     }
-  });
+  })
 
-  return Array.from(uniqueCombinations);
-};
+  return Array.from(uniqueCombinations)
+}

@@ -13,15 +13,15 @@
  * @property {string} reset - Resets formatting to default.
  */
 export enum TColor {
-  green = "green",
-  red = "red",
-  blue = "blue",
-  yellow = "yellow",
-  magenta = "magenta",
-  bgGreen = "bgGreen",
-  bgRed = "bgRed",
-  bgBlue = "bgBlue",
-  reset = "reset",
+  green = 'green',
+  red = 'red',
+  blue = 'blue',
+  yellow = 'yellow',
+  magenta = 'magenta',
+  bgGreen = 'bgGreen',
+  bgRed = 'bgRed',
+  bgBlue = 'bgBlue',
+  reset = 'reset',
 }
 
 /**
@@ -29,4 +29,4 @@ export enum TColor {
  *
  * This type includes both text and background color options.
  */
-export type TColorValue = keyof typeof TColor;
+export type TColorValue = keyof typeof TColor

@@ -6,9 +6,9 @@ export const endsWith = (
   position?: number,
 ): boolean => {
   if (position === undefined || position > str.length) {
-    position = str.length;
+    position = str.length
   }
-  position -= searchString.length;
-  const lastIndex = str.indexOf(searchString, position);
-  return lastIndex !== -1 && lastIndex === position;
-};
+  position -= searchString.length
+  const lastIndex = str.indexOf(searchString, position)
+  return lastIndex !== -1 && lastIndex === position
+}

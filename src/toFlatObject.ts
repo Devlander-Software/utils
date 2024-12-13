@@ -8,31 +8,31 @@ export const toFlatObject = (
     destObj: Record<string, unknown>,
   ) => boolean,
 ): Record<string, unknown> => {
-  console.log("Starting toFlatObject");
-  console.log("Initial sourceObj:", sourceObj);
-  console.log("Initial destObj:", destObj);
+  console.log('Starting toFlatObject')
+  console.log('Initial sourceObj:', sourceObj)
+  console.log('Initial destObj:', destObj)
 
   if (!sourceObj) {
     console.log(
-      "Source object is null or undefined, returning destObj:",
+      'Source object is null or undefined, returning destObj:',
       destObj,
-    );
-    return destObj;
+    )
+    return destObj
   }
 
-  let currentObj: object | null = sourceObj;
-  const merged = new Set<string>();
+  let currentObj: object | null = sourceObj
+  const merged = new Set<string>()
 
   do {
     if (filter && !filter(currentObj)) {
-      break;
+      break
     }
 
-    const props = Object.getOwnPropertyNames(currentObj);
+    const props = Object.getOwnPropertyNames(currentObj)
     for (const prop of props) {
       // Skip properties from Object.prototype
       if (Object.prototype.hasOwnProperty.call(Object.prototype, prop)) {
-        continue;
+        continue
       }
 
       if (
@@ -40,18 +40,18 @@ export const toFlatObject = (
         prop in destObj || // Exclude properties already in destObj
         (propFilter && !propFilter(prop, currentObj, destObj))
       ) {
-        continue;
+        continue
       }
 
-      const value = (currentObj as Record<string, unknown>)[prop];
+      const value = (currentObj as Record<string, unknown>)[prop]
       if (value !== undefined) {
-        destObj[prop] = value;
-        merged.add(prop);
+        destObj[prop] = value
+        merged.add(prop)
       }
     }
 
-    currentObj = Object.getPrototypeOf(currentObj);
-  } while (currentObj && currentObj !== Object.prototype);
+    currentObj = Object.getPrototypeOf(currentObj)
+  } while (currentObj && currentObj !== Object.prototype)
 
-  return destObj;
-};
+  return destObj
+}

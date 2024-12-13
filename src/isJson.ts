@@ -7,9 +7,9 @@ export const isJson = (
   value: string | object,
 ): Record<string, unknown> | boolean => {
   try {
-    const str = typeof value === "string" ? value : JSON.stringify(value);
-    return JSON.parse(str);
+    const str = typeof value === 'string' ? value : JSON.stringify(value)
+    return JSON.parse(str)
   } catch (e) {
-    return false;
+    return false
   }
-};
+}

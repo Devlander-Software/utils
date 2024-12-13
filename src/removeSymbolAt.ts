@@ -5,5 +5,5 @@ export const removeSymbolAt = (
 ): string => {
   return str.charAt(position) === symbol
     ? str.slice(0, position) + str.slice(position + 1)
-    : str;
-};
+    : str
+}

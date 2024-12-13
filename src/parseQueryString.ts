@@ -12,28 +12,32 @@
  * // Output: { foo: ['bar', 'baz'], baz: 'qux' }
  * ```
  */
-export const parseQueryString = (queryString: string): Record<string, string | string[]> => {
-    // Remove the leading '?' if present
-    if (queryString.startsWith('?')) {
-        queryString = queryString.substring(1);
-    }
+export const parseQueryString = (
+  queryString: string,
+): Record<string, string | string[]> => {
+  // Remove the leading '?' if present
+  if (queryString.startsWith('?')) {
+    queryString = queryString.substring(1)
+  }
 
-    return queryString.split('&').reduce((acc: Record<string, string | string[]>, pair) => {
-        const [key, value] = pair.split('=').map(decodeURIComponent);
+  return queryString
+    .split('&')
+    .reduce((acc: Record<string, string | string[]>, pair) => {
+      const [key, value] = pair.split('=').map(decodeURIComponent)
 
-        if (!key) return acc; // Skip empty keys
+      if (!key) return acc // Skip empty keys
 
-        if (key in acc) {
-            const existing = acc[key];
-            if (Array.isArray(existing)) {
-                existing.push(value);
-            } else {
-                acc[key] = [existing, value];
-            }
+      if (key in acc) {
+        const existing = acc[key]
+        if (Array.isArray(existing)) {
+          existing.push(value)
         } else {
-            acc[key] = value;
+          acc[key] = [existing, value]
         }
+      } else {
+        acc[key] = value
+      }
 
-        return acc;
-    }, {});
+      return acc
+    }, {})
 }

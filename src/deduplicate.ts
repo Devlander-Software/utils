@@ -28,7 +28,9 @@ export enum DeduplicateInputType {
  */
 export const deduplicate = (
   input: string | Record<string, unknown> | unknown[] | number,
-  inputType: DeduplicateInputType | keyof typeof DeduplicateInputType = DeduplicateInputType.STRING
+  inputType:
+    | DeduplicateInputType
+    | keyof typeof DeduplicateInputType = DeduplicateInputType.STRING,
 ): string | Record<string, unknown> | number | unknown[] => {
   const getDeduplicationMethod = () => {
     switch (inputType) {
@@ -38,32 +40,32 @@ export const deduplicate = (
           return input
             .split('')
             .filter((item, pos, self) => self.indexOf(item) === pos)
-            .join('');
+            .join('')
         }
-        break;
+        break
 
       case DeduplicateInputType.ARRAY:
       case 'ARRAY':
         if (Array.isArray(input)) {
-          return input.filter((item, pos, self) => self.indexOf(item) === pos);
+          return input.filter((item, pos, self) => self.indexOf(item) === pos)
         }
-        break;
+        break
 
       case DeduplicateInputType.OBJECT:
       case 'OBJECT':
         if (typeof input === 'object' && !Array.isArray(input)) {
-          const seenValues = new Set();
+          const seenValues = new Set()
           const uniqueEntries = Object.entries(input).filter(([key, value]) => {
             // Only include the entry if its value is not in `seenValues`
             if (!seenValues.has(value)) {
-              seenValues.add(value);
-              return true;
+              seenValues.add(value)
+              return true
             }
-            return false;
-          });
-          return Object.fromEntries(uniqueEntries);
+            return false
+          })
+          return Object.fromEntries(uniqueEntries)
         }
-        break;
+        break
 
       case DeduplicateInputType.NUMBER:
       case 'NUMBER':
@@ -72,20 +74,20 @@ export const deduplicate = (
             .toString()
             .split('')
             .filter((digit, pos, self) => self.indexOf(digit) === pos)
-            .join('');
-          return parseInt(uniqueDigits, 10);
+            .join('')
+          return parseInt(uniqueDigits, 10)
         }
-        break;
+        break
 
       case DeduplicateInputType.MATRIX:
       case 'MATRIX':
         if (Array.isArray(input) && input.every(Array.isArray)) {
-          return input.map((row) => Array.from(new Set(row)));
+          return input.map((row) => Array.from(new Set(row)))
         }
-        break;
+        break
     }
-    throw new Error(`Unsupported type or input format for: ${inputType}`);
-  };
+    throw new Error(`Unsupported type or input format for: ${inputType}`)
+  }
 
-  return getDeduplicationMethod();
-};
+  return getDeduplicationMethod()
+}

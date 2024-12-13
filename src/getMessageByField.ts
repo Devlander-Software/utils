@@ -1,10 +1,10 @@
-import { getMessageFromObject } from "./getMessageFromObject";
-import { getValueFromObject } from "./getValueFromObject";
-import { isEmpty } from "./isEmpty";
+import { getMessageFromObject } from './getMessageFromObject'
+import { getValueFromObject } from './getValueFromObject'
+import { isEmpty } from './isEmpty'
 
 export interface ErrorMessages {
-  [key: string]: string | string[] | unknown;
-  message?: string[];
+  [key: string]: string | string[] | unknown
+  message?: string[]
 }
 
 /**
@@ -20,30 +20,30 @@ export const getMessageByField = (
 ): string | undefined => {
   const getMessageForField = (field: string): string | undefined => {
     if (!isEmpty(errors) && getValueFromObject(field, errors)) {
-      const errorMessage = getValueFromObject(field, errors);
-      if (typeof errorMessage === "string") {
-        return errorMessage;
+      const errorMessage = getValueFromObject(field, errors)
+      if (typeof errorMessage === 'string') {
+        return errorMessage
       }
     } else if (!isEmpty(errors)) {
-      const errorMessage = getMessageFromObject(field, errors);
+      const errorMessage = getMessageFromObject(field, errors)
       if (errorMessage) {
-        return errorMessage;
+        return errorMessage
       }
     }
-    return undefined;
-  };
+    return undefined
+  }
 
-  if (typeof fieldsToCheck === "string") {
-    return getMessageForField(fieldsToCheck) || undefined;
+  if (typeof fieldsToCheck === 'string') {
+    return getMessageForField(fieldsToCheck) || undefined
   } else if (Array.isArray(fieldsToCheck)) {
     for (const field of fieldsToCheck) {
-      const message = getMessageForField(field);
+      const message = getMessageForField(field)
       if (message) {
-        return message;
+        return message
       }
     }
-    return undefined;
+    return undefined
   } else {
-    return undefined;
+    return undefined
   }
-};
+}

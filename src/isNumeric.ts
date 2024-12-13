@@ -1,4 +1,4 @@
-import { isNumber } from "./isNumber";
+import { isNumber } from './isNumber'
 
 /**
  * Checks if a value is numeric.
@@ -34,16 +34,16 @@ import { isNumber } from "./isNumber";
  * isNumeric("  123  ");
  */
 export const isNumeric = (n: unknown): boolean => {
-  if (typeof n === "string") {
+  if (typeof n === 'string') {
     // Check if the string is empty or has any leading or trailing spaces
-    if (n.trim() === "" || n.trim() !== n) {
-      return false;
+    if (n.trim() === '' || n.trim() !== n) {
+      return false
     }
     // Check if the trimmed value is numeric
-    return !isNaN(Number(n)) && isFinite(Number(n));
-  } else if (typeof n === "number") {
+    return !isNaN(Number(n)) && isFinite(Number(n))
+  } else if (typeof n === 'number') {
     // Check if it's a valid number and not NaN
-    return !isNaN(n) && isFinite(n);
+    return !isNaN(n) && isFinite(n)
   }
-  return isNumber(n);
-};
+  return isNumber(n)
+}

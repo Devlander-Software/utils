@@ -9,5 +9,5 @@ export function getValueFromObject<T>(
   key: string,
   obj: Record<string, T>,
 ): T | null {
-  return obj.hasOwnProperty(key) ? obj[key] : null;
+  return obj.hasOwnProperty(key) ? obj[key] : null
 }
