@@ -16,6 +16,8 @@
 
 <br/>
 
+
+
 <a href="https://www.npmjs.com/package/@devlander/utils">
   <img src="https://img.shields.io/npm/dm/@devlander/utils.svg" alt="npm downloads">
 </a>
@@ -45,6 +47,9 @@
 <br/>
 <br/>
 
+<a href="https://github.com/Devlander-Software/utils/coverage/index.html">
+See testing results
+</a>
 
 <br/>
 

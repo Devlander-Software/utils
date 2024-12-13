@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734055129437" clover="3.2.0">
-  <project timestamp="1734055129437" name="All files">
+<coverage generated="1734055221421" clover="3.2.0">
+  <project timestamp="1734055221421" name="All files">
     <metrics statements="500" coveredstatements="458" conditionals="454" coveredconditionals="376" methods="111" coveredmethods="107" elements="1065" coveredelements="941" complexity="0" loc="500" ncloc="500" packages="1" files="58" classes="58"/>
     <file name="abbreviateNumber.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/abbreviateNumber.ts">
       <metrics statements="24" coveredstatements="24" conditionals="18" coveredconditionals="18" methods="1" coveredmethods="1"/>
@@ -198,7 +198,7 @@
       <line num="13" count="3" type="stmt"/>
       <line num="59" count="3" type="stmt"/>
       <line num="62" count="3" type="stmt"/>
-      <line num="63" count="9" type="stmt"/>
+      <line num="63" count="10" type="stmt"/>
       <line num="67" count="3" type="stmt"/>
       <line num="68" count="3" type="stmt"/>
       <line num="69" count="3" type="stmt"/>
