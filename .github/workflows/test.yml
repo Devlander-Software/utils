@@ -3,7 +3,7 @@ name: Yarn Install and Test
 on:
   push:
     branches:
-      - '**'
+      - "**"
 
 jobs:
   build:
@@ -17,8 +17,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
-          registry-url: 'https://registry.npmjs.org/'
+          node-version: "18"
+          registry-url: "https://registry.npmjs.org/"
 
       # Enable Corepack and use the correct Yarn version
       - name: Enable Corepack
@@ -56,7 +56,7 @@ jobs:
 
       # Archive coverage reports (optional)
       - name: Archive coverage reports
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: coverage-report
           path: coverage
