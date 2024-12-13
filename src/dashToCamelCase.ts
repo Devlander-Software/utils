@@ -6,10 +6,10 @@
  */
 export function dashToCamelCase(dashName: string): string {
   return dashName
-    .replace(/^-+/, '')
-    .replace(/-+$/, '')
+    .replace(/^-+/, "")
+    .replace(/-+$/, "")
     .toLowerCase()
     .replace(/-([a-z])/g, function (_match, group1) {
-      return group1.toUpperCase()
-    })
+      return group1.toUpperCase();
+    });
 }

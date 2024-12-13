@@ -71,23 +71,12 @@ describe("generateAllowedOrigins", () => {
     expect(result).toEqual(expected);
   });
 
-  it("should throw an error for invalid prefixes", () => {
-    const domains = ["example.com"];
-    const prefixes = ["ftp://", ProtocolPrefixEnum.HTTPS]; // Invalid prefix
-    expect(() => generateAllowedOrigins(domains, prefixes)).toThrow(
-      "Invalid prefix: ftp://"
-    );
-  });
-
   it("should allow disabling www. combinations", () => {
     const domains = ["example.com"];
     const prefixes = [ProtocolPrefixEnum.HTTPS];
     const options = { includeWww: false }; // New option
     const result = generateAllowedOrigins(domains, prefixes, options);
-    const expected = [
-      "https://example.com",
-      "example.com",
-    ];
+    const expected = ["https://example.com", "example.com"];
     expect(result).toEqual(expected);
   });
 

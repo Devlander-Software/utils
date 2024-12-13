@@ -2,27 +2,27 @@
  * Enum representing prefixes for labels when there is a single item.
  */
 export enum SingleItemLabelPrefix {
-  Only = 'Only',
-  Exclusive = 'Exclusive to',
-  Solely = 'Solely in',
+  Only = "Only",
+  Exclusive = "Exclusive to",
+  Solely = "Solely in",
 }
 
 /**
  * Enum representing prefixes for labels when there are multiple items.
  */
 export enum MultipleItemsLabelPrefix {
-  IncludedIn = 'Included in',
-  FoundWithin = 'Found in',
-  PresentIn = 'Present in',
+  IncludedIn = "Included in",
+  FoundWithin = "Found in",
+  PresentIn = "Present in",
 }
 
 /**
  * Enum for conjunctions used between items in a list.
  */
 export enum ListConjunction {
-  And = 'and',
-  AsWellAs = 'as well as',
-  AlongWith = 'along with',
+  And = "and",
+  AsWellAs = "as well as",
+  AlongWith = "along with",
 }
 
 /**
@@ -33,29 +33,29 @@ export interface LabelCompositionParams<T> {
   /**
    * Array of items to compose into the label.
    */
-  items: T[]
+  items: T[];
 
   /**
    * Key in each item to be used for label generation.
    */
-  labelKey: keyof T
+  labelKey: keyof T;
 
   /**
    * Prefix to use if there is only one item. Defaults to SingleItemLabelPrefix.Only.
    */
-  singleItemPrefix?: SingleItemLabelPrefix | keyof typeof SingleItemLabelPrefix
+  singleItemPrefix?: SingleItemLabelPrefix | keyof typeof SingleItemLabelPrefix;
 
   /**
    * Prefix to use for multiple items. Defaults to MultipleItemsLabelPrefix.FoundWithin.
    */
   multipleItemsPrefix?:
     | MultipleItemsLabelPrefix
-    | keyof typeof MultipleItemsLabelPrefix
+    | keyof typeof MultipleItemsLabelPrefix;
 
   /**
    * Conjunction to use when listing items, applied before the last item. Defaults to ListConjunction.And.
    */
-  conjunctionWord?: ListConjunction | keyof typeof ListConjunction
+  conjunctionWord?: ListConjunction | keyof typeof ListConjunction;
 }
 
 /**
@@ -92,35 +92,35 @@ export const composeLabelFromItems = <T>({
   conjunctionWord = ListConjunction.And,
 }: LabelCompositionParams<T>): string => {
   if (!items || items.length === 0) {
-    return ''
+    return "";
   }
 
   // Normalize enum-like parameters to ensure correct prefix or conjunction
   const singlePrefix =
     SingleItemLabelPrefix[
       singleItemPrefix as keyof typeof SingleItemLabelPrefix
-    ] || singleItemPrefix
+    ] || singleItemPrefix;
   const multiplePrefix =
     MultipleItemsLabelPrefix[
       multipleItemsPrefix as keyof typeof MultipleItemsLabelPrefix
-    ] || multipleItemsPrefix
+    ] || multipleItemsPrefix;
   const conjunction =
     ListConjunction[conjunctionWord as keyof typeof ListConjunction] ||
-    conjunctionWord
+    conjunctionWord;
 
   // Handle single item case
   if (items.length === 1) {
-    return `${singlePrefix} ${items[0][labelKey]}:`
+    return `${singlePrefix} ${items[0][labelKey]}:`;
   }
 
   // Compose label for multiple items
   const label = items
     .map((item, index) => {
-      const isLastItem = index === items.length - 1
-      const itemName = item[labelKey]
-      return isLastItem ? `${conjunction} ${itemName}` : itemName
+      const isLastItem = index === items.length - 1;
+      const itemName = item[labelKey];
+      return isLastItem ? `${conjunction} ${itemName}` : itemName;
     })
-    .join(', ')
+    .join(", ");
 
-  return `${multiplePrefix} ${label}:`
-}
+  return `${multiplePrefix} ${label}:`;
+};

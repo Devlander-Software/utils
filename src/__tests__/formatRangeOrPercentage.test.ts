@@ -1,8 +1,12 @@
-import { formatRangeOrPercentage, PercentagePrefixEnum, RangeOrAmountEnum } from "../formatRangeOrPercent";
+import {
+  formatRangeOrPercentage,
+  PercentagePrefixEnum,
+  RangeOrAmountEnum,
+} from "../formatRangeOrPercent";
 
-describe('formatRangeOrPercentage', () => {
+describe("formatRangeOrPercentage", () => {
   // Test case for formatting as a range with prefix and suffix
-  it('should format as a range with prefix and suffix', () => {
+  it("should format as a range with prefix and suffix", () => {
     const result = formatRangeOrPercentage({
       details: "Usage",
       formatAsRangeOrAmount: RangeOrAmountEnum.Range,
@@ -15,7 +19,7 @@ describe('formatRangeOrPercentage', () => {
   });
 
   // Test case for formatting as a single percentage amount
-  it('should format as a single percentage amount', () => {
+  it("should format as a single percentage amount", () => {
     const result = formatRangeOrPercentage({
       details: "Rate",
       formatAsRangeOrAmount: RangeOrAmountEnum.Amount,
@@ -25,7 +29,7 @@ describe('formatRangeOrPercentage', () => {
   });
 
   // Test case for formatting without range or amount (details only)
-  it('should format with details only if RangeOrAmountEnum.None is set', () => {
+  it("should format with details only if RangeOrAmountEnum.None is set", () => {
     const result = formatRangeOrPercentage({
       details: "Performance",
       formatAsRangeOrAmount: RangeOrAmountEnum.None,
@@ -34,7 +38,7 @@ describe('formatRangeOrPercentage', () => {
   });
 
   // Test case for formatting as a range without prefix or suffix
-  it('should format as a range without prefix or suffix', () => {
+  it("should format as a range without prefix or suffix", () => {
     const result = formatRangeOrPercentage({
       details: "Range Detail",
       formatAsRangeOrAmount: RangeOrAmountEnum.Range,
@@ -45,7 +49,7 @@ describe('formatRangeOrPercentage', () => {
   });
 
   // Test case for formatting as an amount with prefix only
-  it('should format as an amount with prefix only', () => {
+  it("should format as an amount with prefix only", () => {
     const result = formatRangeOrPercentage({
       details: "Limit",
       formatAsRangeOrAmount: RangeOrAmountEnum.Amount,
@@ -56,7 +60,7 @@ describe('formatRangeOrPercentage', () => {
   });
 
   // Test case for formatting as an amount with both prefix and suffix
-  it('should format as an amount with both prefix and suffix', () => {
+  it("should format as an amount with both prefix and suffix", () => {
     const result = formatRangeOrPercentage({
       details: "Expected Completion",
       formatAsRangeOrAmount: RangeOrAmountEnum.Amount,
@@ -64,11 +68,13 @@ describe('formatRangeOrPercentage', () => {
       percentagePrefix: PercentagePrefixEnum.Approximately,
       percentageSuffix: "of completion",
     });
-    expect(result).toBe("(approximately 80% of completion) Expected Completion");
+    expect(result).toBe(
+      "(approximately 80% of completion) Expected Completion",
+    );
   });
 
   // Test case for handling empty details
-  it('should return empty string if details are empty and no format is applied', () => {
+  it("should return empty string if details are empty and no format is applied", () => {
     const result = formatRangeOrPercentage({
       details: "",
       formatAsRangeOrAmount: RangeOrAmountEnum.None,
@@ -77,9 +83,9 @@ describe('formatRangeOrPercentage', () => {
   });
 
   // Test case for handling unspecified options (default behavior)
-  it('should use default values if options are not fully specified', () => {
+  it("should use default values if options are not fully specified", () => {
     const result = formatRangeOrPercentage({
-      details: "Default Test"
+      details: "Default Test",
     });
     expect(result).toBe("Default Test");
   });

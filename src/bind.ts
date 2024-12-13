@@ -12,6 +12,6 @@ export function bind<T extends (...args: unknown[]) => unknown>(
   thisArg: unknown,
 ): (...args: Parameters<T>) => ReturnType<T> {
   return function wrap(...args: Parameters<T>): ReturnType<T> {
-    return fn.apply(thisArg as ReturnType<T>, args) as ReturnType<T>
-  }
+    return fn.apply(thisArg as ReturnType<T>, args) as ReturnType<T>;
+  };
 }

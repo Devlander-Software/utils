@@ -1,4 +1,4 @@
-import { typeOfTest } from './typeToTest'
+import { typeOfTest } from "./typeToTest";
 
 /**
  * Checks if a value is of type number.
@@ -20,4 +20,4 @@ import { typeOfTest } from './typeToTest'
  * // Returns false
  * isNumber({});
  */
-export const isNumber = typeOfTest('number')
+export const isNumber = typeOfTest("number");

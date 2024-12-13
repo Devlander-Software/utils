@@ -41,19 +41,19 @@
  * 2. **API Requests**: When making requests to APIs that accept query parameters, this function can simplify the process of generating the query string.
  */
 export const toQueryString = (query?: {
-  [key: string]: string | number | boolean | null | undefined
+  [key: string]: string | number | boolean | null | undefined;
 }): string => {
-  if (!query) return ''
+  if (!query) return "";
 
-  const keys = Object.keys(query)
+  const keys = Object.keys(query);
 
   // Filter out keys with undefined or null values
   const definedKeys = keys.filter(
     (key) => query[key] !== undefined && query[key] !== null,
-  )
+  );
 
   // If there are no defined keys, return an empty string
-  if (!definedKeys.length) return ''
+  if (!definedKeys.length) return "";
 
   // Construct the query string by encoding key-value pairs
   const queryString = definedKeys
@@ -61,7 +61,7 @@ export const toQueryString = (query?: {
       (key) =>
         `${encodeURIComponent(key)}=${encodeURIComponent(String(query[key]))}`,
     )
-    .join('&')
+    .join("&");
 
-  return `?${queryString}`
-}
+  return `?${queryString}`;
+};

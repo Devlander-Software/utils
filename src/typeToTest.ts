@@ -6,13 +6,13 @@
  * This type includes all the possible values that the JavaScript `typeof` operator can return.
  */
 type TypeToTest =
-  | 'string'
-  | 'number'
-  | 'boolean'
-  | 'object'
-  | 'function'
-  | 'undefined'
-  | 'symbol'
+  | "string"
+  | "number"
+  | "boolean"
+  | "object"
+  | "function"
+  | "undefined"
+  | "symbol";
 
 /**
  * Creates a function to test the type of a given value.
@@ -37,4 +37,4 @@ type TypeToTest =
 export const typeOfTest =
   (type: TypeToTest) =>
   (thing: any): boolean =>
-    typeof thing === type
+    typeof thing === type;

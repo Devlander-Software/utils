@@ -1,4 +1,4 @@
-import { Buffer } from 'buffer'
+import { Buffer } from "buffer";
 
 /**
  * Converts a Blob object to a Base64-encoded string in React Native.
@@ -10,24 +10,24 @@ export function convertBlobToBase64(
   onComplete: (error: Error | null, base64String?: string | null) => void,
 ): void {
   if (!(globalThis as typeof globalThis & { Buffer: typeof Buffer }).Buffer) {
-    onComplete(new Error('Buffer is not available in this environment.'))
-    return
+    onComplete(new Error("Buffer is not available in this environment."));
+    return;
   }
 
-  const reader = new FileReader()
-  reader.readAsArrayBuffer(blob)
+  const reader = new FileReader();
+  reader.readAsArrayBuffer(blob);
 
   reader.onloadend = () => {
-    const arrayBuffer = reader.result as ArrayBuffer
+    const arrayBuffer = reader.result as ArrayBuffer;
     const base64String = `data:${blob.type};base64,${Buffer.from(
       arrayBuffer,
-    ).toString('base64')}`
-    onComplete(null, base64String)
-  }
+    ).toString("base64")}`;
+    onComplete(null, base64String);
+  };
 
   reader.onerror = () => {
-    onComplete(new Error('Error occurred while reading the Blob.'))
-  }
+    onComplete(new Error("Error occurred while reading the Blob."));
+  };
 }
 
 /**
@@ -39,10 +39,10 @@ export function convertBlobToBase64Async(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     convertBlobToBase64(blob, (error, base64String) => {
       if (error) {
-        reject(error)
+        reject(error);
       } else {
-        resolve(base64String as string)
+        resolve(base64String as string);
       }
-    })
-  })
+    });
+  });
 }

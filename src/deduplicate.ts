@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export enum DeduplicateInputType {
-  STRING = 'string',
-  OBJECT = 'object',
-  ARRAY = 'array',
-  NUMBER = 'number',
-  MATRIX = 'matrix',
+  STRING = "string",
+  OBJECT = "object",
+  ARRAY = "array",
+  NUMBER = "number",
+  MATRIX = "matrix",
 }
 
 /**
@@ -35,59 +35,59 @@ export const deduplicate = (
   const getDeduplicationMethod = () => {
     switch (inputType) {
       case DeduplicateInputType.STRING:
-      case 'STRING':
-        if (typeof input === 'string') {
+      case "STRING":
+        if (typeof input === "string") {
           return input
-            .split('')
+            .split("")
             .filter((item, pos, self) => self.indexOf(item) === pos)
-            .join('')
+            .join("");
         }
-        break
+        break;
 
       case DeduplicateInputType.ARRAY:
-      case 'ARRAY':
+      case "ARRAY":
         if (Array.isArray(input)) {
-          return input.filter((item, pos, self) => self.indexOf(item) === pos)
+          return input.filter((item, pos, self) => self.indexOf(item) === pos);
         }
-        break
+        break;
 
       case DeduplicateInputType.OBJECT:
-      case 'OBJECT':
-        if (typeof input === 'object' && !Array.isArray(input)) {
-          const seenValues = new Set()
+      case "OBJECT":
+        if (typeof input === "object" && !Array.isArray(input)) {
+          const seenValues = new Set();
           const uniqueEntries = Object.entries(input).filter(([key, value]) => {
             // Only include the entry if its value is not in `seenValues`
             if (!seenValues.has(value)) {
-              seenValues.add(value)
-              return true
+              seenValues.add(value);
+              return true;
             }
-            return false
-          })
-          return Object.fromEntries(uniqueEntries)
+            return false;
+          });
+          return Object.fromEntries(uniqueEntries);
         }
-        break
+        break;
 
       case DeduplicateInputType.NUMBER:
-      case 'NUMBER':
-        if (typeof input === 'number') {
+      case "NUMBER":
+        if (typeof input === "number") {
           const uniqueDigits = input
             .toString()
-            .split('')
+            .split("")
             .filter((digit, pos, self) => self.indexOf(digit) === pos)
-            .join('')
-          return parseInt(uniqueDigits, 10)
+            .join("");
+          return parseInt(uniqueDigits, 10);
         }
-        break
+        break;
 
       case DeduplicateInputType.MATRIX:
-      case 'MATRIX':
+      case "MATRIX":
         if (Array.isArray(input) && input.every(Array.isArray)) {
-          return input.map((row) => Array.from(new Set(row)))
+          return input.map((row) => Array.from(new Set(row)));
         }
-        break
+        break;
     }
-    throw new Error(`Unsupported type or input format for: ${inputType}`)
-  }
+    throw new Error(`Unsupported type or input format for: ${inputType}`);
+  };
 
-  return getDeduplicationMethod()
-}
+  return getDeduplicationMethod();
+};

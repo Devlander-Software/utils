@@ -1,4 +1,4 @@
-const { toString } = Object.prototype
+const { toString } = Object.prototype;
 
 /**
  * Checks if a value is a valid Blob object.
@@ -7,10 +7,10 @@ const { toString } = Object.prototype
  */
 export function isValidBlob(value: unknown): boolean {
   return (
-    typeof Blob !== 'undefined' &&
+    typeof Blob !== "undefined" &&
     value instanceof Blob &&
-    toString.call(value) === '[object Blob]'
-  )
+    toString.call(value) === "[object Blob]"
+  );
 }
 
 /**
@@ -23,25 +23,25 @@ export function convertBlobToBase64(
   onComplete: (error: Error | null, base64String?: string | null) => void,
 ): void {
   if (!isValidBlob(blob)) {
-    onComplete(new Error('Provided argument is not a valid Blob.'))
-    return
+    onComplete(new Error("Provided argument is not a valid Blob."));
+    return;
   }
 
-  if (typeof FileReader === 'undefined') {
-    onComplete(new Error('FileReader is not available in this environment.'))
-    return
+  if (typeof FileReader === "undefined") {
+    onComplete(new Error("FileReader is not available in this environment."));
+    return;
   }
 
-  const reader = new FileReader()
-  reader.readAsDataURL(blob)
+  const reader = new FileReader();
+  reader.readAsDataURL(blob);
 
   reader.onloadend = () => {
-    onComplete(null, reader.result as string)
-  }
+    onComplete(null, reader.result as string);
+  };
 
   reader.onerror = () => {
-    onComplete(new Error('Error occurred while reading the Blob.'))
-  }
+    onComplete(new Error("Error occurred while reading the Blob."));
+  };
 }
 
 /**
@@ -53,10 +53,10 @@ export function convertBlobToBase64Async(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     convertBlobToBase64(blob, (error, base64String) => {
       if (error) {
-        reject(error)
+        reject(error);
       } else {
-        resolve(base64String as string)
+        resolve(base64String as string);
       }
-    })
-  })
+    });
+  });
 }

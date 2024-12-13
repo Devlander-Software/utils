@@ -1,7 +1,7 @@
 {
   "name": "@devlander/utils",
   "description": "Comprehensive JavaScript and TypeScript utilities for seamless development. Includes object manipulation, data validation, and more.",
-  "version": "0.0.73",
+  "version": "0.0.74",
   "browser": "dist/umd/index.js",
   "main": "dist/cjs/index.js",
   "types": "typings/index.d.ts",

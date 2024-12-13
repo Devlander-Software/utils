@@ -5,4 +5,4 @@
  * @returns The input string with all new lines removed.
  */
 export const removeNewLinesFromString = (inputString: string): string =>
-  inputString.replace(/\n/g, '')
+  inputString.replace(/\n/g, "");

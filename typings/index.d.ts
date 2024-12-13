@@ -247,6 +247,10 @@ export * from "./parseHeaders";
  */
 export * from "./parsePropPath";
 /**
+ * TSDoc for parseQueryString
+ */
+export * from "./parseQueryString";
+/**
  * TSDoc for pluralize
  */
 export * from "./pluralize";
