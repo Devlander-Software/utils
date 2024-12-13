@@ -330,23 +330,23 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable tsdoc/syntax */
-import { TColor, TColorValue } from './types/log-color.types'
+import { TColor, TColorValue } from "./types/log-color.types";
 &nbsp;
 /**
  * ANSI escape codes for colors and background colors.
  * Maps the color values from TColor to their corresponding ANSI codes.
  */
-const colors: { [key in TColor | 'reset']: string } = {
-  blue: '\x1b[34m',
-  green: '\x1b[32m',
-  red: '\x1b[31m',
-  yellow: '\x1b[33m',
-  magenta: '\x1b[35m',
-  bgBlue: '\x1b[44m',
-  bgGreen: '\x1b[42m',
-  bgRed: '\x1b[41m',
-  reset: '\x1b[0m',
-}
+const colors: { [key in TColor | "reset"]: string } = {
+  blue: "\x1b[34m",
+  green: "\x1b[32m",
+  red: "\x1b[31m",
+  yellow: "\x1b[33m",
+  magenta: "\x1b[35m",
+  bgBlue: "\x1b[44m",
+  bgGreen: "\x1b[42m",
+  bgRed: "\x1b[41m",
+  reset: "\x1b[0m",
+};
 &nbsp;
 /**
  * Logs a message to the console with the specified color.
@@ -360,14 +360,14 @@ export const log = (
   message: string,
   data?: Record&lt;string, unknown&gt;,
 ): void =&gt; {
-  const colorCode = colors[color as TColor] || <span class="branch-1 cbranch-no" title="branch not covered" >colors.reset</span>
+  const colorCode = colors[color as TColor] || <span class="branch-1 cbranch-no" title="branch not covered" >colors.reset;</span>
 &nbsp;
   <span class="missing-if-branch" title="if path not taken" >I</span>if (data !== undefined) {
-<span class="cstat-no" title="statement not covered" >    console.log(`${colorCode}%s${colors.reset}`, message, data)</span>
+<span class="cstat-no" title="statement not covered" >    console.log(`${colorCode}%s${colors.reset}`, message, data);</span>
   } else {
-    console.log(`${colorCode}%s${colors.reset}`, message)
+    console.log(`${colorCode}%s${colors.reset}`, message);
   }
-}
+};
 &nbsp;
 /**
  * Logs a message with a specified color.
@@ -377,10 +377,10 @@ export const log = (
  */
 export const logMessage = (
   message: string,
-  color: TColorValue = 'bgBlue',
+  color: TColorValue = "bgBlue",
 ): void =&gt; {
-  log(color, message)
-}
+  log(color, message);
+};
 &nbsp;
 /**
  * Logs a message based on a condition (green for true, red for false).
@@ -389,9 +389,9 @@ export const logMessage = (
  * @param {boolean} condition - The condition to determine the color of the message.
  */
 export const logCondition = (message: string, condition: boolean): void =&gt; {
-  const color: TColor | TColorValue = condition ? 'green' : 'red'
-  log(color, message)
-}
+  const color: TColor | TColorValue = condition ? "green" : "red";
+  log(color, message);
+};
 &nbsp;
 /**
  * Logs error messages with red color.
@@ -404,9 +404,9 @@ export const logError = (
   error: string | Record&lt;string, unknown&gt; | object,
 ): void =&gt; {
   const errorMessage =
-    typeof error === 'string' ? error : JSON.stringify(error, null, 2)
-  logMessage(`Error in ${functionName}: ${errorMessage}`, 'red')
-}
+    typeof error === "string" ? error : JSON.stringify(error, null, 2);
+  logMessage(`Error in ${functionName}: ${errorMessage}`, "red");
+};
 &nbsp;
 /**
  * Logs messages for a function, including variables (JSON or normal variables).
@@ -420,22 +420,22 @@ export const logFunction = (
   functionName: string,
   variables: Record&lt;string, unknown&gt; | string | number | boolean,
   message?: string,
-  color: TColorValue = 'bgBlue',
+  color: TColorValue = "bgBlue",
 ): void =&gt; {
   const formattedVariables =
-    typeof variables === 'object'
+    typeof variables === "object"
       ? JSON.stringify(variables, null, 2)
-      : String(variables)
-  const formattedMessage = `Function: ${functionName} ${message ? `- ${message}` : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span> | Variables: ${formattedVariables}`
-  log(color, formattedMessage)
-}
+      : String(variables);
+  const formattedMessage = `Function: ${functionName} ${message ? `- ${message}` : <span class="branch-1 cbranch-no" title="branch not covered" >""}</span> | Variables: ${formattedVariables}`;
+  log(color, formattedMessage);
+};
 &nbsp;
 /**
  * Logs a separator for better readability in the console.
  */
 export const logSeparator = (): void =&gt; {
-  console.log('\n==============================================\n')
-}
+  console.log("\n==============================================\n");
+};
 &nbsp;
 /**
  * Logs the start of a process or function with an optional file name.
@@ -444,11 +444,11 @@ export const logSeparator = (): void =&gt; {
  * @param {string} [fileName] - An optional file name to provide context.
  */
 export const logStart = (functionName: string, fileName?: string): void =&gt; {
-  logSeparator()
-  const location = fileName ? ` (${fileName})` : ''
-  log('blue', `==== START: ${functionName}${location} ====`)
-  logSeparator()
-}
+  logSeparator();
+  const location = fileName ? ` (${fileName})` : "";
+  log("blue", `==== START: ${functionName}${location} ====`);
+  logSeparator();
+};
 &nbsp;
 /**
  * Logs the end of a process or function with an optional file name.
@@ -457,11 +457,11 @@ export const logStart = (functionName: string, fileName?: string): void =&gt; {
  * @param {string} [fileName] - An optional file name to provide context.
  */
 export const logEnd = (functionName: string, fileName?: string): void =&gt; {
-  logSeparator()
-  const location = fileName ? ` (${fileName})` : ''
-  log('blue', `==== END: ${functionName}${location} ====`)
-  logSeparator()
-}
+  logSeparator();
+  const location = fileName ? ` (${fileName})` : "";
+  log("blue", `==== END: ${functionName}${location} ====`);
+  logSeparator();
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -469,7 +469,7 @@ export const logEnd = (functionName: string, fileName?: string): void =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-17T18:24:32.007Z
+                at 2024-10-25T18:23:56.814Z
             </div>
         <script src="prettify.js"></script>
         <script>

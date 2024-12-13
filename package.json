@@ -1,7 +1,7 @@
 {
   "name": "@devlander/utils",
   "description": "Comprehensive JavaScript and TypeScript utilities for seamless development. Includes object manipulation, data validation, and more.",
-  "version": "0.0.72",
+  "version": "0.0.73",
   "browser": "dist/umd/index.js",
   "main": "dist/cjs/index.js",
   "types": "typings/index.d.ts",
@@ -79,7 +79,7 @@
     "@rollup/plugin-typescript": "^11.1.3",
     "@types/jest": "^29.5.6",
     "@types/jsdom-global": "^3.0.7",
-    "@types/node": "^20.6.0",
+    "@types/node": "^22.10.2",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "babel-jest": "^29.7.0",
@@ -103,6 +103,7 @@
     "rollup-plugin-polyfill-node": "^0.13.0",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.6.2",
-    "typedoc": "^0.25.8"
+    "typedoc": "^0.25.8",
+    "typescript": "^5.6.3"
   }
 }

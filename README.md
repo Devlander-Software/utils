@@ -39,9 +39,12 @@
 <a href="https://bit.ly/landonwjohnson-on-twitter">
   <img src="https://wakatime.com/badge/user/bd50b6c5-e0ca-4937-83b3-ab2d13adbc73/project/018d49ad-1c41-4ee7-9a6b-5387db501fcb.svg" alt="Wakatime stats for utils">
 </a>
+
+![Netlify Status](https://api.netlify.com/api/v1/badges/60806e06-d614-4a90-8a77-a39f065d65c2/deploy-status)
+
 <br/>
 <br/>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/60806e06-d614-4a90-8a77-a39f065d65c2/deploy-status)](https://app.netlify.com/sites/devlander-utils/deploys)
+
 
 <br/>
 
@@ -56,7 +59,7 @@ Enhance your JavaScript projects with the Devlander JavaScript Utils Collection 
 
 ## About This Project
 
-The Devlander JavaScript Utils Collection is an evolving library of JavaScript utilities developed by Landon Johnson. These utilities address everyday coding tasks, reducing the need for repetitive code and enhancing productivity. Open to community input for naming and improvements; this project aims to be a go-to resource for developers.
+The Devlander JavaScript Utils Collection is an evolving library of JavaScript utilities developed by Landon Johnson. These utilities address everyday coding tasks, reducing the need for repetitive code and enhancing productivity. Open to community input for naming and improvements, this project aims to be a go-to resource for developers.
 
 ## Utilities Overview
 
