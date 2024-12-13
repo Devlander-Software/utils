@@ -9,7 +9,7 @@ export function convertBlobToBase64(
   blob: Blob,
   onComplete: (error: Error | null, base64String?: string | null) => void,
 ): void {
-  if (!(globalThis as any).Buffer) {
+  if (!(globalThis as typeof globalThis & { Buffer: typeof Buffer }).Buffer) {
     onComplete(new Error('Buffer is not available in this environment.'))
     return
   }
