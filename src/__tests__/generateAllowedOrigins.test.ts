@@ -74,7 +74,7 @@ describe("generateAllowedOrigins", () => {
   it("should allow disabling www. combinations", () => {
     const domains = ["example.com"];
     const prefixes = [ProtocolPrefixEnum.HTTPS];
-    const options = { includeWww: false }; // New option
+    const options = { includeWww: false };
     const result = generateAllowedOrigins(domains, prefixes, options);
     const expected = ["https://example.com", "example.com"];
     expect(result).toEqual(expected);
@@ -98,5 +98,20 @@ describe("generateAllowedOrigins", () => {
     const prefixes = [ProtocolPrefixEnum.HTTPS, ProtocolPrefixEnum.HTTP];
     const result = generateAllowedOrigins(domains, prefixes);
     expect(result.length).toBeGreaterThan(1000 * prefixes.length);
+  });
+
+  it("should correctly handle localhost domains", () => {
+    const domains = ["localhost", "localhost:3000"];
+    const prefixes = [ProtocolPrefixEnum.HTTPS, ProtocolPrefixEnum.HTTP];
+    const result = generateAllowedOrigins(domains, prefixes);
+    const expected = [
+      "https://localhost",
+      "http://localhost",
+      "localhost",
+      "https://localhost:3000",
+      "http://localhost:3000",
+      "localhost:3000",
+    ];
+    expect(result).toEqual(expected);
   });
 });

@@ -6,10 +6,11 @@ const main = () => {
         directory: './src',
         outputFileName: "index",
         outputFilenameExtension: ".ts",
-        includeExtensions: ['.ts'],
+        includeExtensions: ['.ts', '.native.ts', '.web.ts'],
+        
 
         rootDir: './src',
-        allowedExtensions: ['.ts'],
+        allowedExtensions: ['.ts', '.native.ts', '.web.ts'],
         exportMode: 'both',
         outputFileName: 'index',
         outputFilenameExtension: '.ts',

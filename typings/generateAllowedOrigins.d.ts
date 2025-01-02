@@ -10,7 +10,7 @@ interface GenerateAllowedOriginsOptions {
 }
 /**
  * Generates an array of allowed origin URLs based on the provided domains and prefixes.
- *
+ * Automatically excludes `www.` for localhost domains.
  * @param domains - An array of domain strings.
  * @param prefixes - An array of URL prefixes.
  * @param options - Options to customize the generation.
