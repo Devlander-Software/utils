@@ -22,12 +22,13 @@ const normalizeDomain = (domain: string): string => {
 
 /**
  * Validates if a domain is correctly formatted.
- * Includes support for "localhost" with optional ports.
+ * Includes support for "localhost" with optional ports and valid domains/subdomains.
  * @param domain - The domain string to validate.
  * @returns True if the domain is valid, false otherwise.
  */
 const isValidDomain = (domain: string): boolean => {
-  const domainRegex = /^localhost(:\d+)?$|^[a-zA-Z0-9.-]+(\.[a-zA-Z]{2,})$/;
+  const domainRegex =
+    /^(localhost(:\d+)?|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,})$/;
   return domainRegex.test(domain);
 };
 
@@ -68,16 +69,17 @@ export const generateAllowedOrigins = (
 
       uniqueCombinations.add(`${prefix}${normalizedDomain}`);
 
-      // Include `www.` based on domain type
-      if (options.includeWww && !normalizedDomain.includes("localhost")) {
+      // Include `www.` for non-localhost domains, if the option is enabled
+      if (options.includeWww && !normalizedDomain.startsWith("localhost")) {
         uniqueCombinations.add(`${prefix}www.${normalizedDomain}`);
       }
     });
 
+    // Include bare normalized domain
     uniqueCombinations.add(normalizedDomain);
 
-    // Add bare `www.` only for non-localhost domains
-    if (options.includeWww && !normalizedDomain.includes("localhost")) {
+    // Add bare `www.` only for non-localhost domains if the option is enabled
+    if (options.includeWww && !normalizedDomain.startsWith("localhost")) {
       uniqueCombinations.add(`www.${normalizedDomain}`);
     }
   });
