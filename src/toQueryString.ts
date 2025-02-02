@@ -56,11 +56,13 @@ type ArrayTypeToParse =
 export const toQueryString = (query?: Record<string, string | number | boolean | null | undefined | ArrayTypeToParse | Record<string, string | number | boolean>>): string => {
   if (!query || Object.keys(query).length === 0) return "";
 
-  const flattenObject = (obj: Record<string, unknown>, prefix = ''): Record<string, string> => {
+  const flattenObject = (
+    obj: Record<string, unknown>
+  ): Record<string, string> => {
     return Object.keys(obj).reduce((acc: Record<string, string>, k: string) => {
       const value = obj[k];
       if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-        Object.assign(acc, flattenObject(value as Record<string, unknown>, k));
+        Object.assign(acc, flattenObject(value as Record<string, unknown>));
       } else if (value !== null && value !== undefined) {
         acc[k] = String(value);
       }
