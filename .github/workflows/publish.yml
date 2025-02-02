@@ -59,4 +59,4 @@ jobs:
 
       # Publish to npm
       - name: Publish to npm
-        run: yarn publish --non-interactive --access public
+        run: yarn start-publish --non-interactive --access public
