@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736618936728" clover="3.2.0">
-  <project timestamp="1736618936728" name="All files">
-    <metrics statements="508" coveredstatements="465" conditionals="469" coveredconditionals="390" methods="114" coveredmethods="110" elements="1091" coveredelements="965" complexity="0" loc="508" ncloc="508" packages="1" files="59" classes="59"/>
+<coverage generated="1738525594731" clover="3.2.0">
+  <project timestamp="1738525594731" name="All files">
+    <metrics statements="513" coveredstatements="470" conditionals="479" coveredconditionals="400" methods="115" coveredmethods="111" elements="1107" coveredelements="981" complexity="0" loc="513" ncloc="513" packages="1" files="59" classes="59"/>
     <file name="abbreviateNumber.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/abbreviateNumber.ts">
       <metrics statements="24" coveredstatements="24" conditionals="18" coveredconditionals="18" methods="1" coveredmethods="1"/>
       <line num="63" count="1" type="stmt"/>
@@ -199,7 +199,7 @@
       <line num="13" count="3" type="stmt"/>
       <line num="59" count="3" type="stmt"/>
       <line num="62" count="3" type="stmt"/>
-      <line num="63" count="9" type="stmt"/>
+      <line num="63" count="10" type="stmt"/>
       <line num="67" count="3" type="stmt"/>
       <line num="68" count="3" type="stmt"/>
       <line num="69" count="3" type="stmt"/>
@@ -641,16 +641,21 @@
       <line num="27" count="4" type="stmt"/>
     </file>
     <file name="toQueryString.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/toQueryString.ts">
-      <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
-      <line num="43" count="1" type="stmt"/>
-      <line num="46" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="48" count="8" type="stmt"/>
-      <line num="51" count="8" type="stmt"/>
-      <line num="52" count="17" type="cond" truecount="2" falsecount="0"/>
-      <line num="56" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="59" count="6" type="stmt"/>
-      <line num="62" count="13" type="stmt"/>
-      <line num="66" count="6" type="stmt"/>
+      <metrics statements="14" coveredstatements="14" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
+      <line num="56" count="1" type="stmt"/>
+      <line num="57" count="10" type="cond" truecount="4" falsecount="0"/>
+      <line num="59" count="8" type="cond" truecount="1" falsecount="0"/>
+      <line num="60" count="9" type="stmt"/>
+      <line num="61" count="26" type="stmt"/>
+      <line num="62" count="26" type="cond" truecount="5" falsecount="0"/>
+      <line num="63" count="1" type="stmt"/>
+      <line num="64" count="25" type="cond" truecount="4" falsecount="0"/>
+      <line num="65" count="21" type="stmt"/>
+      <line num="67" count="26" type="stmt"/>
+      <line num="71" count="8" type="stmt"/>
+      <line num="73" count="8" type="stmt"/>
+      <line num="74" count="21" type="stmt"/>
+      <line num="77" count="8" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="typeToTest.ts" path="/Users/landonjohnson/dev-local/workplaces/devlander/utils/src/typeToTest.ts">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>

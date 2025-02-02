@@ -1,11 +1,12 @@
-name: Yarn Install And Publish
+name: Publish
 
 on:
   release:
     types: [created]
 
 jobs:
-  build:
+  publish:
+    if: github.event_name == 'release' && github.event.action == 'created'
     runs-on: ubuntu-latest
 
     steps:

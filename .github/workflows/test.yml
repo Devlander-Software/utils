@@ -40,7 +40,6 @@ jobs:
       - name: Set Environment Variables with fallback to .env
         run: |
           echo "NPM_READ_TOKEN=${{ secrets.NPM_READ_TOKEN || env.NPM_READ_TOKEN }}" >> $GITHUB_ENV
-          echo "NPM_PUBLISH_TOKEN=${{ secrets.NPM_PUBLISH_TOKEN || env.NPM_PUBLISH_TOKEN }}" >> $GITHUB_ENV
 
       # Install dependencies
       - name: Install dependencies
