@@ -93,6 +93,10 @@ Dive into our utility functions with ease. Each utility is documented with param
 - **Installation**: `npm install @devlander/utils`
 - **Usage**: Import utilities as needed in your project. Example usage is provided for each function to illustrate its application.
 
+## Changelog
+
+For a full list of changes, check the [CHANGELOG.md](./CHANGELOG.md) file.
+
 ## Engage and Contribute
 
 We welcome contributions, feedback, and suggestions! Join our discussions on GitHub, or connect with us on Discord and Twitter. Your input helps us improve the Devlander JavaScript Utils Collection for the developer community.

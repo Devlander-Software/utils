@@ -13,7 +13,6 @@ interface GenerateAllowedOriginsOptions {
 
 /**
  * Normalizes a domain by removing any existing protocol and "www." prefix.
- *
  * @param domain - The domain string to normalize.
  * @returns The normalized domain.
  */
@@ -23,18 +22,19 @@ const normalizeDomain = (domain: string): string => {
 
 /**
  * Validates if a domain is correctly formatted.
- *
+ * Includes support for "localhost" with optional ports and valid domains/subdomains.
  * @param domain - The domain string to validate.
  * @returns True if the domain is valid, false otherwise.
  */
 const isValidDomain = (domain: string): boolean => {
-  const domainRegex = /^[a-zA-Z0-9.-]+(\.[a-zA-Z]{2,})$/;
+  const domainRegex =
+    /^(localhost(:\d+)?|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,})$/;
   return domainRegex.test(domain);
 };
 
 /**
  * Generates an array of allowed origin URLs based on the provided domains and prefixes.
- *
+ * Automatically excludes `www.` for localhost domains.
  * @param domains - An array of domain strings.
  * @param prefixes - An array of URL prefixes.
  * @param options - Options to customize the generation.
@@ -53,13 +53,11 @@ export const generateAllowedOrigins = (
   domains.forEach((domain) => {
     const normalizedDomain = normalizeDomain(domain);
 
-    // Validate the domain if the option is enabled
     if (options.validateDomains && !isValidDomain(normalizedDomain)) {
       console.warn(`Skipping invalid domain: ${domain}`);
       return;
     }
 
-    // Generate URLs with provided prefixes
     prefixes.forEach((prefix) => {
       if (
         !Object.values(ProtocolPrefixEnum).includes(
@@ -70,14 +68,18 @@ export const generateAllowedOrigins = (
       }
 
       uniqueCombinations.add(`${prefix}${normalizedDomain}`);
-      if (options.includeWww) {
+
+      // Include `www.` for non-localhost domains, if the option is enabled
+      if (options.includeWww && !normalizedDomain.startsWith("localhost")) {
         uniqueCombinations.add(`${prefix}www.${normalizedDomain}`);
       }
     });
 
-    // Add bare domain and its www-prefixed variant if not already included
+    // Include bare normalized domain
     uniqueCombinations.add(normalizedDomain);
-    if (options.includeWww) {
+
+    // Add bare `www.` only for non-localhost domains if the option is enabled
+    if (options.includeWww && !normalizedDomain.startsWith("localhost")) {
       uniqueCombinations.add(`www.${normalizedDomain}`);
     }
   });

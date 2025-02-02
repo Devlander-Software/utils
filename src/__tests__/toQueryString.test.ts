@@ -45,4 +45,27 @@ describe("toQueryString", () => {
       "?name=Test&count=5&isActive=false",
     );
   });
+
+  test("should handle a mix of string, number, and boolean types", () => {
+    expect(toQueryString({
+      limit: 10,
+      page: 2,
+      cursor: 20,
+      sortBy: "name",
+      sortOrder: "asc",
+      filters: { hi: "Test", count: 5, isActive: false },
+    })).toBe(
+      "?limit=10&page=2&cursor=20&sortBy=name&sortOrder=asc&hi=Test&count=5&isActive=false",
+    );
+  });
 });
+
+
+// export interface PaginationParams<Filters = Record<string, any>> {
+// 	limit: number // Number of items per page
+// 	page?: number // Page index (for offset-based pagination)
+// 	cursor?: number // Cursor (for cursor-based pagination)
+// 	sortBy?: string // Optional sorting field
+// 	sortOrder?: 'asc' | 'desc' // Sorting order (optional)
+// 	filters?: Filters // Optional filters
+// }

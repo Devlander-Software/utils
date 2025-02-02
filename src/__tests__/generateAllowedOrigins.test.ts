@@ -18,7 +18,26 @@ describe("generateAllowedOrigins", () => {
       "subdomain.example.com",
       "www.subdomain.example.com",
     ];
-    expect(result).toEqual(expected);
+    expect(result.sort()).toEqual(expected.sort());
+  });
+
+  it("should handle the specific domain 'rawvideosbeta.netlify.app'", () => {
+    const domains = ["rawvideosbeta.netlify.app"];
+    const prefixes = [
+      ProtocolPrefixEnum.HTTPS,
+      ProtocolPrefixEnum.HTTP,
+      ProtocolPrefixEnum.NONE,
+    ];
+    const result = generateAllowedOrigins(domains, prefixes);
+    const expected = [
+      "https://rawvideosbeta.netlify.app",
+      "https://www.rawvideosbeta.netlify.app",
+      "http://rawvideosbeta.netlify.app",
+      "http://www.rawvideosbeta.netlify.app",
+      "rawvideosbeta.netlify.app",
+      "www.rawvideosbeta.netlify.app",
+    ];
+    expect(result.sort()).toEqual(expected.sort());
   });
 
   it("should generate URLs for a domain without duplicates", () => {
@@ -31,7 +50,7 @@ describe("generateAllowedOrigins", () => {
       "hello-my-darling.com",
       "www.hello-my-darling.com",
     ];
-    expect(result).toEqual(expected);
+    expect(result.sort()).toEqual(expected.sort());
   });
 
   it("should handle an empty domain list", () => {
@@ -55,7 +74,7 @@ describe("generateAllowedOrigins", () => {
       "test.com",
       "www.test.com",
     ];
-    expect(result).toEqual(expected);
+    expect(result.sort()).toEqual(expected.sort());
   });
 
   it("should skip invalid domains", () => {
@@ -68,16 +87,16 @@ describe("generateAllowedOrigins", () => {
       "example.com",
       "www.example.com",
     ];
-    expect(result).toEqual(expected);
+    expect(result.sort()).toEqual(expected.sort());
   });
 
   it("should allow disabling www. combinations", () => {
     const domains = ["example.com"];
     const prefixes = [ProtocolPrefixEnum.HTTPS];
-    const options = { includeWww: false }; // New option
+    const options = { includeWww: false };
     const result = generateAllowedOrigins(domains, prefixes, options);
     const expected = ["https://example.com", "example.com"];
-    expect(result).toEqual(expected);
+    expect(result.sort()).toEqual(expected.sort());
   });
 
   it("should handle domains with subdomains correctly", () => {
@@ -90,13 +109,32 @@ describe("generateAllowedOrigins", () => {
       "sub.domain.com",
       "www.sub.domain.com",
     ];
-    expect(result).toEqual(expected);
+    expect(result.sort()).toEqual(expected.sort());
   });
 
   it("should handle large inputs efficiently", () => {
     const domains = Array.from({ length: 1000 }, (_, i) => `example${i}.com`);
     const prefixes = [ProtocolPrefixEnum.HTTPS, ProtocolPrefixEnum.HTTP];
     const result = generateAllowedOrigins(domains, prefixes);
-    expect(result.length).toBeGreaterThan(1000 * prefixes.length);
+    const expectedLength = 1000 * prefixes.length * 2; // 2 for www and non-www
+    expect(result.length).toBeGreaterThan(expectedLength - 2000); // Allow some duplication removal
   });
+
+  it("should correctly handle localhost domains", () => {
+    const domains = ["localhost", "localhost:3000"];
+    const prefixes = [ProtocolPrefixEnum.HTTPS, ProtocolPrefixEnum.HTTP];
+    const result = generateAllowedOrigins(domains, prefixes);
+    const expected = [
+      "https://localhost",
+      "http://localhost",
+      "localhost",
+      "https://localhost:3000",
+      "http://localhost:3000",
+      "localhost:3000",
+    ];
+    expect(result.sort()).toEqual(expected.sort());
+  });
+
 });
+
+
