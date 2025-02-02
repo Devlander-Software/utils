@@ -15,7 +15,7 @@
     "test": "jest --coverage",
     "test:failures": "jest --onlyFailures",
     "format": "prettier --write 'src/**/*.ts'",
-    "docs": "typedoc --out ./docs --theme ./typedoc-theme ./src",
+    "docs": "typedoc --out ./docs  ./src",
     "lint": "eslint ./src --ext .ts --fix && yarn run format && yarn run typecheck",
     "typecheck": "tsc --project tsconfig.json --noEmit --emitDeclarationOnly false",
     "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index && yarn build:esm && yarn build:umd",
