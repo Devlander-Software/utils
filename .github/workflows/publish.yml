@@ -11,11 +11,11 @@ jobs:
 
     steps:
       # Checkout the repository
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Set up Node.js environment
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
           registry-url: "https://registry.npmjs.org/"
@@ -45,18 +45,18 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable
 
       # Set up .npmrc for authentication
       - name: Set up .npmrc for authentication
         run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_PUBLISH_TOKEN}" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ env.NPM_PUBLISH_TOKEN }}" > ~/.npmrc
 
       # Debug - Display .npmrc (optional)
       - name: Debug - Display .npmrc
         run: cat ~/.npmrc
         continue-on-error: true
 
-      # Publish to npm
+      # Publish to npm using the correct script
       - name: Publish to npm
         run: yarn start-publish --non-interactive --access public
