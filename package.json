@@ -1,13 +1,15 @@
 {
   "name": "@devlander/utils",
   "description": "Comprehensive JavaScript and TypeScript utilities for seamless development. Includes object manipulation, data validation, and more.",
-  "version": "0.0.75",
+  "version": "0.0.76",
   "browser": "dist/umd/index.js",
   "main": "dist/cjs/index.js",
   "types": "typings/index.d.ts",
   "module": "dist/esm/index.js",
   "type": "commonjs",
   "scripts": {
+    "release": "standard-version",
+    "changelog": "standard-version --dry-run --skip.tag",
     "prebuild": "npm cache clean --force",
     "build:index": "node ./external-modules/auto-export.js",
     "build:esm": "tsc",
@@ -101,6 +103,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-polyfill-node": "^0.13.0",
     "rollup-plugin-terser": "^7.0.2",
+    "standard-version": "^9.5.0",
     "tslib": "^2.6.2",
     "typedoc": "^0.25.8",
     "typescript": "^5.6.3"
