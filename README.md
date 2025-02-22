@@ -1,12 +1,7 @@
-
-
 # Devlander JavaScript Utilities Collection
-
-
 
 <br/>
 <img src="https://github.com/Devlander-Software/utils/raw/main/media/images/javascript-utils-devlander-github-header-photo.png" alt="Devlander Utils Header">
-
 
 <br/>
 
@@ -45,6 +40,9 @@
 <br/>
 <br/>
 
+<a href="https://github.com/Devlander-Software/utils/coverage/index.html">
+See testing results
+</a>
 
 <br/>
 
@@ -88,13 +86,17 @@ Dive into our utility functions with ease. Each utility is documented with param
 - **Installation**: `npm install @devlander/utils`
 - **Usage**: Import utilities as needed in your project. Example usage is provided for each function to illustrate its application.
 
+## Changelog
+
+For a full list of changes, check the [CHANGELOG.md](./CHANGELOG.md) file.
+
 ## Engage and Contribute
 
 We welcome contributions, feedback, and suggestions! Join our discussions on GitHub, or connect with us on Discord and Twitter. Your input helps us improve the Devlander JavaScript Utils Collection for the developer community. Go read the [Contributing Guidelines](./CONTRIBUTING.md) for more details
 
 ### [Become a Sponsor!](https://bit.ly/sponsor-landonjohnson-github/)
 
-
 ## TO DO
-- [ ] keep track of which functions get used the most 
+
+- [ ] keep track of which functions get used the most
 - [ ] organize functions by usecase

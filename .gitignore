@@ -8,6 +8,11 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/.coverage/*
+.yarn/cache
+.yarn/installed-state.gz
+
+./typings/*
 
 # IDEs and editors
 /.idea/
@@ -25,7 +30,7 @@ yarn-error.log*
 .Trashes
 ehthumbs.db
 Thumbs.db
-
+coverage
 dist
 .env
 

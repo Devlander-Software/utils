@@ -45,4 +45,19 @@ describe("toQueryString", () => {
       "?name=Test&count=5&isActive=false",
     );
   });
+
+  test("should handle a mix of string, number, and boolean types", () => {
+    expect(toQueryString({
+      limit: 10,
+      page: 2,
+      cursor: 20,
+      sortBy: "name",
+      sortOrder: "asc",
+      filters: { hi: "Test", count: 5, isActive: false },
+    })).toBe(
+      "?limit=10&page=2&cursor=20&sortBy=name&sortOrder=asc&hi=Test&count=5&isActive=false",
+    );
+  });
 });
+
+

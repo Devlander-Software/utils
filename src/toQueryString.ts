@@ -5,7 +5,7 @@
  *
  * @param query - An optional object containing key-value pairs for query parameters.
  *   - `key: string`: The query parameter name.
- *   - `value: string | number | boolean | null | undefined`: The value of the query parameter.
+ *   - `value: string | number | boolean | null | undefined | ArrayTypeToParse`: The value of the query parameter.
  *     If the value is `null` or `undefined`, it will be excluded from the final query string.
  * @returns A string representing the query parameters in URL-encoded format.
  *   - If `query` is undefined or empty, an empty string `""` will be returned.
@@ -36,32 +36,45 @@
  * // Returns: ""
  * ```
  *
- * @usecases
- * 1. **Building URL with query parameters**: This function is useful when constructing URLs with dynamic query parameters in frontend applications.
- * 2. **API Requests**: When making requests to APIs that accept query parameters, this function can simplify the process of generating the query string.
+ * Handling arrays and objects in filters:
+ * ```typescript
+ * toQueryString({ filters: [{ type: "category", value: "books" }, { type: "price", value: "low" }] });
+ * // Returns: "?filters[0][type]=category&filters[0][value]=books&filters[1][type]=price&filters[1][value]=low"
+ * ```
  */
-export const toQueryString = (query?: {
-  [key: string]: string | number | boolean | null | undefined;
-}): string => {
-  if (!query) return "";
 
-  const keys = Object.keys(query);
+type ArrayTypeToParse =
+  | {
+      [key: string]: string | number | boolean | null | undefined | string[];
+    }[]
+  | string[]
+  | number[]
+  | boolean[]
+  | null[]
+  | undefined[];
 
-  // Filter out keys with undefined or null values
-  const definedKeys = keys.filter(
-    (key) => query[key] !== undefined && query[key] !== null,
-  );
+export const toQueryString = (query?: Record<string, string | number | boolean | null | undefined | ArrayTypeToParse | Record<string, string | number | boolean>>): string => {
+  if (!query || Object.keys(query).length === 0) return "";
 
-  // If there are no defined keys, return an empty string
-  if (!definedKeys.length) return "";
+  const flattenObject = (
+    obj: Record<string, unknown>
+  ): Record<string, string> => {
+    return Object.keys(obj).reduce((acc: Record<string, string>, k: string) => {
+      const value = obj[k];
+      if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+        Object.assign(acc, flattenObject(value as Record<string, unknown>));
+      } else if (value !== null && value !== undefined) {
+        acc[k] = String(value);
+      }
+      return acc;
+    }, {});
+  };
 
-  // Construct the query string by encoding key-value pairs
-  const queryString = definedKeys
-    .map(
-      (key) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(String(query[key]))}`,
-    )
+  const flattenedQuery = flattenObject(query);
+
+  const queryString = Object.keys(flattenedQuery)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(flattenedQuery[key])}`)
     .join("&");
 
-  return `?${queryString}`;
+  return queryString ? `?${queryString}` : "";
 };

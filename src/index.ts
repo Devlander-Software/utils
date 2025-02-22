@@ -27,6 +27,18 @@ export * from "./calculatePercentage";
  */
 export * from "./composeLabelFromParts";
 /**
+ * TSDoc for convert-blob-to-base64.native
+ */
+export * from "./convert-blob-to-base64/convert-blob-to-base64.native";
+/**
+ * TSDoc for convert-blob-to-base64.web
+ */
+export * from "./convert-blob-to-base64/convert-blob-to-base64.web";
+/**
+ * TSDoc for isValidBlob
+ */
+export * from "./convert-blob-to-base64/isValidBlob";
+/**
  * TSDoc for convertVideoTimeStampToSeconds
  */
 export * from "./convertVideoTimeStampToSeconds";
@@ -98,6 +110,10 @@ export * from "./generateStripeCard";
  * TSDoc for getAspectRatio
  */
 export * from "./getAspectRatio";
+/**
+ * TSDoc for getAverage
+ */
+export * from "./getAverage";
 /**
  * TSDoc for getFirstWordCapitalized
  */
@@ -250,6 +266,10 @@ export * from "./parseHeaders";
  * TSDoc for parsePropPath
  */
 export * from "./parsePropPath";
+/**
+ * TSDoc for parseQueryString
+ */
+export * from "./parseQueryString";
 /**
  * TSDoc for pluralize
  */
