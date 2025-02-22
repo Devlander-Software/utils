@@ -5,11 +5,11 @@ export interface WordSelectionOptions {
 
 /**
  * Extracts a specified number of words from a given sentence, with optional settings.
- * 
+ *
  * @param sentence - The sentence from which words will be extracted.
  * @param wordLimit - The maximum number of words to include in the output.
  * @param options - Additional options to customize word extraction.
- * 
+ *
  * @returns An object containing:
  * - `words`: A string of the extracted words up to the specified limit.
  * - `errors`: An object with error messages if any issues arise during extraction.
@@ -17,10 +17,13 @@ export interface WordSelectionOptions {
 export const extractWordsFromSentence = (
   sentence: string,
   wordLimit: number,
-  options: WordSelectionOptions = {}
+  options: WordSelectionOptions = {},
 ): { words: string; errors: { [key: string]: string } } => {
   // Define default options and merge with provided options
-  const defaultOptions: WordSelectionOptions = { caseSensitive: true, removeDuplicates: false };
+  const defaultOptions: WordSelectionOptions = {
+    caseSensitive: true,
+    removeDuplicates: false,
+  };
   const finalOptions = { ...defaultOptions, ...options };
 
   // Step 1: Split the sentence into words
@@ -28,13 +31,13 @@ export const extractWordsFromSentence = (
 
   // Step 2: Apply case insensitivity if specified
   if (!finalOptions.caseSensitive) {
-    words = words.map(word => word.toLowerCase());
+    words = words.map((word) => word.toLowerCase());
   }
 
   // Step 3: Remove duplicates if specified
   if (finalOptions.removeDuplicates) {
     const seen = new Set();
-    words = words.filter(word => {
+    words = words.filter((word) => {
       if (seen.has(word)) {
         return false;
       }

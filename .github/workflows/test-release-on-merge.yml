@@ -1,0 +1,60 @@
+name: Test and Create Release on Merge
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+jobs:
+  test-and-release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Use the correct Yarn version
+        run: corepack prepare yarn@3.6.3 --activate
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run Tests
+        run: yarn test
+
+      - name: Generate Changelog from Conventional Commits
+        run: npx conventional-changelog -p angular -i CHANGELOG.md -s
+
+      - name: Commit Updated Changelog
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "docs(changelog): update CHANGELOG.md [skip ci]" || echo "No changes to commit"
+          git push origin main
+
+      - name: Get Version from package.json
+        id: get_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "PACKAGE_VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ env.PACKAGE_VERSION }}
+          name: "Release v${{ env.PACKAGE_VERSION }}"
+          body: |
+            Automated release generated from \`package.json\` version after successful PR merge, tests, and changelog update.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -17,5 +17,4 @@ Include any relevant screenshots that demonstrate the changes.
 
 ## Checklist
 - [ ] I have read the CONTRIBUTING document.
-- [ ] My code follows the code style of this project.
 - [ ] I have updated the documentation accordingly.

@@ -59,6 +59,10 @@ export * from "./extend";
  */
 export * from "./extractKeysAndValues";
 /**
+ * TSDoc for extractWordsFromSentence
+ */
+export * from "./extractWordsFromSentence";
+/**
  * TSDoc for filterAndSuggestItems
  */
 export * from "./filterAndSuggestItems";
