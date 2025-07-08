@@ -14,7 +14,6 @@ module.exports = {
     'prettier',
   ],
   plugins: [
-    'eslint-plugin-tsdoc',
     '@typescript-eslint',
     'import',
     'jest',
@@ -26,7 +25,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-   
     project: path.join(__dirname, 'tsconfig.eslint.json'),
   },
   ignorePatterns: [
@@ -37,14 +35,15 @@ module.exports = {
     "rollup-config/rollup-config.ts",
     "rollup.config.mjs",
     "__tests__",
+    "examples/**",
+    "test/**",
   ],
   rules: {
-    'tsdoc/syntax': 'warn',
     'prettier/prettier': [
       'warn',
       {
         semi: false,
-        singleQuote: true, // Add this line to enable automatic fixing of quote issues
+        singleQuote: true,
       },
       {
         usePrettierrc: false,

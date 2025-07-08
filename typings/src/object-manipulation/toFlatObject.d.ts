@@ -1,1 +1,0 @@
-export declare const toFlatObject: (sourceObj: object | null, destObj?: Record<string, unknown>, filter?: (obj: object) => boolean, propFilter?: (prop: string, obj: object, destObj: Record<string, unknown>) => boolean) => Record<string, unknown>;

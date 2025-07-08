@@ -1,4 +1,4 @@
-import { filterAndSuggestItems } from "../filterAndSuggestItems";
+import { filterAndSuggestItems } from "../array-operations/filterAndSuggestItems";
 
 interface Product {
   _id: string;

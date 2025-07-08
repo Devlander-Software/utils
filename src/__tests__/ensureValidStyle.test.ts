@@ -1,4 +1,4 @@
-import { ensureValidStyle } from "../ensureValidStyle";
+import { ensureValidStyle } from "../file-operations/ensureValidStyle";
 
 // These are the tests that are failing.
 

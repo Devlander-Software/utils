@@ -1,4 +1,4 @@
-import { isJson } from "./isJson";
+import { isJson } from "../type-checking/isJson";
 
 export const jsonContainsNewLine = (jsonInput: string | object): boolean => {
   const jsonObject:

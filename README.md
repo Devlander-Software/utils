@@ -53,14 +53,25 @@ See testing results
 
 <br/>
 
-Enhance your JavaScript projects with the Devlander JavaScript Utils Collection - a meticulously curated set of utility functions to streamline your coding workflow. Join our vibrant community on Discord, engage in discussions on GitHub, and stay updated with our latest streams on Twitch. Boost your project's efficiency today!
+Enhance your JavaScript projects with the Devlander JavaScript Utils Collection—a meticulously curated set of utility functions to streamline your coding workflow. Join our vibrant community on Discord, engage in discussions on GitHub, and stay updated with our latest streams on Twitch. Boost your project's efficiency today!
 
-- **Discord:** Join the Devlander community [here](https://bit.ly/devlander-discord-invite).
-- **npm downloads:** Get our package [@devlander/utils](https://www.npmjs.com/package/@devlander/utils).
-- **GitHub Discussions:** Engage in discussions and get support [here](https://github.com/orgs/Devlander-Software/discussions).
-- **Twitch:** Catch our live coding sessions [here](https://bit.ly/devlander-twitch).
-- **Twitter:** Follow Landon Johnson [@landonwjohnson](https://bit.ly/landonwjohnson-on-twitter).
-- **Wakatime stats:** Track our progress [here](https://bit.ly/landonwjohnson-on-twitter).
+---
+
+## 📚 New to contributing? Start here!
+
+If you're new to open source, npm packages, or TypeScript, **please reference the step-by-step Medium articles linked below**. These guides will walk you through everything from Git basics to advanced package publishing, testing, and code style:
+
+- [What is Git? A Complete Beginner's Guide to Version Control and GitHub](https://medium.com/@techwithlandon/what-is-git-a-complete-beginners-guide-to-version-control-and-github-3327797528a5)
+- [npm Packages: What They Are, Where They Came From, and When to Use Them](https://medium.com/devlander/npm-packages-what-they-are-where-they-came-from-and-when-to-use-them-7304c411c1c5)
+- [How to Plan and Structure Your npm Package for Success](https://medium.com/devlander/how-to-plan-and-structure-your-npm-package-for-success-956991cb6768)
+- [How to Build Your First npm Package: Validators](https://medium.com/@techwithlandon/how-to-build-your-first-npm-package-validators-ad7d72d303d2)
+- [How to Add TypeScript to Your npm Package](https://medium.com/devlander/how-to-add-typescript-to-your-npm-package-272d013809b9)
+- [Testing and Deploying Your npm Package with Jest and Unit Testing](https://medium.com/@techwithlandon/testing-and-deploying-your-npm-package-with-jest-and-unit-testing-ca4acc0af641)
+- [Setting Up ESLint and Prettier for Your npm Package](https://medium.com/@techwithlandon/setting-up-eslint-and-prettier-for-your-npm-package-9e5e549f7b3e)
+
+**These articles are highly recommended for all contributors!**
+
+---
 
 ## About This Project
 
@@ -101,4 +112,34 @@ For a full list of changes, check the [CHANGELOG.md](./CHANGELOG.md) file.
 
 We welcome contributions, feedback, and suggestions! Join our discussions on GitHub, or connect with us on Discord and Twitter. Your input helps us improve the Devlander JavaScript Utils Collection for the developer community.
 
+**Before contributing, please read the Medium articles above for step-by-step guidance on Git, npm, TypeScript, testing, and code style.**
+
 ### [Become a Sponsor!](https://bit.ly/sponsor-landonjohnson-github/)
+
+## 🧪 Cross-Platform Testing
+
+This package includes comprehensive cross-platform testing to ensure compatibility across different environments:
+
+### Automated Testing
+
+- **Unit Tests**: Run with `yarn test`
+- **Cross-Platform Tests**: Run with `yarn test:examples`
+- **Full Pre-Publish Check**: Run with `yarn prepublishOnly`
+
+### Example Apps
+
+The `/examples` directory contains minimal test apps for each platform:
+
+- **React** (`examples/react/`) - Vite-based React app
+- **Next.js** (`examples/nextjs/`) - Next.js app with TypeScript
+- **React Native** (`examples/react-native/`) - Expo app
+- **Node.js** (`examples/node/`) - Node.js with TypeScript
+
+### How It Works
+
+1. **Build & Pack**: Creates a tarball (exactly like npm would deliver)
+2. **Install**: Installs the tarball into each example app
+3. **Test**: Runs tests in each environment to verify imports work
+4. **Validate**: Ensures your package works in real-world scenarios
+
+This guarantees that your package can be installed and used successfully in React, Next.js, React Native, and Node.js projects.

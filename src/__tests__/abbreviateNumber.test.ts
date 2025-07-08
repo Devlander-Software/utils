@@ -1,4 +1,7 @@
-import { abbreviateNumber, AbbreviateNumberSuffix } from "../abbreviateNumber";
+import {
+  abbreviateNumber,
+  AbbreviateNumberSuffix,
+} from "../data-formatting/abbreviateNumber";
 
 describe("abbreviateNumber", () => {
   it("should return the same value if it is less than 1000", () => {

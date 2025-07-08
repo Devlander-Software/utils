@@ -21,4 +21,4 @@ export * from "./isValidBinary";
 export * from "./isValidStyle";
 export * from "./kindOf";
 export * from "./kindOfTest";
-export * from "./hasOwnProp"; 
+export * from "./hasOwnProp";

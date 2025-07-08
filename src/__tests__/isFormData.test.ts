@@ -1,4 +1,4 @@
-import { isFormData } from "../isFormData";
+import { isFormData } from "../type-checking/isFormData";
 
 describe("isFormData", () => {
   it("should return true if the value is a form data", () => {

@@ -1,7 +1,7 @@
 {
   "name": "@devlander/utils",
   "description": "Comprehensive JavaScript and TypeScript utilities for seamless development. Includes object manipulation, data validation, and more.",
-  "version": "0.0.91",
+  "version": "1.0.0",
   "browser": "dist/umd/index.js",
   "main": "dist/cjs/index.js",
   "types": "typings/index.d.ts",
@@ -12,12 +12,14 @@
     "build:index": "node ./external-modules/auto-export.js",
     "increment-version": "yarn version patch",
     "build:esm": "tsc",
-    "test": "jest --coverage",
+    "test": "jest --coverage && yarn test:examples",
     "test:failures": "jest --onlyFailures",
+    "test:examples": "bash scripts/test-examples.sh",
+    "prepublishOnly": "yarn test && yarn test:examples && yarn docs",
     "format": "prettier --write 'src/**/*.ts'",
     "docs": "typedoc --out ./docs  ./src",
     "lint": "eslint ./src --ext .ts --fix && yarn run format && yarn run typecheck",
-    "typecheck": "tsc --project tsconfig.json --noEmit --emitDeclarationOnly false",
+    "typecheck": "tsc --project tsconfig.check.json",
     "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index && yarn build:esm && yarn build:umd",
     "build:umd": "rollup -c",
     "timeout": "delay 5",
@@ -111,11 +113,14 @@
     "standard-version": "^9.5.0",
     "tslib": "^2.6.2",
     "typedoc": "^0.25.8",
-    "typescript": "^5.6.3"
+    "typescript": "5.3.3"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@devlander/utils": "^0.0.3"
   }
 }

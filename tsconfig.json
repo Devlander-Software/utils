@@ -37,7 +37,23 @@
     "target": "ESNext"
     
   },
-  "include":  ["./src/**/*.web.ts", "./src/**/*.native.ts", "**/*.ts", "**/*.tsx", "src/rollup.config.js", "**/*.web.ts", "**/*.web.tsx", "**/*.native.ts", "**/*.native.tsx", "src/hooks/web/useKeyCodes/useKeyCodes.hook.tsx"],
-  "exclude": ["node_modules", "dist", "types", "*/**/.d.ts", "typings"],
-
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.web.ts",
+    "src/**/*.native.ts",
+    "src/rollup.config.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "types",
+    "*/**/.d.ts",
+    "typings",
+    "test",
+    "test-react-web-app",
+    "test-react-native-app",
+    "test-nextjs-app",
+    "src/__tests__"
+  ]
 }

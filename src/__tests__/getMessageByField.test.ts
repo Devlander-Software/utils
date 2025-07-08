@@ -1,4 +1,7 @@
-import { ErrorMessages, getMessageByField } from "../getMessageByField";
+import {
+  ErrorMessages,
+  getMessageByField,
+} from "../data-formatting/getMessageByField";
 
 describe("getMessageByField", () => {
   it("should return the error message associated with the given field", () => {

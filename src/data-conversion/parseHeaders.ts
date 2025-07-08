@@ -1,4 +1,4 @@
-import { toObjectSet } from "./toObjectSet.js";
+import { toObjectSet } from "../object-manipulation/toObjectSet";
 
 /**
  * Parse headers into an object

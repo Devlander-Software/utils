@@ -4,4 +4,4 @@ export * from "./formatRangeOrPercent";
 export * from "./composeLabelFromParts";
 export * from "./getMessageFromObject";
 export * from "./getMessageByField";
-export * from "./getFirstWordCapitalized"; 
+export * from "./getFirstWordCapitalized";

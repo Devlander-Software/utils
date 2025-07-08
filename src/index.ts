@@ -47,21 +47,29 @@ export * from "./array-operations/selectFromList";
  */
 export * from "./array-operations/shuffleArray";
 /**
- * TSDoc for base64
+ * TSDoc for convertBlobToBase64Native
  */
-export * from "./base64";
+export * from "./base64-utilities/convertBlobToBase64Native";
 /**
- * TSDoc for convert-blob-to-base64.native
+ * TSDoc for convertBlobToBase64Web
  */
-export * from "./convert-blob-to-base64/convert-blob-to-base64.native";
+export * from "./base64-utilities/convertBlobToBase64Web";
 /**
- * TSDoc for convert-blob-to-base64.web
+ * TSDoc for decodeBase64ToString
  */
-export * from "./convert-blob-to-base64/convert-blob-to-base64.web";
+export * from "./base64-utilities/decodeBase64ToString";
+/**
+ * TSDoc for encodeStringToBase64
+ */
+export * from "./base64-utilities/encodeStringToBase64";
+/**
+ * TSDoc for isValidBase64
+ */
+export * from "./base64-utilities/isValidBase64";
 /**
  * TSDoc for isValidBlob
  */
-export * from "./convert-blob-to-base64/isValidBlob";
+export * from "./base64-utilities/isValidBlob";
 /**
  * TSDoc for binaryToHex
  */
@@ -103,6 +111,10 @@ export * from "./data-formatting/getMessageFromObject";
  */
 export * from "./data-validation/generateAllowedOrigins";
 /**
+ * TSDoc for generateStripeCard
+ */
+export * from "./data-validation/generateStripeCard";
+/**
  * TSDoc for hasItemByLetterAndFilter
  */
 export * from "./data-validation/hasItemByLetterAndFilter";
@@ -122,10 +134,6 @@ export * from "./development-tools/loggerUtils";
  * TSDoc for reduceDescriptors
  */
 export * from "./development-tools/reduceDescriptors";
-/**
- * TSDoc for typeToTest
- */
-export * from "./development-tools/typeToTest";
 /**
  * TSDoc for waitFor
  */
@@ -382,3 +390,7 @@ export * from "./type-checking/kindOf";
  * TSDoc for kindOfTest
  */
 export * from "./type-checking/kindOfTest";
+/**
+ * TSDoc for typeToTest
+ */
+export * from "./type-checking/typeToTest";

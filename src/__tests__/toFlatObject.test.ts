@@ -1,4 +1,4 @@
-import { toFlatObject } from "../toFlatObject";
+import { toFlatObject } from "../object-manipulation/toFlatObject";
 
 describe("toFlatObject", () => {
   test("should flatten properties from source object to destination object", () => {

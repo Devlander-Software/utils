@@ -1,4 +1,4 @@
-import { extractKeysAndValues } from "../extractKeysAndValues";
+import { extractKeysAndValues } from "../object-manipulation/extractKeysAndValues";
 
 describe("extractKeysAndValues", () => {
   test("extracts keys and values from a record with default type", () => {

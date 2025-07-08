@@ -1,6 +1,6 @@
 import { getMessageFromObject } from "./getMessageFromObject";
-import { getValueFromObject } from "./getValueFromObject";
-import { isEmpty } from "./isEmpty";
+import { getValueFromObject } from "../object-manipulation/getValueFromObject";
+import { isEmpty } from "../type-checking/isEmpty";
 
 export interface ErrorMessages {
   [key: string]: string | string[] | unknown;

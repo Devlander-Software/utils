@@ -6,7 +6,6 @@
   "excludeProtected": true,
   "excludeInternal": true,
   "excludeExternals": true,
-  "stripInternal": true,
   "includeVersion": true,
   "cleanOutputDir": true,
   "readme": "README.md",
@@ -34,5 +33,6 @@
   "validation": {
     "invalidLink": true,
     "notExported": true
-  }
+  },
+  "githubPages": true
 } 

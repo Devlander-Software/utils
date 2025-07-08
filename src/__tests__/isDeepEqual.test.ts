@@ -1,4 +1,4 @@
-import { isDeepEqual } from "../isDeepEqual";
+import { isDeepEqual } from "../type-checking/isDeepEqual";
 
 describe("isDeepEqual", () => {
   it("should return true for equal objects", () => {

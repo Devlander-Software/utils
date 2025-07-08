@@ -1,4 +1,7 @@
-import { GetAspectRatioParams, getAspectRatio } from "../getAspectRatio";
+import {
+  GetAspectRatioParams,
+  getAspectRatio,
+} from "../mathematical-calculations/getAspectRatio";
 
 describe("getAspectRatio", () => {
   it("should calculate the correct height for landscape orientation", () => {

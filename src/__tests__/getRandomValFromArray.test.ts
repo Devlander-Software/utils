@@ -1,4 +1,4 @@
-import { getRandomValFromArray } from "../getRandomValFromArray";
+import { getRandomValFromArray } from "../array-operations/getRandomValFromArray";
 
 describe("getRandomValFromArray", () => {
   it("should return the fallback value if the array is empty", () => {

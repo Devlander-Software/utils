@@ -1,0 +1,17 @@
+{
+  "name": "node-example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "ts-node index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@devlander/utils": "../../package.tgz"
+  }
+}

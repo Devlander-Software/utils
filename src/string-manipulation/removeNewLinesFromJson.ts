@@ -1,6 +1,6 @@
 // cleanJson.ts
-import { isJson } from "./isJson";
-import { jsonContainsNewLine } from "./jsonContainsNewLine";
+import { isJson } from "../type-checking/isJson";
+import { jsonContainsNewLine } from "../data-validation/jsonContainsNewLine";
 import { removeNewLinesFromString } from "./removeNewLinesFromString";
 
 /**

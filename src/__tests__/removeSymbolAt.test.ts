@@ -1,4 +1,4 @@
-import { removeSymbolAt } from "../removeSymbolAt";
+import { removeSymbolAt } from "../string-manipulation/removeSymbolAt";
 
 describe("removeSymbolAt", () => {
   test("removes the symbol at the specified position", () => {

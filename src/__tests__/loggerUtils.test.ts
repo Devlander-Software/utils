@@ -7,7 +7,7 @@ import {
   logMessage,
   logSeparator,
   logStart,
-} from "../loggerUtils";
+} from "../development-tools/loggerUtils";
 
 // Mock the console.log method
 beforeEach(() => {

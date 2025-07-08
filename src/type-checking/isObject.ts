@@ -8,5 +8,6 @@ import { typeOfTest } from "./typeToTest";
  */
 export const isObject = (thing: unknown): boolean => {
   const isTypeObject = typeOfTest("object");
-  return thing !== null && isTypeObject(thing);
+  const isTypeArray = typeOfTest("array");
+  return thing !== null && (isTypeObject(thing) || isTypeArray(thing));
 };

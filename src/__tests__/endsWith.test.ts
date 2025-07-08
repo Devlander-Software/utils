@@ -1,4 +1,4 @@
-import { endsWith } from "../endsWith";
+import { endsWith } from "../string-manipulation/endsWith";
 
 describe("endsWith", () => {
   it("should return true if the string ends with the search string", () => {

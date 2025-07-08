@@ -1,4 +1,4 @@
-import { mergeObjects } from "../mergeObjects";
+import { mergeObjects } from "../object-manipulation/mergeObjects";
 
 describe("mergeObjects", () => {
   it("should merge two objects with nested properties", () => {

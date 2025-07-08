@@ -1,4 +1,4 @@
-import { safeCssProperties } from "./safeCssProperties";
+import { safeCssProperties } from "../file-operations/safeCssProperties";
 
 /**
  * Checks if a CSS string contains valid style declarations.

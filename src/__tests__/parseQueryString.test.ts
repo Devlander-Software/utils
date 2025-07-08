@@ -1,4 +1,4 @@
-import { parseQueryString } from "../parseQueryString";
+import { parseQueryString } from "../query-string-utilities/parseQueryString";
 
 describe("parseQueryString", () => {
   it("should parse a simple query string with single key-value pairs", () => {

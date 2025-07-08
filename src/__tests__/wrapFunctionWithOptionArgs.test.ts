@@ -1,4 +1,4 @@
-import { wrapFunctionWithOptionalArgs } from "../wrapFunctionWithOptionalArgs";
+import { wrapFunctionWithOptionalArgs } from "../development-tools/wrapFunctionWithOptionalArgs";
 
 describe("wrapFunctionWithOptionalArgs", () => {
   it("should call the original function with required and optional arguments", () => {

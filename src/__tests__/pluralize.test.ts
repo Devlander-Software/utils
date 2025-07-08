@@ -1,4 +1,4 @@
-import { pluralize } from "../pluralize";
+import { pluralize } from "../string-manipulation/pluralize";
 
 describe("pluralize", () => {
   it("should return singular when count is 1", () => {

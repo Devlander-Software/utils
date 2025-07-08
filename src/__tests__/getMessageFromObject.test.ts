@@ -1,4 +1,4 @@
-import { getMessageFromObject } from "../getMessageFromObject";
+import { getMessageFromObject } from "../data-formatting/getMessageFromObject";
 
 describe("getMessageFromObject", () => {
   it("should return the message containing the field value", () => {

@@ -1,4 +1,4 @@
-import { isValidBinary } from "../isValidBinary";
+import { isValidBinary } from "../type-checking/isValidBinary";
 
 describe("isValidBinary", () => {
   test("returns true for a valid binary number", () => {

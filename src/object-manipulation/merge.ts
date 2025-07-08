@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { assignValue } from "./assignValue";
-import { forEach } from "./forEach";
-import { MergeableInput, MergeableValue } from "./types/value.types";
+import { forEach } from "../array-operations/forEach";
+import { MergeableInput, MergeableValue } from "../types/value.types";
 export type MergedValue = MergeableValue | Record<string, MergeableValue>;
 export function merge(
   ...objs: MergeableInput[]

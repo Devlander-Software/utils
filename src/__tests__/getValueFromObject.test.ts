@@ -1,4 +1,4 @@
-import { getValueFromObject } from "../getValueFromObject";
+import { getValueFromObject } from "../object-manipulation/getValueFromObject";
 
 describe("getValueFromObject", () => {
   it("should return the value associated with the given key", () => {

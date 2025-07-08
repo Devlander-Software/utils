@@ -1,4 +1,4 @@
-import { isEmpty } from "../isEmpty";
+import { isEmpty } from "../type-checking/isEmpty";
 
 describe("isEmpty", () => {
   it("should return true for undefined", () => {

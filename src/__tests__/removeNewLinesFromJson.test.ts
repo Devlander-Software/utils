@@ -1,4 +1,4 @@
-import { removeNewLinesFromJson } from "../removeNewLinesFromJson";
+import { removeNewLinesFromJson } from "../string-manipulation/removeNewLinesFromJson";
 
 describe("removeNewLinesFromJson", () => {
   it("should remove new lines from a JSON string", () => {

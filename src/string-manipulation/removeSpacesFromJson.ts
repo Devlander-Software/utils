@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { isJson } from "./isJson";
+import { isJson } from "../type-checking/isJson";
 import { removeSpacesFromString } from "./removeSpacesFromString";
 
 /**

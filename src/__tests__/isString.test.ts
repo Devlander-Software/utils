@@ -1,4 +1,4 @@
-import { isString } from "../isString";
+import { isString } from "../type-checking/isString";
 
 describe("isString", () => {
   it("should return true if the value is a string", () => {

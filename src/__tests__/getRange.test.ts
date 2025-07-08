@@ -1,4 +1,4 @@
-import { getRange } from "../getRange";
+import { getRange } from "../array-operations/getRange";
 
 describe("getRange", () => {
   it("should return an array of numbers starting from the specified start value", () => {

@@ -1,4 +1,4 @@
-import { isObject } from "../isObject";
+import { isObject } from "../type-checking/isObject";
 
 describe("isObject", () => {
   test("should return true for an object", () => {

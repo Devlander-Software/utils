@@ -1,4 +1,4 @@
-import { toObjectSet } from "../toObjectSet";
+import { toObjectSet } from "../object-manipulation/toObjectSet";
 
 describe("toObjectSet", () => {
   it("should convert an array of strings to an object set", () => {

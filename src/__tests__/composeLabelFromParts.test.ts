@@ -3,7 +3,7 @@ import {
   ListConjunction,
   MultipleItemsLabelPrefix,
   SingleItemLabelPrefix,
-} from "../composeLabelFromParts";
+} from "../data-formatting/composeLabelFromParts";
 
 interface Product {
   name: string;

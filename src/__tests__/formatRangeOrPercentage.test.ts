@@ -2,7 +2,7 @@ import {
   formatRangeOrPercentage,
   PercentagePrefixEnum,
   RangeOrAmountEnum,
-} from "../formatRangeOrPercent";
+} from "../data-formatting/formatRangeOrPercent";
 
 describe("formatRangeOrPercentage", () => {
   // Test case for formatting as a range with prefix and suffix

@@ -1,4 +1,7 @@
-import { deduplicate, DeduplicateInputType } from "../deduplicate";
+import {
+  deduplicate,
+  DeduplicateInputType,
+} from "../array-operations/deduplicate";
 
 describe("deduplicate", () => {
   // Test for STRING input type

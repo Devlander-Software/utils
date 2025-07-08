@@ -1,4 +1,4 @@
-import { dashToCamelCase } from "../dashToCamelCase";
+import { dashToCamelCase } from "../string-manipulation/dashToCamelCase";
 
 describe("dashToCamelCase", () => {
   it("should convert a dash-case string to camelCase", () => {

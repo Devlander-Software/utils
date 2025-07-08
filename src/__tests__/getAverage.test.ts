@@ -1,4 +1,4 @@
-import { getAverage } from "../getAverage";
+import { getAverage } from "../mathematical-calculations/getAverage";
 
 describe("getAverage", () => {
   it("should throw an error for an empty array", () => {

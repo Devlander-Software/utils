@@ -1,4 +1,4 @@
-import { removeNewLinesFromString } from "../removeNewLinesFromString";
+import { removeNewLinesFromString } from "../string-manipulation/removeNewLinesFromString";
 
 describe("removeNewLinesFromString", () => {
   it("should remove new lines from a string", () => {

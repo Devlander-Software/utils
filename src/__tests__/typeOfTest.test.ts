@@ -1,4 +1,4 @@
-import { typeOfTest } from "../typeToTest";
+import { typeOfTest } from "../type-checking/typeToTest";
 
 describe("typeOfTest", () => {
   test("should return true for correct type", () => {
@@ -11,7 +11,7 @@ describe("typeOfTest", () => {
     expect(isBoolean(false)).toBe(true);
     const isObject = typeOfTest("object");
     expect(isObject({})).toBe(true);
-    expect(isObject([])).toBe(true); // Arrays are also of type "object"
+    expect(isObject([])).toBe(false); // Arrays are of type "array", not "object"
     const isFunction = typeOfTest("function");
     expect(isFunction(() => {})).toBe(true);
     const isUndefined = typeOfTest("undefined");

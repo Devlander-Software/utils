@@ -1,4 +1,4 @@
-import { isValidStyle } from "../isValidStyle";
+import { isValidStyle } from "../type-checking/isValidStyle";
 
 describe("isValidStyle", () => {
   it("should return true for a valid CSS string", () => {

@@ -1,5 +1,5 @@
-import { generateAllowedOrigins } from "../generateAllowedOrigins";
-import { ProtocolPrefixEnum } from "../generateAllowedOrigins";
+import { generateAllowedOrigins } from "../data-validation/generateAllowedOrigins";
+import { ProtocolPrefixEnum } from "../data-validation/generateAllowedOrigins";
 
 describe("generateAllowedOrigins", () => {
   it("should generate URLs for a subdomain with all prefix combinations", () => {
@@ -134,7 +134,4 @@ describe("generateAllowedOrigins", () => {
     ];
     expect(result.sort()).toEqual(expected.sort());
   });
-
 });
-
-

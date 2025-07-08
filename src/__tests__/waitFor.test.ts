@@ -1,4 +1,4 @@
-import { waitFor } from "../waitFor";
+import { waitFor } from "../development-tools/waitFor";
 
 describe("waitFor", () => {
   let consoleSpy: jest.SpyInstance<void, unknown[]>; // Specify a different type for jest.SpyInstance

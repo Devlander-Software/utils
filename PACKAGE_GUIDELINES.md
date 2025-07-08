@@ -48,7 +48,7 @@ The `@devlander/utils` package is a **generic, reusable utility library** that p
 - ❌ Platform-specific implementations
 
 ### Application-Specific Features
-- ❌ Raw Outdoors specific functions
+- ❌ App specific functions
 - ❌ Video processing logic
 - ❌ User management functions
 - ❌ Payment processing

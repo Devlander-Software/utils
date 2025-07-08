@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { AnyObject } from "./types/value.types";
+import { AnyObject } from "../types/value.types";
 
 // Helper to check if a value is a plain object
 /**

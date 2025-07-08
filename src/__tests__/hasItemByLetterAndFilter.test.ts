@@ -1,4 +1,4 @@
-import { hasItemByLetterAndFilter } from "../hasItemByLetterAndFilter";
+import { hasItemByLetterAndFilter } from "../data-validation/hasItemByLetterAndFilter";
 
 describe("hasItemByLetterAndFilter", () => {
   it("should return true if an item with the specified letter is found", () => {

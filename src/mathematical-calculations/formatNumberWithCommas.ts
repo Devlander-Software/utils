@@ -1,9 +1,9 @@
 /**
  * Formats a number with comma separators for thousands.
- * 
+ *
  * @param num - The number to format.
  * @returns The formatted number string with commas.
- * 
+ *
  * @example
  * ```typescript
  * formatNumberWithCommas(1000); // Returns: "1,000"
@@ -13,9 +13,9 @@
  * ```
  */
 export const formatNumberWithCommas = (num: number): string => {
-  if (typeof num !== 'number' || isNaN(num)) {
-    return '0';
+  if (typeof num !== "number" || isNaN(num)) {
+    return "0";
   }
-  
-  return num.toLocaleString('en-US');
-}; 
+
+  return num.toLocaleString("en-US");
+};

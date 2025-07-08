@@ -1,5 +1,4 @@
-/* eslint-disable tsdoc/syntax */
-import { TColor, TColorValue } from "./types/log-color.types";
+import { TColor, TColorValue } from "../types/log-color.types";
 
 /**
  * ANSI escape codes for colors and background colors.

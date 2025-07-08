@@ -1,8 +1,8 @@
-import { forEachEntry } from "./forEachEntry";
-import { hasOwnProp } from "./hasOwnProp";
-import { isFormData } from "./isFormData";
-import { isFunction } from "./isFunction";
-import { isObject } from "./isObject";
+import { forEachEntry } from "../array-operations/forEachEntry";
+import { hasOwnProp } from "../type-checking/hasOwnProp";
+import { isFormData } from "../type-checking/isFormData";
+import { isFunction } from "../type-checking/isFunction";
+import { isObject } from "../type-checking/isObject";
 import { parsePropPath } from "./parsePropPath";
 
 type FormDataValue = string | Blob | File;

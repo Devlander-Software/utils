@@ -1,4 +1,4 @@
-import { jsonContainsNewLine } from "../jsonContainsNewLine";
+import { jsonContainsNewLine } from "../data-validation/jsonContainsNewLine";
 
 describe("jsonContainsNewLine", () => {
   it("should return true for a JSON string with newline characters", () => {

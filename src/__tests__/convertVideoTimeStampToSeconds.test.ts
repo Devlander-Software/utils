@@ -1,4 +1,4 @@
-import { convertVideoTimeStampToSeconds } from "../convertVideoTimeStampToSeconds";
+import { convertVideoTimeStampToSeconds } from "../time-utilities/convertVideoTimeStampToSeconds";
 
 describe("convertVideoTimeStampToSeconds", () => {
   it("should convert a timestamp in the format 'HH:MM:SS' to seconds", () => {

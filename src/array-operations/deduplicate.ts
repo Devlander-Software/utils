@@ -15,7 +15,7 @@ export enum DeduplicateInputType {
  * `Record<string, unknown>`, `unknown[]`, or `number`.
  * @param inputType - Specifies the type of the input to control the deduplication strategy.
  * Accepts either `DeduplicateInputType` enum values or their string literals (e.g., "string").
- * Defaults to `DeduplicateInputType.STRING`.
+ * If not provided, the function will auto-detect the input type.
  * @returns The input with duplicates removed, formatted according to the specified input type:
  * - `STRING` - Returns a string with duplicate characters removed.
  * - `ARRAY` - Returns an array with duplicate elements removed.
@@ -28,14 +28,35 @@ export enum DeduplicateInputType {
  */
 export const deduplicate = (
   input: string | Record<string, unknown> | unknown[] | number,
-  inputType:
+  inputType?:
     | DeduplicateInputType
-    | keyof typeof DeduplicateInputType = DeduplicateInputType.STRING,
+    | keyof typeof DeduplicateInputType,
 ): string | Record<string, unknown> | number | unknown[] => {
+  // Auto-detect input type if not provided
+  if (!inputType) {
+    if (typeof input === "string") {
+      inputType = DeduplicateInputType.STRING;
+    } else if (Array.isArray(input)) {
+      // Check if it's a matrix (2D array)
+      if (input.length > 0 && input.every(Array.isArray)) {
+        inputType = DeduplicateInputType.MATRIX;
+      } else {
+        inputType = DeduplicateInputType.ARRAY;
+      }
+    } else if (typeof input === "number") {
+      inputType = DeduplicateInputType.NUMBER;
+    } else if (typeof input === "object" && input !== null) {
+      inputType = DeduplicateInputType.OBJECT;
+    } else {
+      throw new Error(`Unsupported input type: ${typeof input}`);
+    }
+  }
+
   const getDeduplicationMethod = () => {
     switch (inputType) {
       case DeduplicateInputType.STRING:
       case "STRING":
+      case "string":
         if (typeof input === "string") {
           return input
             .split("")
@@ -46,6 +67,7 @@ export const deduplicate = (
 
       case DeduplicateInputType.ARRAY:
       case "ARRAY":
+      case "array":
         if (Array.isArray(input)) {
           return input.filter((item, pos, self) => self.indexOf(item) === pos);
         }
@@ -53,6 +75,7 @@ export const deduplicate = (
 
       case DeduplicateInputType.OBJECT:
       case "OBJECT":
+      case "object":
         if (typeof input === "object" && !Array.isArray(input)) {
           const seenValues = new Set();
           const uniqueEntries = Object.entries(input).filter(([key, value]) => {
@@ -69,6 +92,7 @@ export const deduplicate = (
 
       case DeduplicateInputType.NUMBER:
       case "NUMBER":
+      case "number":
         if (typeof input === "number") {
           const uniqueDigits = input
             .toString()
@@ -81,6 +105,7 @@ export const deduplicate = (
 
       case DeduplicateInputType.MATRIX:
       case "MATRIX":
+      case "matrix":
         if (Array.isArray(input) && input.every(Array.isArray)) {
           return input.map((row) => Array.from(new Set(row)));
         }

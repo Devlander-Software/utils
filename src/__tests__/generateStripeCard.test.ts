@@ -1,4 +1,4 @@
-import { generateStripeCard } from "../generateStripeCard";
+import { generateStripeCard } from "../data-validation/generateStripeCard";
 
 describe("generateStripeCard", () => {
   it("should generate a random Stripe card object", () => {

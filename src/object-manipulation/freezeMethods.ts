@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { isFunction } from "./isFunction";
-import { reduceDescriptors } from "./reduceDescriptors";
+import { isFunction } from "../type-checking/isFunction";
+import { reduceDescriptors } from "../development-tools/reduceDescriptors";
 
 type ObjectWithMethods = {
   [key: string]: Function;

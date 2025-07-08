@@ -10,4 +10,4 @@ export * from "./extractKeysAndValues";
 export * from "./extend";
 export * from "./bind";
 export * from "./assignValue";
-export * from "./deepClone"; 
+export * from "./deepClone";

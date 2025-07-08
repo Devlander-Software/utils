@@ -1,4 +1,4 @@
-import { isJson } from "../isJson";
+import { isJson } from "../type-checking/isJson";
 
 describe("isJson", () => {
   it("should return true if the input is a valid JSON string", () => {

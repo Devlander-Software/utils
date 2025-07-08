@@ -12,4 +12,4 @@ export * from "./removeSymbolAt";
 export * from "./removeNewLinesFromJson";
 export * from "./removeNewLinesFromString";
 export * from "./removeSpacesFromJson";
-export * from "./removeSpacesFromString"; 
+export * from "./removeSpacesFromString";

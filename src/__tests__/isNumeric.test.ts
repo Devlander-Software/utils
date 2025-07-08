@@ -1,6 +1,6 @@
 // isNumeric.test.ts
 
-import { isNumeric } from "../isNumeric";
+import { isNumeric } from "../type-checking/isNumeric";
 
 describe("isNumeric function", () => {
   it("should return true for numeric values", () => {

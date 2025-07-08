@@ -1,11 +1,11 @@
-import { isBoolean } from "../isBoolean";
-import { isBuffer } from "../isBuffer";
-import { isDate } from "../isDate";
-import { isFile } from "../isFile";
-import { isNumber } from "../isNumber";
-import { isObject } from "../isObject";
-import { isUndefined } from "../isUndefined";
-import { typeOfTest } from "../typeToTest";
+import { isBoolean } from "../type-checking/isBoolean";
+import { isBuffer } from "../type-checking/isBuffer";
+import { isDate } from "../type-checking/isDate";
+import { isFile } from "../type-checking/isFile";
+import { isNumber } from "../type-checking/isNumber";
+import { isObject } from "../type-checking/isObject";
+import { isUndefined } from "../type-checking/isUndefined";
+import { typeOfTest } from "../type-checking/typeToTest";
 
 describe("typeToTest", () => {
   describe("typeOfTest", () => {

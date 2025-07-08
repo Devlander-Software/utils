@@ -1,4 +1,4 @@
-import { calculatePercentage } from "../calculatePercentage";
+import { calculatePercentage } from "../mathematical-calculations/calculatePercentage";
 
 describe("calculatePercentage", () => {
   it("should calculate the percentage correctly when partial and whole are numbers", () => {

@@ -1,4 +1,4 @@
-import { toQueryString } from "../toQueryString";
+import { toQueryString } from "../query-string-utilities/toQueryString";
 describe("toQueryString", () => {
   test("should return an empty string if no query object is provided", () => {
     expect(toQueryString()).toBe("");
@@ -47,19 +47,20 @@ describe("toQueryString", () => {
   });
 
   test("should handle a mix of string, number, and boolean types", () => {
-    expect(toQueryString({
-      limit: 10,
-      page: 2,
-      cursor: 20,
-      sortBy: "name",
-      sortOrder: "asc",
-      filters: { hi: "Test", count: 5, isActive: false },
-    })).toBe(
+    expect(
+      toQueryString({
+        limit: 10,
+        page: 2,
+        cursor: 20,
+        sortBy: "name",
+        sortOrder: "asc",
+        filters: { hi: "Test", count: 5, isActive: false },
+      }),
+    ).toBe(
       "?limit=10&page=2&cursor=20&sortBy=name&sortOrder=asc&hi=Test&count=5&isActive=false",
     );
   });
 });
-
 
 // export interface PaginationParams<Filters = Record<string, any>> {
 // 	limit: number // Number of items per page

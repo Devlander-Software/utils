@@ -1,4 +1,4 @@
-import { matchAll } from "./matchAll";
+import { matchAll } from "../string-manipulation/matchAll";
 
 export function parsePropPath(name: string): string[] {
   const matches = matchAll(/\w+|\[(\w*)]/g, name);

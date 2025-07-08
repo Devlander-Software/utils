@@ -1,4 +1,4 @@
-import { isPlainObject } from "../isPlainObject";
+import { isPlainObject } from "../type-checking/isPlainObject";
 
 describe("isPlainObject", () => {
   it("should return true for a plain object", () => {

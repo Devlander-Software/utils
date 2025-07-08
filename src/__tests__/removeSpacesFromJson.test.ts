@@ -1,4 +1,4 @@
-import { removeSpacesFromJson } from "../removeSpacesFromJson";
+import { removeSpacesFromJson } from "../string-manipulation/removeSpacesFromJson";
 
 describe("removeSpacesFromJson", () => {
   it("should remove spaces from a JSON string", () => {

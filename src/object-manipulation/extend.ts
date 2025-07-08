@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { bind } from "./bind";
-import { forEach } from "./forEach";
-import { isFunction } from "./isFunction";
-import { AnyObject } from "./types/value.types";
+import { forEach } from "../array-operations/forEach";
+import { isFunction } from "../type-checking/isFunction";
+import { AnyObject } from "../types/value.types";
 
 export const extend = <T, U>(
   a: T,

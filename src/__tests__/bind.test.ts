@@ -1,4 +1,4 @@
-import { bind } from "../bind";
+import { bind } from "../object-manipulation/bind";
 
 describe("bind", () => {
   it("should bind the function to the specified context", () => {

@@ -10,4 +10,4 @@ export * from "./forEachEntry";
 export * from "./getRange";
 export * from "./chunkArray";
 export * from "./flattenArray";
-export * from "./shuffleArray"; 
+export * from "./shuffleArray";

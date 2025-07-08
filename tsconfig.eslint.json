@@ -4,14 +4,13 @@
       "./src/**/*",
       "./jest.config.js",
       "./build-script.config.js",
-      "./test/**/*",
       "./.eslintrc.js",
       "rollup.config.mjs"
-
     ],
     "exclude": [
         "node_modules",
         "example",
+        "examples",
         "**/*.spec.ts",
         "*.d.ts",
         "typings",
@@ -19,6 +18,8 @@
         ".storybook/**/*",
         "./auto-exporter.script.ts",
         ".storybook",
-        "auto-exporter.cjs"
+        "auto-exporter.cjs",
+        "test",
+        "src/__tests__"
     ]
   }

@@ -1,6 +1,6 @@
 // isNumber.test.ts
 
-import { isNumber } from "../isNumber";
+import { isNumber } from "../type-checking/isNumber";
 
 describe("isNumber function", () => {
   it("should return true for numbers", () => {

@@ -1,4 +1,4 @@
-import { selectFromList } from "../selectFromList";
+import { selectFromList } from "../array-operations/selectFromList";
 
 describe("selectFromList", () => {
   it("should select the correct item based on the index", () => {
