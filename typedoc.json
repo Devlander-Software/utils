@@ -1,0 +1,38 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "stripInternal": true,
+  "includeVersion": true,
+  "cleanOutputDir": true,
+  "readme": "README.md",
+  "name": "@devlander/utils – Cross-Platform JavaScript Utility Functions",
+  "theme": "default",
+  "categorizeByGroup": true,
+  "categoryOrder": [
+    "String Manipulation",
+    "Array Operations", 
+    "Object Manipulation",
+    "Mathematical Calculations",
+    "Data Formatting",
+    "Data Conversion",
+    "Data Validation",
+    "Time Utilities",
+    "Development Tools",
+    "File Operations",
+    "Query String Utilities",
+    "Type Checking",
+    "*"
+  ],
+  "defaultCategory": "Other",
+  "sort": ["source-order"],
+  "searchInComments": true,
+  "validation": {
+    "invalidLink": true,
+    "notExported": true
+  }
+} 
