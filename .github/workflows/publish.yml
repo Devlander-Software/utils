@@ -30,21 +30,6 @@ jobs:
       - name: Use the correct Yarn version
         run: corepack prepare yarn@3.6.3 --activate
 
-      # Load .env file if it exists
-      - name: Load .env file if exists
-        run: |
-          if [ -f .env ]; then
-            set -a
-            source .env
-            set +a
-          fi
-
-      # Set Environment Variables with fallback to .env
-      - name: Set Environment Variables with fallback to .env
-        run: |
-          echo "NPM_READ_TOKEN=${{ secrets.NPM_READ_TOKEN || env.NPM_READ_TOKEN }}" >> $GITHUB_ENV
-          echo "NPM_PUBLISH_TOKEN=${{ secrets.NPM_PUBLISH_TOKEN || env.NPM_PUBLISH_TOKEN }}" >> $GITHUB_ENV
-
       # Install dependencies
       - name: Install dependencies
         run: yarn install --immutable
@@ -75,12 +60,16 @@ jobs:
       # Set up .npmrc for authentication
       - name: Set up .npmrc for authentication
         run: |
-          echo "//registry.npmjs.org/:_authToken=${{ env.NPM_PUBLISH_TOKEN }}" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
 
       # Publish to npm (only if version doesn't exist)
       - name: Publish to npm
         if: steps.version-check.outputs.exists == 'false'
-        run: yarn start-publish --non-interactive --access public
+        run: |
+          echo "Publishing version ${{ env.VERSION }} to npm..."
+          yarn start-publish --non-interactive --access public
+          echo "Successfully published version ${{ env.VERSION }}"
 
       # Skip publish if version exists
       - name: Skip publish - version already exists
