@@ -8,15 +8,7 @@ export const toFlatObject = (
     destObj: Record<string, unknown>,
   ) => boolean,
 ): Record<string, unknown> => {
-  console.log("Starting toFlatObject");
-  console.log("Initial sourceObj:", sourceObj);
-  console.log("Initial destObj:", destObj);
-
   if (!sourceObj) {
-    console.log(
-      "Source object is null or undefined, returning destObj:",
-      destObj,
-    );
     return destObj;
   }
 

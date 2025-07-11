@@ -16,8 +16,6 @@ export const toObjectSet = (
     define(String(arrayOrString).split(delimiter));
   }
 
-  console.log(obj, "obj");
-
   Object.keys(obj).forEach((key) => {
     if (!key) {
       delete obj[key];

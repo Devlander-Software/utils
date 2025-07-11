@@ -9,7 +9,6 @@ describe("isJson", () => {
       city: "New York",
     };
     const result = isJson(jsonString);
-    console.log(result);
     expect(result).toEqual(expectedJson);
   });
 
