@@ -1,17 +1,19 @@
 name: Publish
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   publish:
-    if: github.event_name == 'release' && github.event.action == 'created'
     runs-on: ubuntu-latest
 
     steps:
       # Checkout the repository
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # Set up Node.js environment
       - name: Set up Node.js
@@ -47,16 +49,54 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      # Extract version from git tag
+      - name: Extract version from tag
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Extracted version: $VERSION"
+
+      # Check if version already exists on npm
+      - name: Check if version exists on npm
+        id: version-check
+        run: |
+          if npm view @devlander/utils@${{ env.VERSION }} version >/dev/null 2>&1; then
+            echo "Version ${{ env.VERSION }} already exists on npm"
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "Version ${{ env.VERSION }} is new and will be published"
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      # Generate changelog
+      - name: Generate changelog
+        run: yarn changelog
+
       # Set up .npmrc for authentication
       - name: Set up .npmrc for authentication
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ env.NPM_PUBLISH_TOKEN }}" > ~/.npmrc
 
-      # Debug - Display .npmrc (optional)
-      - name: Debug - Display .npmrc
-        run: cat ~/.npmrc
-        continue-on-error: true
-
-      # Publish to npm using the correct script
+      # Publish to npm (only if version doesn't exist)
       - name: Publish to npm
+        if: steps.version-check.outputs.exists == 'false'
         run: yarn start-publish --non-interactive --access public
+
+      # Skip publish if version exists
+      - name: Skip publish - version already exists
+        if: steps.version-check.outputs.exists == 'true'
+        run: |
+          echo "Skipping npm publish - version ${{ env.VERSION }} already exists"
+          echo "This is normal if the tag was pushed multiple times"
+
+      # Create GitHub release with changelog
+      - name: Create GitHub release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref_name }}
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: false

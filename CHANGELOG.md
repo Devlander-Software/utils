@@ -1,4 +1,4 @@
-## [0.0.1](https://github.com/Devlander-Software/utils/compare/v0.0.91...v0.0.1) (2025-07-08)
+## [1.0.1](https://github.com/Devlander-Software/utils/compare/v0.0.91...v1.0.1) (2025-07-11)
 ## [0.0.91](https://github.com/Devlander-Software/utils/compare/0.0.1...v0.0.91) (2025-07-08)
 
 ### Features

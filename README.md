@@ -143,3 +143,77 @@ The `/examples` directory contains minimal test apps for each platform:
 4. **Validate**: Ensures your package works in real-world scenarios
 
 This guarantees that your package can be installed and used successfully in React, Next.js, React Native, and Node.js projects.
+
+## 🚀 Release Process
+
+This project uses an automated release process with GitHub Actions. Here's how it works:
+
+### Automatic Release Workflow
+
+1. **Create a new version**: Use one of the release commands:
+   ```bash
+   # Standard release (with version checking)
+   yarn release:patch:check  # 1.0.1 → 1.0.2
+   yarn release:minor:check  # 1.0.1 → 1.1.0  
+   yarn release:major:check  # 1.0.1 → 2.0.0
+   
+   # Quick release (no version checking)
+   yarn release:patch  # 1.0.1 → 1.0.2
+   yarn release:minor  # 1.0.1 → 1.1.0
+   yarn release:major  # 1.0.1 → 2.0.0
+   ```
+
+2. **What happens automatically**:
+   - ✅ Version is incremented in `package.json`
+   - ✅ **Version check**: Verifies the version doesn't already exist on npm
+   - ✅ Git tag is created and pushed
+   - ✅ GitHub Action triggers on tag push
+   - ✅ **Smart publishing**: Only publishes if version is new
+   - ✅ Changelog is generated from conventional commits
+   - ✅ Package is published to npm (if new version)
+   - ✅ GitHub release is created with changelog notes
+
+### Manual Release (Alternative)
+
+If you prefer manual control:
+```bash
+# Generate changelog and create release
+yarn release
+```
+
+### Commit Convention
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) for automatic changelog generation:
+
+- `feat:` - New features
+- `fix:` - Bug fixes  
+- `docs:` - Documentation changes
+- `style:` - Code style changes
+- `refactor:` - Code refactoring
+- `test:` - Test changes
+- `chore:` - Maintenance tasks
+
+### How Version Detection Works
+
+The release process uses **dual-layer version checking**:
+
+1. **Local Check** (before pushing tag):
+   ```bash
+   npm view @devlander/utils@1.0.2 version
+   ```
+   - If version exists → Stops and shows warning
+   - If version is new → Proceeds with tag push
+
+2. **GitHub Action Check** (after tag push):
+   - Extracts version from git tag (`v1.0.2` → `1.0.2`)
+   - Checks npm registry for existing version
+   - Only publishes if version is new
+   - Creates GitHub release regardless
+
+### Current Status
+
+- **Latest npm version**: `1.0.0` (published 3 days ago)
+- **Current package version**: `1.0.1` (ready for next release)
+- **GitHub Actions**: ✅ Configured and working
+- **Auto-release**: ✅ Enabled with changelog generation
+- **Version checking**: ✅ Smart publishing (only new versions)
