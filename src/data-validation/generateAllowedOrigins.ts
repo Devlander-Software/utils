@@ -27,8 +27,19 @@ const normalizeDomain = (domain: string): string => {
  * @returns True if the domain is valid, false otherwise.
  */
 const isValidDomain = (domain: string): boolean => {
-  const domainRegex =
-    /^(localhost(:\d+)?|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,})$/;
+  // Handle empty domains
+  if (!domain || domain.trim() === "") {
+    return false;
+  }
+  
+  // Handle localhost with optional port
+  if (domain.startsWith("localhost")) {
+    return /^localhost(:\d+)?$/.test(domain);
+  }
+  
+  // Handle regular domains and subdomains
+  // Allow hyphens in domain names, but not at start/end of segments
+  const domainRegex = /^([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)*[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.[a-zA-Z]{2,}$/;
   return domainRegex.test(domain);
 };
 
