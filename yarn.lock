@@ -1561,7 +1561,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@devlander/utils@^0.0.3, @devlander/utils@workspace:.":
+"@devlander/utils@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@devlander/utils@npm:0.0.3"
+  checksum: 0b1cfb95fbdc0ab7271567c99c697e3b21a14144ef0b9e9819f69defecdf9b1127b42ff51483a0ef5843a8e07fba5fc8c0dc53103dec1f89583aa1305cc7b0c3
+  languageName: node
+  linkType: hard
+
+"@devlander/utils@workspace:.":
   version: 0.0.0-use.local
   resolution: "@devlander/utils@workspace:."
   dependencies:
@@ -2476,20 +2483,20 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 24.0.11
-  resolution: "@types/node@npm:24.0.11"
+  version: 24.0.13
+  resolution: "@types/node@npm:24.0.13"
   dependencies:
     undici-types: ~7.8.0
-  checksum: c674ca541b3e112595783fee52b48219b1442d3fbc5bb8c2d922148718b099a9cb19b0698ac48d0bcbfc0b98073d27226c11add1408f5eb459a5d9dea2803385
+  checksum: a98c3c7979e3c17e2853af4b5c4adfb0cbeaf3747a85bc349048ec068cf16d2a96186e005b76ad05f8f533f9b067f499e45ff0296dab0111297af634f71c792c
   languageName: node
   linkType: hard
 
 "@types/node@npm:^22.10.2":
-  version: 22.16.1
-  resolution: "@types/node@npm:22.16.1"
+  version: 22.16.3
+  resolution: "@types/node@npm:22.16.3"
   dependencies:
     undici-types: ~6.21.0
-  checksum: 85a487762b67ff6ec49bf74b2ec33f4f7e471a7446408c0923c697c69cf0416be1538e0bc6ec284d89b31353dbd0029de110dacdbe4de02b4c3cc6ab827a859d
+  checksum: f37674ff0141380e41bde4a44776185df69757b17d94a7b05ed4c0d003b86239a3d640f1b65c9dcca5f9ba289f14fa2f3ed7ab8298b5538747d07f11da7e1bdc
   languageName: node
   linkType: hard
 
@@ -3895,8 +3902,8 @@ __metadata:
   linkType: hard
 
 "conventional-changelog-writer@npm:^8.0.0":
-  version: 8.1.0
-  resolution: "conventional-changelog-writer@npm:8.1.0"
+  version: 8.2.0
+  resolution: "conventional-changelog-writer@npm:8.2.0"
   dependencies:
     conventional-commits-filter: ^5.0.0
     handlebars: ^4.7.7
@@ -3904,7 +3911,7 @@ __metadata:
     semver: ^7.5.2
   bin:
     conventional-changelog-writer: dist/cli/index.js
-  checksum: cf3122058186f1e0ceaaa321fdad22c4ff2cbd830115747a695be153184692800e4bf51e54487884c3809c87b52f7933a968b53f44e2a25ad56993ffc2034cf1
+  checksum: 0a7b62fdc06dbe3e8f0feff2c51295ebc03d8046db73111b3c6a595472885551adf9ef2eeb741c43794466e58c1f23a055160c8aef08cacfe769b86ea2b7c611
   languageName: node
   linkType: hard
 
@@ -4438,9 +4445,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.173":
-  version: 1.5.180
-  resolution: "electron-to-chromium@npm:1.5.180"
-  checksum: 52f5a42dec005c56d6894f1570136bf5f163e5e61a7e4414631a010c81eb24ff8e5c3a7c335e03bd87587cd73a3ca751f66a1d125e4e648ded0cae9404dc019a
+  version: 1.5.182
+  resolution: "electron-to-chromium@npm:1.5.182"
+  checksum: 7c698db2733aea35cc76b3914af73ee46e4fe47009100a58e18313fca0b1179ddda3c37166354895765a918a2984cec2e18d4652c2f7b51dd76268ca84b718d3
   languageName: node
   linkType: hard
 
@@ -9003,12 +9010,12 @@ __metadata:
   linkType: hard
 
 "socks@npm:^2.8.3":
-  version: 2.8.5
-  resolution: "socks@npm:2.8.5"
+  version: 2.8.6
+  resolution: "socks@npm:2.8.6"
   dependencies:
     ip-address: ^9.0.5
     smart-buffer: ^4.2.0
-  checksum: d39a77a8c91cfacafc75c67dba45925eccfd884a8a4a68dcda6fb9ab7f37de6e250bb6db3721e8a16a066a8e1ebe872d4affc26f3eb763f4befedcc7b733b7ed
+  checksum: 3d2a696d42d94b05b2a7e797b9291483d6768b23300b015353f34f8046cce35f23fe59300a38a77a9f0dee4274dd6c333afbdef628cf48f3df171bfb86c2d21c
   languageName: node
   linkType: hard
 
